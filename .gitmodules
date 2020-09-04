@@ -1,0 +1,3 @@
+[submodule "Software/BikerBlinkerApp"]
+	path = Software/BikerBlinkerApp
+	url = https://github.com/dmascioli/BikerBlinker/Software
