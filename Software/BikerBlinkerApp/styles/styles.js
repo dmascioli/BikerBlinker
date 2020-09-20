@@ -25,6 +25,31 @@ export const layout = StyleSheet.create({
         color: "white",
         fontFamily: "sans-serif",
         fontSize: "5em"
+    },
+    menu: {
+      display: "inline-block", 
+      height: "40%",
+      width: "100%"
     }
   });
+
+export const components = StyleSheet.create({
+  menuBox: {
+    flex: 1,
+    borderColor: "#F8DA00",
+    backgroundColor: "#F8DA00",
+    width: "40%",
+    height: "80%",
+    borderWidth: ".0005em",
+    borderRadius: "1em",
+    alignItems: "center",
+    display: "inline-block",
+    margin: "5%"
+  },
+  menuText: {
+    color: "white",
+    fontSize: "5em",
+    padding: "30%"
+  }
+});
   
