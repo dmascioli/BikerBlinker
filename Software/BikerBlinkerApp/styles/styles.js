@@ -13,18 +13,28 @@ import { StyleSheet } from "react-native";
 
 export const layout = StyleSheet.create({
     container: {
-      flex: 1,
       borderColor: "#9ae19d",
-      backgroundColor: "#474a48",
+      backgroundColor: "#2c302e",
       borderWidth: "1em",
-      borderRadius: "2em",
+      overflow: 'auto', 
       alignItems: "center",
       justifyContent: "center",
+      height: '100vh'
     },
     header: {
-        color: "white",
+        color: "#F8DA00",
+        textAlign: 'center',
         fontFamily: "sans-serif",
-        fontSize: "5em"
+        fontSize: "3em",
+    },
+    touchable: {
+      height: '500px'
+    },
+    subHeader: {
+      color: "#F8DA00",
+      textAlign: 'center',
+      fontFamily: "sans-serif",
+      fontSize: "2em"
     },
     menu: {
       display: "inline-block", 
@@ -34,22 +44,30 @@ export const layout = StyleSheet.create({
   });
 
 export const components = StyleSheet.create({
-  menuBox: {
-    flex: 1,
-    borderColor: "#F8DA00",
-    backgroundColor: "#F8DA00",
-    width: "40%",
-    height: "80%",
-    borderWidth: ".0005em",
-    borderRadius: "1em",
-    alignItems: "center",
-    display: "inline-block",
-    margin: "5%"
-  },
   menuText: {
     color: "white",
-    fontSize: "5em",
-    padding: "30%"
+    fontSize: "5em"
+  },
+  menuBox: {
+    width: '49.5vw',
+    height: '100vh',
+    alignItems: "center",
+    justifyContent: "center",
+  },
+  main: {
+    display: 'flex',
+    flexDirection: 'row',
+    padding: 'none'
+  },
+  verticalRule: {
+    borderLeftWidth: '6px',
+    borderLeftColor: 'white',
+    borderStyle: 'dashed',
+    height: '100%',
+    position: 'absolute',
+    left: '50%',
+    marginLeft: '-3px',
+    top: '0'
   }
 });
   
