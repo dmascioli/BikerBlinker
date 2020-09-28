@@ -1,6 +1,6 @@
 import React from "react";
 import { components } from '../styles/styles';
-import { Text, View, Button, TouchableHighlight } from "react-native";
+import { Text, TouchableHighlight } from "react-native";
 import { useNavigation } from '@react-navigation/native';
 
 export default function MenuBox({boxText, boxLink}) {
