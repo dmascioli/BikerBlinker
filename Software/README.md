@@ -16,8 +16,8 @@ This folder contains code for the accompanying mobile application.
     - React-Native/React/Redux snippets
 
 ## Libraries used
-1 React-Native-Voice (https://github.com/react-native-voice/voice)
+1. React-Native-Voice (https://github.com/react-native-voice/voice)
     - used for input and transcription of users audio
-2 npl goes here
-3 react-native-ble-plx (https://github.com/Polidea/react-native-ble-plx)
+2. npl goes here
+3. react-native-ble-plx (https://github.com/Polidea/react-native-ble-plx)
     - used for bluetooth communitcation with biker blinker modual
