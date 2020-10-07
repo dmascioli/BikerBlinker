@@ -9,6 +9,8 @@ import {
 
 import Voice from 'react-native-voice';
 
+import Clipboard from '@react-native-community/clipboard';
+
 export default class VoiceNative extends React.Component {
   constructor(props) {
     super(props);
@@ -66,6 +68,12 @@ async _stopRecognition(e) {
       console.error(e);
     }
   }
+
+
+copyToClipboard = () => {
+  Clipboard.setString(this.state.results.map((result, index) => index == 0 ? `${result}` : ` ${result}`).toString())
+}
+
 render () {
     return (
       <View>
@@ -88,6 +96,15 @@ render () {
               onPress={this._startRecognition.bind(this)}
               title="Start"></Button>
             )
+          }
+          {
+            this.state.results
+              && this.state.results.length > 0
+              && (
+                <Button style={styles.transcript}
+                onPress={this.copyToClipboard.bind(this)}
+                title="Copy"></Button>
+              )
           }
         </>
       </View>
