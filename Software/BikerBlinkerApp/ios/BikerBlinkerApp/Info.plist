@@ -55,5 +55,9 @@
 	<false/>
   <key>UIStatusBarStyle</key>
   <string>UIStatusBarStyleDefault</string>
+  <key>NSMicrophoneUsageDescription</key>
+  <string>Microphone will pick up users voice commands</string>
+  <key>NSSpeechRecognitionUsageDescription</key>
+  <string>Speech recognition will use users voice input to issue commands to BikerBlinker module</string>
 </dict>
 </plist>

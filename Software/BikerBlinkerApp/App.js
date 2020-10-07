@@ -41,8 +41,6 @@ function Home() {
       <TouchableOpacity onPress={() => navigation.navigate("Main")}>
         <View style={layout.container}>
           <Text style={layout.header}>Welcome to BikerBlinker</Text>
-          <br />
-          <br />
           <Text style={layout.subHeader}>Click anywhere to begin!</Text>
           <TouchableWithoutFeedback onPress={() => navigation.navigate("Debug")}><Text>debug</Text></TouchableWithoutFeedback>
           <StatusBar style="auto" />
