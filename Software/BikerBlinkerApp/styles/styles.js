@@ -15,17 +15,16 @@ export const layout = StyleSheet.create({
     container: {
       borderColor: "#9ae19d",
       backgroundColor: "#2c302e",
-      borderWidth: "1em",
-      overflow: 'auto', 
+      borderWidth: 16,
+      overflow: 'scroll', 
       alignItems: "center",
       justifyContent: "center",
-      height: '100vh'
+      height: '100%'
     },
     header: {
         color: "#F8DA00",
         textAlign: 'center',
-        fontFamily: "sans-serif",
-        fontSize: "3em",
+        fontSize: 24,
     },
     touchable: {
       height: '500px'
@@ -33,11 +32,10 @@ export const layout = StyleSheet.create({
     subHeader: {
       color: "#F8DA00",
       textAlign: 'center',
-      fontFamily: "sans-serif",
-      fontSize: "2em"
+      fontSize: 18
     },
     menu: {
-      display: "inline-block", 
+      display: "flex", 
       height: "40%",
       width: "100%"
     }
@@ -46,28 +44,27 @@ export const layout = StyleSheet.create({
 export const components = StyleSheet.create({
   menuText: {
     color: "white",
-    fontSize: "5em"
+    fontSize: 32
   },
   menuBox: {
-    width: '49.5vw',
-    height: '100vh',
+    width: '50%',
+    height: '100%',
     alignItems: "center",
     justifyContent: "center",
   },
   main: {
     display: 'flex',
     flexDirection: 'row',
-    padding: 'none'
   },
   verticalRule: {
-    borderLeftWidth: '6px',
+    borderLeftWidth: 6,
     borderLeftColor: 'white',
     borderStyle: 'dashed',
     height: '100%',
     position: 'absolute',
     left: '50%',
-    marginLeft: '-3px',
-    top: '0'
+    marginLeft: -3,
+    top: 0
   }
 });
   
