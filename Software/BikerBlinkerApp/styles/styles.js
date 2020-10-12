@@ -22,22 +22,39 @@ export const layout = StyleSheet.create({
       height: '100%'
     },
     header: {
-        color: "#F8DA00",
+        color: "white",
         textAlign: 'center',
-        fontSize: 24,
+        fontFamily: "sans-serif",
+        fontSize: "3em",
+        marginTop: "2.75em"
     },
     touchable: {
       height: '500px'
     },
     subHeader: {
-      color: "#F8DA00",
+      color: "white",
       textAlign: 'center',
-      fontSize: 18
+      fontFamily: "sans-serif",
+      fontSize: "2em",
+      marginBottom: "4em"
     },
     menu: {
       display: "flex", 
       height: "40%",
       width: "100%"
+    },
+    menuItem: {
+      borderTopColor: "#909590",
+      width: "100vw",
+      borderWidth: "0.1em",
+      padding: "1em",
+      borderBottomWidth: "0px"
+    },
+    menuItemText: {
+      color: "white",
+      textAlign: "center",
+      fontFamily: "sans-serif",
+      fontSize: "2em",
     }
   });
 
