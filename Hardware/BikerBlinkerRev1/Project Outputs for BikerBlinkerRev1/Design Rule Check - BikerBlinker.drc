@@ -1,7 +1,7 @@
 Protel Design System Design Rule Check
 PCB File : C:\Users\Bryan Moed\Documents\GitHub\BikerBlinker\Hardware\BikerBlinkerRev1\BikerBlinker.PcbDoc
 Date     : 10/14/2020
-Time     : 1:15:14 PM
+Time     : 2:14:43 PM
 
 Processing Rule : Clearance Constraint (Gap=0.152mm) (All),(All)
    Violation between Clearance Constraint: (Collision < 0.152mm) Between Pad U2-11(15.299mm,6.922mm) on Top Layer And Pad U2-15(15.299mm,6.922mm) on Multi-Layer 
@@ -23,7 +23,8 @@ Rule Violations :6
 
 Processing Rule : Un-Routed Net Constraint ( (All) )
    Violation between Un-Routed Net Constraint: Net GND Between Track (13.677mm,6.469mm)(13.677mm,6.482mm) on Top Layer And Pad U2-11(15.299mm,6.922mm) on Top Layer 
-Rule Violations :1
+   Violation between Un-Routed Net Constraint: Net NetSW_1 Between Track (55.533mm,36.694mm)(56.032mm,36.195mm) on Top Layer And Track (61.164mm,40.209mm)(61.214mm,40.259mm) on Top Layer 
+Rule Violations :2
 
 Processing Rule : Modified Polygon (Allow modified: No), (Allow shelved: No)
 Rule Violations :0
@@ -35,7 +36,9 @@ Processing Rule : Power Plane Connect Rule(Relief Connect )(Expansion=0.508mm) (
 Rule Violations :0
 
 Processing Rule : Hole Size Constraint (Min=0.025mm) (Max=2.54mm) (All)
-Rule Violations :0
+   Violation between Hole Size Constraint: (3mm > 2.54mm) Via (28.931mm,17.399mm) from Top Layer to Bottom Layer Actual Hole Size = 3mm
+   Violation between Hole Size Constraint: (3mm > 2.54mm) Via (49.936mm,34.265mm) from Top Layer to Bottom Layer Actual Hole Size = 3mm
+Rule Violations :2
 
 Processing Rule : Hole To Hole Clearance (Gap=0.254mm) (All),(All)
 Rule Violations :0
@@ -95,8 +98,14 @@ Processing Rule : Silk to Silk (Clearance=0.254mm) (All),(All)
 Rule Violations :0
 
 Processing Rule : Net Antennae (Tolerance=0mm) (All)
-   Violation between Net Antennae: Via (42.316mm,24.282mm) from Top Layer to Bottom Layer 
-Rule Violations :1
+   Violation between Net Antennae: Track (61.164mm,40.209mm)(61.214mm,40.259mm) on Top Layer 
+   Violation between Net Antennae: Track (61.164mm,40.209mm)(61.214mm,40.259mm) on Top Layer 
+   Violation between Net Antennae: Via (28.931mm,17.399mm) from Top Layer to Bottom Layer 
+   Violation between Net Antennae: Via (33.757mm,31.42mm) from Top Layer to Bottom Layer 
+   Violation between Net Antennae: Via (38.837mm,31.42mm) from Top Layer to Bottom Layer 
+   Violation between Net Antennae: Via (43.917mm,31.42mm) from Top Layer to Bottom Layer 
+   Violation between Net Antennae: Via (49.936mm,34.265mm) from Top Layer to Bottom Layer 
+Rule Violations :7
 
 Processing Rule : Room BikerBlinker (Bounding Region = (72.238mm, 25.476mm, 164.763mm, 91.035mm) (InComponentClass('BikerBlinker'))
 Rule Violations :0
@@ -105,6 +114,6 @@ Processing Rule : Height Constraint (Min=0mm) (Max=25.4mm) (Prefered=12.7mm) (Al
 Rule Violations :0
 
 
-Violations Detected : 59
+Violations Detected : 68
 Waived Violations : 0
-Time Elapsed        : 00:00:01
+Time Elapsed        : 00:00:02
