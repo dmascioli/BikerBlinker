@@ -1,4 +1,6 @@
 import { StyleSheet } from "react-native";
+require('react-native').Dimensions
+var {vw, vh, vmin, vmax} = require('react-native-viewport-units');
 
 /*
 * Color Palette
@@ -25,8 +27,8 @@ export const layout = StyleSheet.create({
         color: "white",
         textAlign: 'center',
         fontFamily: "sans-serif",
-        fontSize: "3em",
-        marginTop: "2.75em"
+        fontSize: 28,
+        marginTop: 120
     },
     touchable: {
       height: '500px'
@@ -35,8 +37,8 @@ export const layout = StyleSheet.create({
       color: "white",
       textAlign: 'center',
       fontFamily: "sans-serif",
-      fontSize: "2em",
-      marginBottom: "4em"
+      fontSize: 16,
+      marginBottom: 160
     },
     menu: {
       display: "flex", 
@@ -45,16 +47,18 @@ export const layout = StyleSheet.create({
     },
     menuItem: {
       borderTopColor: "#909590",
-      width: "100vw",
-      borderWidth: "0.1em",
-      padding: "1em",
-      borderBottomWidth: "0px"
+      width: 100*vw,
+      borderWidth: 1,
+      padding: 30,
+      borderLeftWidth: 0,
+      borderRightWidth: 0,
+      borderBottomWidth: 0
     },
     menuItemText: {
       color: "white",
       textAlign: "center",
       fontFamily: "sans-serif",
-      fontSize: "2em",
+      fontSize: 20,
     }
   });
 
@@ -72,16 +76,12 @@ export const components = StyleSheet.create({
   main: {
     display: 'flex',
     flexDirection: 'row',
+    height: '100%'
   },
   verticalRule: {
     borderLeftWidth: 6,
     borderLeftColor: 'white',
-    borderStyle: 'dashed',
-    height: '100%',
-    position: 'absolute',
-    left: '50%',
-    marginLeft: -3,
-    top: 0
+    borderStyle: 'dashed'
   }
 });
   

@@ -5,7 +5,7 @@ import { Text, View } from "react-native";
 import { useNavigation } from '@react-navigation/native';
 import Debug from './pages/debug';
 import Main from './pages/main';
-import Settings from './pages/settings';
+import Sensors from './pages/sensors';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import { TouchableHighlight, TouchableOpacity, TouchableWithoutFeedback } from "react-native-gesture-handler";
@@ -29,7 +29,7 @@ export default function App() {
         <Stack.Screen name="Home" component={Home} options={layoutOptions}/>
         <Stack.Screen name="Debug" component={Debug} options={layoutOptions}/>
         <Stack.Screen name="Main" component={Main} options={layoutOptions}/>
-        <Stack.Screen name="Settings" component={Settings} options={layoutOptions}/>
+        <Stack.Screen name="Sensors" component={Sensors} options={layoutOptions}/>
       </Stack.Navigator>
     </NavigationContainer>
   );
@@ -43,9 +43,9 @@ function Home() {
         <View style={layout.container}>
           <Text style={layout.header}>Welcome to BikerBlinker</Text>
           <Text style={layout.subHeader}>Click anywhere to begin!</Text>
-          <TouchableHighlight onPress={() => navigation.navigate("Settings")}>
+          <TouchableHighlight onPress={() => navigation.navigate("Sensors")}>
             <View style={layout.menuItem}>
-              <Text style={layout.menuItemText}>Settings</Text>
+              <Text style={layout.menuItemText}>Sensors</Text>
             </View>
           </TouchableHighlight>
           <TouchableHighlight onPress={() => navigation.navigate("Debug")}>
