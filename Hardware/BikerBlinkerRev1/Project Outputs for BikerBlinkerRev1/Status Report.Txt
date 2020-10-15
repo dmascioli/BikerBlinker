@@ -1,0 +1,12 @@
+Output: NC Drill Files
+Type  : NC Drill
+From  : Project [BikerBlinkerRev1.PrjPcb]
+   Generated File[BikerBlinker.TXT]
+   Generated File[BikerBlinker.LDP]
+   Generated File[BikerBlinker.DRR]
+
+
+Files Generated   : 3
+Documents Printed : 0
+
+Finished Output Generation At 12:47:43 PM On 10/14/2020

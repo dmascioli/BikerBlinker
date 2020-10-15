@@ -12,7 +12,7 @@ void setup()
 
 void loop()
 {
-  // put your main code here, to run repeatedly:
+  /*
   TEST_leftBlinkOn();
   delay(10000);
   TEST_leftBlinkOff();
@@ -22,4 +22,5 @@ void loop()
   delay(2000);
   TEST_brakeOff();
   delay(2000);
+  */
 }

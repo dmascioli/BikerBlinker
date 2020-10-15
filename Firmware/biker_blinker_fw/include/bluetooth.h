@@ -7,3 +7,4 @@
 #define DEVICE_NAME "BikerBlinker"
 
 void initBluetooth();
+void processCommand(std::string string);

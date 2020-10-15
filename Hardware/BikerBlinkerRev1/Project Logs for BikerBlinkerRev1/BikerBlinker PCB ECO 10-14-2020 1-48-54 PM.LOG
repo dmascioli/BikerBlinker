@@ -1,0 +1,6 @@
+Removed Pin From Net: NetName=MTMS Pin=J7-1
+Removed Pin From Net: NetName=MTDI Pin=J7-2
+Removed Pin From Net: NetName=MTCK Pin=J-1
+Removed Pin From Net: NetName=MTDO Pin=J-2
+Removed Member From Class: ClassName=BikerBlinker Member=J7
+Removed Member From Class: ClassName=BikerBlinker Member=J

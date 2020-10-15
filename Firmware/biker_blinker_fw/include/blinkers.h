@@ -23,6 +23,10 @@ void leftOn();
 void leftOff();
 void leftOnTask(void *parameter);
 
+//void rightOn();
+//void rightOff();
+//void rightOnTask(void *parameter);
+
 void TEST_leftOn();
 void TEST_leftOff();
 
