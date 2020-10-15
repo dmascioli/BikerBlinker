@@ -1,4 +1,5 @@
 #include "bluetooth.h"
+#include "blinkers.h"
 
 // See the following for generating UUIDs:
 // https://www.uuidgenerator.net/
@@ -15,6 +16,8 @@ class CommandCallbacks : public BLECharacteristicCallbacks
     {
         std::string value = pCharacteristic->getValue();
 
+        processCommand(value);
+
         if (value.length() > 0)
         {
             Serial.print("New value: ");
@@ -24,6 +27,42 @@ class CommandCallbacks : public BLECharacteristicCallbacks
         }
     }
 };
+
+void processCommand(std::string value)
+{
+    if (value.compare("leftoff") == 0)
+    {
+        Serial.println("Command received: leftoff");
+        leftOff();
+    }
+    if (value.compare("left") == 0)
+    {
+        Serial.println("Command received: left");
+        leftOn();
+    }
+
+    if (value.compare("rightoff") == 0)
+    {
+        Serial.println("Command received: rightoff");
+        //rightOff();
+    }
+    if (value.compare("right") == 0)
+    {
+        Serial.println("Command received: right");
+        //rightOn();
+    }
+
+    if (value.compare("brakeoff") == 0)
+    {
+        Serial.println("Command received: brakeoff");
+        TEST_brakeOff();
+    }
+    if (value.compare("brake") == 0)
+    {
+        Serial.println("Command received: brake");
+        TEST_brakeOn();
+    }
+}
 
 void initBluetooth()
 {

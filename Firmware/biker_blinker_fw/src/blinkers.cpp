@@ -58,6 +58,8 @@ void leftOn()
 void leftOff()
 {
     vTaskDelete(leftBlinkTask);
+    delay(250);
+    digitalWrite(LEFT_BLINKER, LOW);
 }
 
 void leftOnTask(void *parameter)
