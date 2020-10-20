@@ -7,8 +7,8 @@
 #define CMD_SERVICE_UUID "dad223bb-67b0-40d0-8a76-4bca05ae04b6"
 #define CMD_CHARACTERISTIC_UUID "cda2e29c-d126-4887-9bfc-5a390dfe8255"
 
-#define BAT_SERVICE_UUID BLEUUID((uint16_t)0x180F)
-#define BAT_CHARACTERISITC_UUID BLEUUID((uint16_t)0x2A19)
+#define BAT_SERVICE_UUID BLEUUID("0x180F")
+#define BAT_CHARACTERISITC_UUID BLEUUID("0x2A19")
 
 class CommandCallbacks : public BLECharacteristicCallbacks
 {
@@ -81,18 +81,20 @@ void initBluetooth()
     pCommandService->start();
 
     // create service and characteristic to read battery level
+    /*
     BLEService *pBatteryService = pServer->createService(BAT_SERVICE_UUID);
     BLECharacteristic *pBatteryCharacteristic = pBatteryService->createCharacteristic(
         BAT_CHARACTERISITC_UUID,
         BLECharacteristic::PROPERTY_READ | BLECharacteristic::PROPERTY_NOTIFY);
 
-    pBatteryCharacteristic->addDescriptor(new BLEDescriptor("Percentage 0-100%"));
+    pBatteryCharacteristic->addDescriptor(new BLEDescriptor("Percentage"));
     uint8_t start_battery_level = 100;
     pBatteryCharacteristic->setValue(&start_battery_level, 1);
-
+    pBatteryService->start();
+    */
     BLEAdvertising *pAdvertising = BLEDevice::getAdvertising();
     pAdvertising->addServiceUUID(CMD_SERVICE_UUID);
-    pAdvertising->addServiceUUID(pBatteryService->getUUID());
+    //pAdvertising->addServiceUUID(pBatteryService->getUUID());
     pAdvertising->setScanResponse(true);
 
     //pAdvertising->setMinPreferred(0x06); // functions that help with iPhone connections issue
