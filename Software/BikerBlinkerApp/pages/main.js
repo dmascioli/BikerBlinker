@@ -1,5 +1,6 @@
 import React from "react";
-import SignalButton from '../components/signalButton';
+import LeftSignalButton from '../components/leftSignalButton';
+import RightSignalButton from '../components/rightSignalButton';
 import { layout, components} from '../styles/styles';
 import { View } from "react-native";
 
@@ -7,9 +8,9 @@ export default function Main() {
   return (
     <View style={layout.container}>
       <View style={components.main}>
-      <SignalButton command="<-" />
+      <LeftSignalButton />
         <View style={components.verticalRule}/>
-      <SignalButton command="->" />
+      <RightSignalButton />
       </View>
     </View>
   );
