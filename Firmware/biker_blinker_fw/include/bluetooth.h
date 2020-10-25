@@ -8,3 +8,4 @@
 
 void initBluetooth();
 void processCommand(std::string string);
+void setBatLevel(int percentage);
