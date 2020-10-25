@@ -1,0 +1,557 @@
+<html>
+<head>
+<META http-equiv="Content-Type" content="text/html">
+<style type="text/css">
+        h1, h2, h3, h4, h5, h6 {
+			font-family : segoe ui;
+			color : black;
+			background-color : #EDE7D9;
+            padding: 0.3em;
+        }
+
+		h1 {
+			font-size: 1.2em;
+		}		
+
+		h2 {
+			font-size: 1.2em;
+		}
+
+        body {
+			font-family : segoe ui;
+        }
+
+        td, th {
+            padding: 0.5em;
+			text-align : left;
+			width: 10em;
+        }
+        th {
+			background-color : #EEEEEE;
+
+        }
+        th.column1, td.column1 {
+            text-align: left;
+            width : auto;
+        }
+        table {
+            width : 100%;
+			font-size: 0.9em;
+        }
+        
+        .DRC_summary_header {                           
+            padding-bottom : 0.1em;
+            border : 0px solid black;                           
+            width: 100%;
+			align: left;
+        }
+
+        .DRC_summary_header_col1, 
+        .DRC_summary_header_col2, 
+        .DRC_summary_header_col3  {
+            color : black;
+            font-size:100%;
+                        padding : 0em;
+            padding-top : 0.2em;
+            padding-bottom 0.2em;
+            border : 0px solid black;
+            vertical-align: top;
+			text-align: left;
+        }
+        
+        .DRC_summary_header_col1 {                              
+			font-weight: bold;
+			width: 8em;
+        }
+
+        .DRC_summary_header_col2 {       
+			width: 0.1em;
+		
+        }
+
+        .DRC_summary_header_col3 {       
+			width : auto;
+        }
+
+        .header_holder  {
+        Width = 100%;
+        border = 0px solid green;
+        padding = 0;
+        }
+        
+        
+        .front_matter, .front_matter_column1, .front_matter_column2, .front_matter_column3
+                {
+            left:0;
+            top:0;
+			padding: 0em;
+            padding-top : 0.1em;            
+            border : 0px solid black;
+            width : 100%;
+            vertical-align: top;
+            text-align: left;
+        }
+
+        .front_matter_column1 {
+            width : 8em;   
+			font-weight: bold;
+        }
+        
+        .front_matter_column2 {
+            width: 0.1em;
+        }
+
+        .front_matter_column3 {
+            width         : auto;  
+        }
+        
+        .total_column1, .total_column {
+            font-weight : bold;
+        }
+        .total_column1 {
+			text-align : left;
+        }
+        .warning, .error {
+            color : red;
+            font-weight : bold;
+        }
+        tr.onmouseout_odd {
+			background-color : #white;
+        }
+        tr.onmouseout_even { 
+			background-color : #FAFAFA;
+        }
+        tr.onmouseover_odd, tr.onmouseover_even { 
+			background-color : #EEEEEE;
+        } 
+        a:link, a:visited, .q a:link,.q a:active,.q {
+            color: #21489e; 
+        }
+        a:link.callback, a:visited.callback { 
+            color: #21489e; 
+        }
+        p.contents_level1 {
+            font-weight : bold;
+            font-size : 110%;
+            margin : 0.5em;
+        }
+        p.contents_level2 {
+            position : relative;
+            left : 20px;
+            margin : 0.5em;
+        }
+    </style><script type="text/javascript">
+        function coordToMils(coord) {
+            var number = coord / 10000;
+            
+            if (number != number.toFixed(3))
+                number = number.toFixed(3);
+
+            return number + 'mil'
+        }
+
+        function coordToMM(coord) {
+            var number = 0.0254 * coord / 10000;
+            
+            if (number != number.toFixed(4))
+                number = number.toFixed(4);
+            
+            return number + 'mm'
+        }
+    
+        function convertCoord(coordNode, units) {
+            for (var i = 0; i < coordNode.childNodes.length; i++) {
+                coordNode.removeChild(coordNode.childNodes[i]);
+            }
+
+            var coord = coordNode.getAttribute('value');
+            if (coord != null) {
+                if (units == 'mm') {
+                    textNode = document.createTextNode(coordToMM(coord));
+                    coordNode.appendChild(textNode);
+                } else if (units == 'mil') {
+                    textNode = document.createTextNode(coordToMils(coord));     
+                    coordNode.appendChild(textNode);    
+                }
+            }
+        }
+    
+        function convertUnits(unitNode, units) {
+            for (var i = 0; i < unitNode.childNodes.length; i++) {
+                unitNode.removeChild(unitNode.childNodes[i]);       
+            }
+        
+            textNode = document.createTextNode(units); 
+            unitNode.appendChild(textNode);
+        }
+    
+        function changeUnits(radio_input, units) {
+            if (radio_input.checked) {
+            
+                var elements = document.getElementsByName('coordinate');
+                if (elements) {
+                    for (var i = 0; i < elements.length; i++) {
+                        convertCoord(elements[i], units);
+                    }
+                }
+    
+                var elements = document.getElementsByName('units');
+                if (elements) {
+                    for (var i = 0; i < elements.length; i++) {
+                        convertUnits(elements[i], units);
+                    }
+                }
+            }
+        }
+    </script></head>
+<body onload=""><img ALT="Altium" src="
+			file://C:\Users\Public\Documents\Altium\AD20\Templates\AD_logo.png
+        "><h1>Design Rule Verification Report</h1>
+<table class="header_holder">
+<td class="column1">
+<table class="front_matter">
+<tr class="front_matter">
+<td class="front_matter_column1">Date:</td>
+<td class="front_matter_column2"></td>
+<td class="front_matter_column3">10/16/2020</td>
+</tr>
+<tr class="front_matter">
+<td class="front_matter_column1">Time:</td>
+<td class="front_matter_column2"></td>
+<td class="front_matter_column3">3:35:23 PM</td>
+</tr>
+<tr class="front_matter">
+<td class="front_matter_column1">Elapsed Time:</td>
+<td class="front_matter_column2"></td>
+<td class="front_matter_column3">00:00:02</td>
+</tr>
+<tr class="front_matter">
+<td class="front_matter_column1">Filename:</td>
+<td class="front_matter_column2"></td>
+<td class="front_matter_column3"><a href="file:///C:\Users\Bryan Moed\Documents\GitHub\BikerBlinker\Hardware\BikerBlinkerRev1\BikerBlinker.PcbDoc" class="file"><acronym title="C:\Users\Bryan Moed\Documents\GitHub\BikerBlinker\Hardware\BikerBlinkerRev1\BikerBlinker.PcbDoc">C:\Users\Bryan Moed\Documents\GitHub\BikerBlinker\Hardware\BikerBlinkerRev1\BikerBlinker.PcbDoc</acronym></a></td>
+</tr>
+</table>
+</td>
+<td class="column2">
+<table class="DRC_summary_header">
+<tr>
+<td class="DRC_summary_header_col1">Warnings:</td>
+<td class="DRC_summary_header_col2"></td>
+<td class="DRC_summary_header_col3">0</td></tr>
+<tr>
+<td class="DRC_summary_header_col1">Rule Violations:</td>
+<td class="DRC_summary_header_col2"></td>
+<td class="DRC_summary_header_col3" style="color : red">69</td></tr>
+</table>
+</td>
+</table><a name="IDCCAZSN0ZVRASJ5GGMAJ5MXS0AJMAFOQBLGMBDVJZUNJMCERRW4NL"><h2>Summary</h2></a><table>
+<tr>
+<th class="column1">Warnings</th>
+<th class="column2">Count</th>
+</tr>
+<tr>
+<td style="font-weight : bold; text-align : right" class="column1">Total</td>
+<td style="font-weight : bold" class="column2">0</td>
+</tr>
+</table><br><table>
+<tr>
+<th class="column1">Rule Violations</th>
+<th class="column2">Count</th>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDWDEUAEPUGYG5BOIAHOJFZQIG0CMG0WGTEDWNRALX32ZRBNJNBEQH">Clearance Constraint (Gap=0.152mm) (All),(All)</a></td>
+<td class="column2">7</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#ID4L4QEDNITHWCLRIQR1VI3NJLYOX0PXGMZSTURGKQLCYHI0K0BGQB">Short-Circuit Constraint (Allowed=No) (All),(All)</a></td>
+<td class="column2">6</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#ID2XV0F4THKD3BECA3E21KGAFERLXJJNJE33PRLZJ4T5SQJQKXPK5C">Un-Routed Net Constraint ( (All) )</a></td>
+<td class="column2">1</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#IDSCCF3NM5ZZRGOHXQU50EPAVROGSGVYSS00MTJFML0L4E4TG2HCHH">Modified Polygon (Allow modified: No), (Allow shelved: No)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDLWKO0IL3UMFNFE2C1XWUEEDH4JEBZ1PDYVQIG2LBWYGZ4XBZMCYO">Width Constraint (Min=0.152mm) (Max=1mm) (Preferred=0.5mm) (All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#ID03XEICDDHPN5FCYLVIYZJ4QKNEXG5YH2WHIOZCGLQ1RGE1GDWIOB">Power Plane Connect Rule(Relief Connect )(Expansion=0.508mm) (Conductor Width=0.254mm) (Air Gap=0.254mm) (Entries=4) (All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDVL2Q5BACEGPTOEAYZ4YQH4C42L3ATXDHV2UUMAGOAEKUQW5VDLOL">Hole Size Constraint (Min=0.025mm) (Max=2.54mm) (All)</a></td>
+<td class="column2">2</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#IDO3RBX514FYYXEKNJDGRO0WKSVNFCNJ5TCQ24NAMUM1F3GTVN1G1L">Hole To Hole Clearance (Gap=0.254mm) (All),(All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDIOMJB43ZDPEJJSCARVIDOZAHEF3V2SPO5GJ5BKEWSSCSS3F2FRG">Minimum Solder Mask Sliver (Gap=0.102mm) (All),(All)</a></td>
+<td class="column2">46</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#IDDYDPM4H4RD2IEMUTUL5VF2K4PNVIITZZD1VJYCFZR5ZYYEA4ENR">Silk To Solder Mask (Clearance=0.254mm) (IsText),(All)</a></td>
+<td class="column2">2</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDDKPUMB2ZBABBDI1P2VD2S1XNTFIWMDSMATR3DNECIEBZX5D5WGOO">Silk to Silk (Clearance=0.254mm) (All),(All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#ID5BT0OECCEWGNLYXJFV5O4ENZPBB20AE30JLMUDLHEV3K5R2UPCGM">Net Antennae (Tolerance=0mm) (All)</a></td>
+<td class="column2">5</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#ID3PPUG3ANQOV0OG1VDQKM2JVDGJTIKL3GQFO4HGOGQGXUNOMKNTQN">Room BikerBlinker (Bounding Region = (72.238mm, 25.476mm, 164.763mm, 91.035mm) (InComponentClass('BikerBlinker'))</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#IDGABT2E2BMUGPJI04N4QVTBVS4J1W5CSZLDUWDBDBJVE2NXPKIU2G">Height Constraint (Min=0mm) (Max=25.4mm) (Prefered=12.7mm) (All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr>
+<td style="font-weight : bold; text-align : right" class="column1">Total</td>
+<td style="font-weight : bold" class="column2">69</td>
+</tr>
+</table><br><a name="IDWDEUAEPUGYG5BOIAHOJFZQIG0CMG0WGTEDWNRALX32ZRBNJNBEQH"><table>
+<tr>
+<th style="text-align : left" colspan="1" class="rule">Clearance Constraint (Gap=0.152mm) (All),(All)</th>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Bryan Moed\Documents\GitHub\BikerBlinker\Hardware\BikerBlinkerRev1\BikerBlinker.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3444.831mil|Location2.X=3449.831mil|Location1.Y=1295.012mil|Location2.Y=1300.012mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Bryan Moed\Documents\GitHub\BikerBlinker\Hardware\BikerBlinkerRev1\BikerBlinker.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3444.831mil|Location2.X=3449.831mil|Location1.Y=1295.012mil|Location2.Y=1300.012mil|Absolute=True">Clearance Constraint: (Collision &lt; 0.152mm) Between Pad U2-11(15.299mm,6.922mm) on Top Layer And Pad U2-15(15.299mm,6.922mm) on Multi-Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Bryan Moed\Documents\GitHub\BikerBlinker\Hardware\BikerBlinkerRev1\BikerBlinker.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3418.326mil|Location2.X=3423.326mil|Location1.Y=1314.099mil|Location2.Y=1319.099mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Bryan Moed\Documents\GitHub\BikerBlinker\Hardware\BikerBlinkerRev1\BikerBlinker.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3418.326mil|Location2.X=3423.326mil|Location1.Y=1314.099mil|Location2.Y=1319.099mil|Absolute=True">Clearance Constraint: (Collision &lt; 0.152mm) Between Pad U2-12(14.799mm,7.422mm) on Multi-Layer And Region (0 hole(s)) Top Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Bryan Moed\Documents\GitHub\BikerBlinker\Hardware\BikerBlinkerRev1\BikerBlinker.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3457.626mil|Location2.X=3462.626mil|Location1.Y=1314.697mil|Location2.Y=1319.697mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Bryan Moed\Documents\GitHub\BikerBlinker\Hardware\BikerBlinkerRev1\BikerBlinker.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3457.626mil|Location2.X=3462.626mil|Location1.Y=1314.697mil|Location2.Y=1319.697mil|Absolute=True">Clearance Constraint: (Collision &lt; 0.152mm) Between Pad U2-13(15.799mm,7.422mm) on Multi-Layer And Region (0 hole(s)) Top Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Bryan Moed\Documents\GitHub\BikerBlinker\Hardware\BikerBlinkerRev1\BikerBlinker.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3421.753mil|Location2.X=3426.753mil|Location1.Y=1275.029mil|Location2.Y=1280.029mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Bryan Moed\Documents\GitHub\BikerBlinker\Hardware\BikerBlinkerRev1\BikerBlinker.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3421.753mil|Location2.X=3426.753mil|Location1.Y=1275.029mil|Location2.Y=1280.029mil|Absolute=True">Clearance Constraint: (Collision &lt; 0.152mm) Between Pad U2-14(14.799mm,6.422mm) on Multi-Layer And Region (0 hole(s)) Top Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Bryan Moed\Documents\GitHub\BikerBlinker\Hardware\BikerBlinkerRev1\BikerBlinker.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3441.878mil|Location2.X=3446.878mil|Location1.Y=1295.012mil|Location2.Y=1300.012mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Bryan Moed\Documents\GitHub\BikerBlinker\Hardware\BikerBlinkerRev1\BikerBlinker.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3441.878mil|Location2.X=3446.878mil|Location1.Y=1295.012mil|Location2.Y=1300.012mil|Absolute=True">Clearance Constraint: (Collision &lt; 0.152mm) Between Pad U2-15(15.299mm,6.922mm) on Multi-Layer And Region (0 hole(s)) Top Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Bryan Moed\Documents\GitHub\BikerBlinker\Hardware\BikerBlinkerRev1\BikerBlinker.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3453.865mil|Location2.X=3461.115mil|Location1.Y=1273.366mil|Location2.Y=1280.616mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Bryan Moed\Documents\GitHub\BikerBlinker\Hardware\BikerBlinkerRev1\BikerBlinker.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3453.865mil|Location2.X=3461.115mil|Location1.Y=1273.366mil|Location2.Y=1280.616mil|Absolute=True">Clearance Constraint: (0.086mm &lt; 0.152mm) Between Pad U2-16(15.799mm,6.422mm) on Multi-Layer And Region (0 hole(s)) Top Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Bryan Moed\Documents\GitHub\BikerBlinker\Hardware\BikerBlinkerRev1\BikerBlinker.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3056.375mil|Location2.X=3063.625mil|Location1.Y=3278.265mil|Location2.Y=3285.515mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Bryan Moed\Documents\GitHub\BikerBlinker\Hardware\BikerBlinkerRev1\BikerBlinker.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3056.375mil|Location2.X=3063.625mil|Location1.Y=3278.265mil|Location2.Y=3285.515mil|Absolute=True">Clearance Constraint: (0.096mm &lt; 0.152mm) Between Polygon Region (118 hole(s)) Bottom Layer And Track (5mm,57.5mm)(65mm,57.5mm) on Keep-Out Layer </acronym></a><br></td>
+</tr>
+</table></a><hr color="#EEEEEE"><a href="#top" style="font-size: 0.9em">Back to top</a><br><br><a name="ID4L4QEDNITHWCLRIQR1VI3NJLYOX0PXGMZSTURGKQLCYHI0K0BGQB"><table>
+<tr>
+<th style="text-align : left" colspan="1" class="rule">Short-Circuit Constraint (Allowed=No) (All),(All)</th>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Bryan Moed\Documents\GitHub\BikerBlinker\Hardware\BikerBlinkerRev1\BikerBlinker.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3434.599mil|Location2.X=3460.062mil|Location1.Y=1284.78mil|Location2.Y=1310.243mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Bryan Moed\Documents\GitHub\BikerBlinker\Hardware\BikerBlinkerRev1\BikerBlinker.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3434.599mil|Location2.X=3460.062mil|Location1.Y=1284.78mil|Location2.Y=1310.243mil|Absolute=True">Short-Circuit Constraint: Between Pad U2-11(15.299mm,6.922mm) on Top Layer And Pad U2-15(15.299mm,6.922mm) on Multi-Layer Location : [X = 87.562mm][Y = 32.957mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Bryan Moed\Documents\GitHub\BikerBlinker\Hardware\BikerBlinkerRev1\BikerBlinker.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3414.914mil|Location2.X=3440.377mil|Location1.Y=1304.465mil|Location2.Y=1329.928mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Bryan Moed\Documents\GitHub\BikerBlinker\Hardware\BikerBlinkerRev1\BikerBlinker.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3414.914mil|Location2.X=3440.377mil|Location1.Y=1304.465mil|Location2.Y=1329.928mil|Absolute=True">Short-Circuit Constraint: Between Pad U2-12(14.799mm,7.422mm) on Multi-Layer And Region (0 hole(s)) Top Layer Location : [X = 87.062mm][Y = 33.457mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Bryan Moed\Documents\GitHub\BikerBlinker\Hardware\BikerBlinkerRev1\BikerBlinker.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3454.284mil|Location2.X=3479.747mil|Location1.Y=1304.465mil|Location2.Y=1329.928mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Bryan Moed\Documents\GitHub\BikerBlinker\Hardware\BikerBlinkerRev1\BikerBlinker.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3454.284mil|Location2.X=3479.747mil|Location1.Y=1304.465mil|Location2.Y=1329.928mil|Absolute=True">Short-Circuit Constraint: Between Pad U2-13(15.799mm,7.422mm) on Multi-Layer And Region (0 hole(s)) Top Layer Location : [X = 88.062mm][Y = 33.457mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Bryan Moed\Documents\GitHub\BikerBlinker\Hardware\BikerBlinkerRev1\BikerBlinker.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3414.914mil|Location2.X=3440.377mil|Location1.Y=1265.095mil|Location2.Y=1290.558mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Bryan Moed\Documents\GitHub\BikerBlinker\Hardware\BikerBlinkerRev1\BikerBlinker.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3414.914mil|Location2.X=3440.377mil|Location1.Y=1265.095mil|Location2.Y=1290.558mil|Absolute=True">Short-Circuit Constraint: Between Pad U2-14(14.799mm,6.422mm) on Multi-Layer And Region (0 hole(s)) Top Layer Location : [X = 87.062mm][Y = 32.457mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Bryan Moed\Documents\GitHub\BikerBlinker\Hardware\BikerBlinkerRev1\BikerBlinker.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3434.599mil|Location2.X=3460.062mil|Location1.Y=1284.78mil|Location2.Y=1310.243mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Bryan Moed\Documents\GitHub\BikerBlinker\Hardware\BikerBlinkerRev1\BikerBlinker.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3434.599mil|Location2.X=3460.062mil|Location1.Y=1284.78mil|Location2.Y=1310.243mil|Absolute=True">Short-Circuit Constraint: Between Pad U2-15(15.299mm,6.922mm) on Multi-Layer And Region (0 hole(s)) Top Layer Location : [X = 87.562mm][Y = 32.957mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Bryan Moed\Documents\GitHub\BikerBlinker\Hardware\BikerBlinkerRev1\BikerBlinker.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3454.284mil|Location2.X=3479.747mil|Location1.Y=1265.095mil|Location2.Y=1290.558mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Bryan Moed\Documents\GitHub\BikerBlinker\Hardware\BikerBlinkerRev1\BikerBlinker.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3454.284mil|Location2.X=3479.747mil|Location1.Y=1265.095mil|Location2.Y=1290.558mil|Absolute=True">Short-Circuit Constraint: Between Pad U2-16(15.799mm,6.422mm) on Multi-Layer And Region (0 hole(s)) Top Layer Location : [X = 88.062mm][Y = 32.457mm]</acronym></a><br></td>
+</tr>
+</table></a><hr color="#EEEEEE"><a href="#top" style="font-size: 0.9em">Back to top</a><br><br><a name="ID2XV0F4THKD3BECA3E21KGAFERLXJJNJE33PRLZJ4T5SQJQKXPK5C"><table>
+<tr>
+<th style="text-align : left" colspan="1" class="rule">Un-Routed Net Constraint ( (All) )</th>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Bryan Moed\Documents\GitHub\BikerBlinker\Hardware\BikerBlinkerRev1\BikerBlinker.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3283.449mil|Location2.X=3547.331mil|Location1.Y=1180.197mil|Location2.Y=1397.512mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Bryan Moed\Documents\GitHub\BikerBlinker\Hardware\BikerBlinkerRev1\BikerBlinker.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3283.449mil|Location2.X=3547.331mil|Location1.Y=1180.197mil|Location2.Y=1397.512mil|Absolute=True">Un-Routed Net Constraint: Net GND Between Track (13.677mm,6.469mm)(13.677mm,6.482mm) on Top Layer And Pad U2-11(15.299mm,6.922mm) on Top Layer </acronym></a><br></td>
+</tr>
+</table></a><hr color="#EEEEEE"><a href="#top" style="font-size: 0.9em">Back to top</a><br><br><a name="IDVL2Q5BACEGPTOEAYZ4YQH4C42L3ATXDHV2UUMAGOAEKUQW5VDLOL"><table>
+<tr>
+<th style="text-align : left" colspan="1" class="rule">Hole Size Constraint (Min=0.025mm) (Max=2.54mm) (All)</th>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Bryan Moed\Documents\GitHub\BikerBlinker\Hardware\BikerBlinkerRev1\BikerBlinker.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3924.32mil|Location2.X=4043.68mil|Location1.Y=1650.32mil|Location2.Y=1769.68mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Bryan Moed\Documents\GitHub\BikerBlinker\Hardware\BikerBlinkerRev1\BikerBlinker.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3924.32mil|Location2.X=4043.68mil|Location1.Y=1650.32mil|Location2.Y=1769.68mil|Absolute=True">Hole Size Constraint: (3mm &gt; 2.54mm) Via (28.931mm,17.399mm) from Top Layer to Bottom Layer Actual Hole Size = 3mm</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Bryan Moed\Documents\GitHub\BikerBlinker\Hardware\BikerBlinkerRev1\BikerBlinker.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4751.32mil|Location2.X=4870.68mil|Location1.Y=2314.32mil|Location2.Y=2433.68mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Bryan Moed\Documents\GitHub\BikerBlinker\Hardware\BikerBlinkerRev1\BikerBlinker.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4751.32mil|Location2.X=4870.68mil|Location1.Y=2314.32mil|Location2.Y=2433.68mil|Absolute=True">Hole Size Constraint: (3mm &gt; 2.54mm) Via (49.936mm,34.265mm) from Top Layer to Bottom Layer Actual Hole Size = 3mm</acronym></a><br></td>
+</tr>
+</table></a><hr color="#EEEEEE"><a href="#top" style="font-size: 0.9em">Back to top</a><br><br><a name="IDIOMJB43ZDPEJJSCARVIDOZAHEF3V2SPO5GJ5BKEWSSCSS3F2FRG"><table>
+<tr>
+<th style="text-align : left" colspan="1" class="rule">Minimum Solder Mask Sliver (Gap=0.102mm) (All),(All)</th>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Bryan Moed\Documents\GitHub\BikerBlinker\Hardware\BikerBlinkerRev1\BikerBlinker.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4615.745mil|Location2.X=4620.995mil|Location1.Y=1179.115mil|Location2.Y=1184.365mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Bryan Moed\Documents\GitHub\BikerBlinker\Hardware\BikerBlinkerRev1\BikerBlinker.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4615.745mil|Location2.X=4620.995mil|Location1.Y=1179.115mil|Location2.Y=1184.365mil|Absolute=True">Minimum Solder Mask Sliver Constraint: (0.047mm &lt; 0.102mm) Between Pad J-1(44.719mm,4.758mm) on Top Layer And Pad J-2(45.369mm,4.758mm) on Top Layer [Top Solder] Mask Sliver [0.047mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Bryan Moed\Documents\GitHub\BikerBlinker\Hardware\BikerBlinkerRev1\BikerBlinker.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4641.336mil|Location2.X=4646.586mil|Location1.Y=1179.115mil|Location2.Y=1184.365mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Bryan Moed\Documents\GitHub\BikerBlinker\Hardware\BikerBlinkerRev1\BikerBlinker.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4641.336mil|Location2.X=4646.586mil|Location1.Y=1179.115mil|Location2.Y=1184.365mil|Absolute=True">Minimum Solder Mask Sliver Constraint: (0.047mm &lt; 0.102mm) Between Pad J-2(45.369mm,4.758mm) on Top Layer And Pad J-3(46.019mm,4.758mm) on Top Layer [Top Solder] Mask Sliver [0.047mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Bryan Moed\Documents\GitHub\BikerBlinker\Hardware\BikerBlinkerRev1\BikerBlinker.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4666.926mil|Location2.X=4672.176mil|Location1.Y=1179.115mil|Location2.Y=1184.365mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Bryan Moed\Documents\GitHub\BikerBlinker\Hardware\BikerBlinkerRev1\BikerBlinker.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4666.926mil|Location2.X=4672.176mil|Location1.Y=1179.115mil|Location2.Y=1184.365mil|Absolute=True">Minimum Solder Mask Sliver Constraint: (0.047mm &lt; 0.102mm) Between Pad J-3(46.019mm,4.758mm) on Top Layer And Pad J-4(46.669mm,4.758mm) on Top Layer [Top Solder] Mask Sliver [0.047mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Bryan Moed\Documents\GitHub\BikerBlinker\Hardware\BikerBlinkerRev1\BikerBlinker.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4692.517mil|Location2.X=4697.767mil|Location1.Y=1179.115mil|Location2.Y=1184.365mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Bryan Moed\Documents\GitHub\BikerBlinker\Hardware\BikerBlinkerRev1\BikerBlinker.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4692.517mil|Location2.X=4697.767mil|Location1.Y=1179.115mil|Location2.Y=1184.365mil|Absolute=True">Minimum Solder Mask Sliver Constraint: (0.047mm &lt; 0.102mm) Between Pad J-4(46.669mm,4.758mm) on Top Layer And Pad J-5(47.319mm,4.758mm) on Top Layer [Top Solder] Mask Sliver [0.047mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Bryan Moed\Documents\GitHub\BikerBlinker\Hardware\BikerBlinkerRev1\BikerBlinker.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3398.593mil|Location2.X=3403.843mil|Location1.Y=1324.424mil|Location2.Y=1329.674mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Bryan Moed\Documents\GitHub\BikerBlinker\Hardware\BikerBlinkerRev1\BikerBlinker.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3398.593mil|Location2.X=3403.843mil|Location1.Y=1324.424mil|Location2.Y=1329.674mil|Absolute=True">Minimum Solder Mask Sliver Constraint: (0.082mm &lt; 0.102mm) Between Pad U2-1(13.824mm,7.922mm) on Top Layer And Pad U2-2(13.824mm,7.422mm) on Top Layer [Top Solder] Mask Sliver [0.082mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Bryan Moed\Documents\GitHub\BikerBlinker\Hardware\BikerBlinkerRev1\BikerBlinker.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3398.593mil|Location2.X=3403.843mil|Location1.Y=1324.424mil|Location2.Y=1329.674mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Bryan Moed\Documents\GitHub\BikerBlinker\Hardware\BikerBlinkerRev1\BikerBlinker.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3398.593mil|Location2.X=3403.843mil|Location1.Y=1324.424mil|Location2.Y=1329.674mil|Absolute=True">Minimum Solder Mask Sliver Constraint: (0.082mm &lt; 0.102mm) Between Pad U2-1(13.824mm,7.922mm) on Top Layer And Region (0 hole(s)) Top Solder [Top Solder] Mask Sliver [0.082mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Bryan Moed\Documents\GitHub\BikerBlinker\Hardware\BikerBlinkerRev1\BikerBlinker.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3489.416mil|Location2.X=3494.666mil|Location1.Y=1324.414mil|Location2.Y=1329.664mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Bryan Moed\Documents\GitHub\BikerBlinker\Hardware\BikerBlinkerRev1\BikerBlinker.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3489.416mil|Location2.X=3494.666mil|Location1.Y=1324.414mil|Location2.Y=1329.664mil|Absolute=True">Minimum Solder Mask Sliver Constraint: (0.094mm &lt; 0.102mm) Between Pad U2-10(16.774mm,7.922mm) on Top Layer And Pad U2-9(16.774mm,7.422mm) on Top Layer [Top Solder] Mask Sliver [0.094mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Bryan Moed\Documents\GitHub\BikerBlinker\Hardware\BikerBlinkerRev1\BikerBlinker.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3489.416mil|Location2.X=3494.666mil|Location1.Y=1324.414mil|Location2.Y=1329.664mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Bryan Moed\Documents\GitHub\BikerBlinker\Hardware\BikerBlinkerRev1\BikerBlinker.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3489.416mil|Location2.X=3494.666mil|Location1.Y=1324.414mil|Location2.Y=1329.664mil|Absolute=True">Minimum Solder Mask Sliver Constraint: (0.094mm &lt; 0.102mm) Between Pad U2-10(16.774mm,7.922mm) on Top Layer And Region (0 hole(s)) Top Solder [Top Solder] Mask Sliver [0.094mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Bryan Moed\Documents\GitHub\BikerBlinker\Hardware\BikerBlinkerRev1\BikerBlinker.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3398.593mil|Location2.X=3403.843mil|Location1.Y=1304.739mil|Location2.Y=1309.989mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Bryan Moed\Documents\GitHub\BikerBlinker\Hardware\BikerBlinkerRev1\BikerBlinker.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3398.593mil|Location2.X=3403.843mil|Location1.Y=1304.739mil|Location2.Y=1309.989mil|Absolute=True">Minimum Solder Mask Sliver Constraint: (0.082mm &lt; 0.102mm) Between Pad U2-2(13.824mm,7.422mm) on Top Layer And Pad U2-3(13.824mm,6.922mm) on Top Layer [Top Solder] Mask Sliver [0.082mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Bryan Moed\Documents\GitHub\BikerBlinker\Hardware\BikerBlinkerRev1\BikerBlinker.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3398.593mil|Location2.X=3403.843mil|Location1.Y=1304.739mil|Location2.Y=1309.989mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Bryan Moed\Documents\GitHub\BikerBlinker\Hardware\BikerBlinkerRev1\BikerBlinker.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3398.593mil|Location2.X=3403.843mil|Location1.Y=1304.739mil|Location2.Y=1309.989mil|Absolute=True">Minimum Solder Mask Sliver Constraint: (0.082mm &lt; 0.102mm) Between Pad U2-2(13.824mm,7.422mm) on Top Layer And Region (0 hole(s)) Top Solder [Top Solder] Mask Sliver [0.082mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Bryan Moed\Documents\GitHub\BikerBlinker\Hardware\BikerBlinkerRev1\BikerBlinker.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3398.593mil|Location2.X=3403.843mil|Location1.Y=1324.424mil|Location2.Y=1329.674mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Bryan Moed\Documents\GitHub\BikerBlinker\Hardware\BikerBlinkerRev1\BikerBlinker.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3398.593mil|Location2.X=3403.843mil|Location1.Y=1324.424mil|Location2.Y=1329.674mil|Absolute=True">Minimum Solder Mask Sliver Constraint: (0.082mm &lt; 0.102mm) Between Pad U2-2(13.824mm,7.422mm) on Top Layer And Region (0 hole(s)) Top Solder [Top Solder] Mask Sliver [0.082mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Bryan Moed\Documents\GitHub\BikerBlinker\Hardware\BikerBlinkerRev1\BikerBlinker.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3398.593mil|Location2.X=3403.843mil|Location1.Y=1285.054mil|Location2.Y=1290.304mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Bryan Moed\Documents\GitHub\BikerBlinker\Hardware\BikerBlinkerRev1\BikerBlinker.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3398.593mil|Location2.X=3403.843mil|Location1.Y=1285.054mil|Location2.Y=1290.304mil|Absolute=True">Minimum Solder Mask Sliver Constraint: (0.082mm &lt; 0.102mm) Between Pad U2-3(13.824mm,6.922mm) on Top Layer And Pad U2-4(13.824mm,6.422mm) on Top Layer [Top Solder] Mask Sliver [0.082mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Bryan Moed\Documents\GitHub\BikerBlinker\Hardware\BikerBlinkerRev1\BikerBlinker.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3398.593mil|Location2.X=3403.843mil|Location1.Y=1285.054mil|Location2.Y=1290.304mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Bryan Moed\Documents\GitHub\BikerBlinker\Hardware\BikerBlinkerRev1\BikerBlinker.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3398.593mil|Location2.X=3403.843mil|Location1.Y=1285.054mil|Location2.Y=1290.304mil|Absolute=True">Minimum Solder Mask Sliver Constraint: (0.082mm &lt; 0.102mm) Between Pad U2-3(13.824mm,6.922mm) on Top Layer And Region (0 hole(s)) Top Solder [Top Solder] Mask Sliver [0.082mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Bryan Moed\Documents\GitHub\BikerBlinker\Hardware\BikerBlinkerRev1\BikerBlinker.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3398.593mil|Location2.X=3403.843mil|Location1.Y=1304.739mil|Location2.Y=1309.989mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Bryan Moed\Documents\GitHub\BikerBlinker\Hardware\BikerBlinkerRev1\BikerBlinker.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3398.593mil|Location2.X=3403.843mil|Location1.Y=1304.739mil|Location2.Y=1309.989mil|Absolute=True">Minimum Solder Mask Sliver Constraint: (0.082mm &lt; 0.102mm) Between Pad U2-3(13.824mm,6.922mm) on Top Layer And Region (0 hole(s)) Top Solder [Top Solder] Mask Sliver [0.082mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Bryan Moed\Documents\GitHub\BikerBlinker\Hardware\BikerBlinkerRev1\BikerBlinker.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3398.593mil|Location2.X=3403.843mil|Location1.Y=1265.369mil|Location2.Y=1270.619mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Bryan Moed\Documents\GitHub\BikerBlinker\Hardware\BikerBlinkerRev1\BikerBlinker.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3398.593mil|Location2.X=3403.843mil|Location1.Y=1265.369mil|Location2.Y=1270.619mil|Absolute=True">Minimum Solder Mask Sliver Constraint: (0.082mm &lt; 0.102mm) Between Pad U2-4(13.824mm,6.422mm) on Top Layer And Pad U2-5(13.824mm,5.922mm) on Top Layer [Top Solder] Mask Sliver [0.082mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Bryan Moed\Documents\GitHub\BikerBlinker\Hardware\BikerBlinkerRev1\BikerBlinker.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3398.593mil|Location2.X=3403.843mil|Location1.Y=1265.369mil|Location2.Y=1270.619mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Bryan Moed\Documents\GitHub\BikerBlinker\Hardware\BikerBlinkerRev1\BikerBlinker.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3398.593mil|Location2.X=3403.843mil|Location1.Y=1265.369mil|Location2.Y=1270.619mil|Absolute=True">Minimum Solder Mask Sliver Constraint: (0.082mm &lt; 0.102mm) Between Pad U2-4(13.824mm,6.422mm) on Top Layer And Region (0 hole(s)) Top Solder [Top Solder] Mask Sliver [0.082mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Bryan Moed\Documents\GitHub\BikerBlinker\Hardware\BikerBlinkerRev1\BikerBlinker.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3398.593mil|Location2.X=3403.843mil|Location1.Y=1285.054mil|Location2.Y=1290.304mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Bryan Moed\Documents\GitHub\BikerBlinker\Hardware\BikerBlinkerRev1\BikerBlinker.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3398.593mil|Location2.X=3403.843mil|Location1.Y=1285.054mil|Location2.Y=1290.304mil|Absolute=True">Minimum Solder Mask Sliver Constraint: (0.082mm &lt; 0.102mm) Between Pad U2-4(13.824mm,6.422mm) on Top Layer And Region (0 hole(s)) Top Solder [Top Solder] Mask Sliver [0.082mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Bryan Moed\Documents\GitHub\BikerBlinker\Hardware\BikerBlinkerRev1\BikerBlinker.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3398.593mil|Location2.X=3403.843mil|Location1.Y=1265.369mil|Location2.Y=1270.619mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Bryan Moed\Documents\GitHub\BikerBlinker\Hardware\BikerBlinkerRev1\BikerBlinker.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3398.593mil|Location2.X=3403.843mil|Location1.Y=1265.369mil|Location2.Y=1270.619mil|Absolute=True">Minimum Solder Mask Sliver Constraint: (0.082mm &lt; 0.102mm) Between Pad U2-5(13.824mm,5.922mm) on Top Layer And Region (0 hole(s)) Top Solder [Top Solder] Mask Sliver [0.082mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Bryan Moed\Documents\GitHub\BikerBlinker\Hardware\BikerBlinkerRev1\BikerBlinker.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3489.416mil|Location2.X=3494.666mil|Location1.Y=1265.359mil|Location2.Y=1270.609mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Bryan Moed\Documents\GitHub\BikerBlinker\Hardware\BikerBlinkerRev1\BikerBlinker.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3489.416mil|Location2.X=3494.666mil|Location1.Y=1265.359mil|Location2.Y=1270.609mil|Absolute=True">Minimum Solder Mask Sliver Constraint: (0.094mm &lt; 0.102mm) Between Pad U2-6(16.774mm,5.922mm) on Top Layer And Pad U2-7(16.774mm,6.422mm) on Top Layer [Top Solder] Mask Sliver [0.094mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Bryan Moed\Documents\GitHub\BikerBlinker\Hardware\BikerBlinkerRev1\BikerBlinker.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3489.627mil|Location2.X=3494.877mil|Location1.Y=1265.309mil|Location2.Y=1270.559mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Bryan Moed\Documents\GitHub\BikerBlinker\Hardware\BikerBlinkerRev1\BikerBlinker.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3489.627mil|Location2.X=3494.877mil|Location1.Y=1265.309mil|Location2.Y=1270.559mil|Absolute=True">Minimum Solder Mask Sliver Constraint: (0.092mm &lt; 0.102mm) Between Pad U2-6(16.774mm,5.922mm) on Top Layer And Region (0 hole(s)) Top Solder [Top Solder] Mask Sliver [0.092mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Bryan Moed\Documents\GitHub\BikerBlinker\Hardware\BikerBlinkerRev1\BikerBlinker.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3489.416mil|Location2.X=3494.666mil|Location1.Y=1285.044mil|Location2.Y=1290.294mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Bryan Moed\Documents\GitHub\BikerBlinker\Hardware\BikerBlinkerRev1\BikerBlinker.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3489.416mil|Location2.X=3494.666mil|Location1.Y=1285.044mil|Location2.Y=1290.294mil|Absolute=True">Minimum Solder Mask Sliver Constraint: (0.094mm &lt; 0.102mm) Between Pad U2-7(16.774mm,6.422mm) on Top Layer And Pad U2-8(16.774mm,6.922mm) on Top Layer [Top Solder] Mask Sliver [0.094mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Bryan Moed\Documents\GitHub\BikerBlinker\Hardware\BikerBlinkerRev1\BikerBlinker.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3489.627mil|Location2.X=3494.877mil|Location1.Y=1284.994mil|Location2.Y=1290.244mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Bryan Moed\Documents\GitHub\BikerBlinker\Hardware\BikerBlinkerRev1\BikerBlinker.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3489.627mil|Location2.X=3494.877mil|Location1.Y=1284.994mil|Location2.Y=1290.244mil|Absolute=True">Minimum Solder Mask Sliver Constraint: (0.092mm &lt; 0.102mm) Between Pad U2-7(16.774mm,6.422mm) on Top Layer And Region (0 hole(s)) Top Solder [Top Solder] Mask Sliver [0.092mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Bryan Moed\Documents\GitHub\BikerBlinker\Hardware\BikerBlinkerRev1\BikerBlinker.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3489.416mil|Location2.X=3494.666mil|Location1.Y=1265.359mil|Location2.Y=1270.609mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Bryan Moed\Documents\GitHub\BikerBlinker\Hardware\BikerBlinkerRev1\BikerBlinker.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3489.416mil|Location2.X=3494.666mil|Location1.Y=1265.359mil|Location2.Y=1270.609mil|Absolute=True">Minimum Solder Mask Sliver Constraint: (0.094mm &lt; 0.102mm) Between Pad U2-7(16.774mm,6.422mm) on Top Layer And Region (0 hole(s)) Top Solder [Top Solder] Mask Sliver [0.094mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Bryan Moed\Documents\GitHub\BikerBlinker\Hardware\BikerBlinkerRev1\BikerBlinker.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3489.334mil|Location2.X=3494.584mil|Location1.Y=1304.754mil|Location2.Y=1310.004mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Bryan Moed\Documents\GitHub\BikerBlinker\Hardware\BikerBlinkerRev1\BikerBlinker.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3489.334mil|Location2.X=3494.584mil|Location1.Y=1304.754mil|Location2.Y=1310.004mil|Absolute=True">Minimum Solder Mask Sliver Constraint: (0.096mm &lt; 0.102mm) Between Pad U2-8(16.774mm,6.922mm) on Top Layer And Pad U2-9(16.774mm,7.422mm) on Top Layer [Top Solder] Mask Sliver [0.096mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Bryan Moed\Documents\GitHub\BikerBlinker\Hardware\BikerBlinkerRev1\BikerBlinker.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3489.627mil|Location2.X=3494.877mil|Location1.Y=1304.679mil|Location2.Y=1309.929mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Bryan Moed\Documents\GitHub\BikerBlinker\Hardware\BikerBlinkerRev1\BikerBlinker.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3489.627mil|Location2.X=3494.877mil|Location1.Y=1304.679mil|Location2.Y=1309.929mil|Absolute=True">Minimum Solder Mask Sliver Constraint: (0.092mm &lt; 0.102mm) Between Pad U2-8(16.774mm,6.922mm) on Top Layer And Region (0 hole(s)) Top Solder [Top Solder] Mask Sliver [0.092mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Bryan Moed\Documents\GitHub\BikerBlinker\Hardware\BikerBlinkerRev1\BikerBlinker.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3489.416mil|Location2.X=3494.666mil|Location1.Y=1285.044mil|Location2.Y=1290.294mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Bryan Moed\Documents\GitHub\BikerBlinker\Hardware\BikerBlinkerRev1\BikerBlinker.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3489.416mil|Location2.X=3494.666mil|Location1.Y=1285.044mil|Location2.Y=1290.294mil|Absolute=True">Minimum Solder Mask Sliver Constraint: (0.094mm &lt; 0.102mm) Between Pad U2-8(16.774mm,6.922mm) on Top Layer And Region (0 hole(s)) Top Solder [Top Solder] Mask Sliver [0.094mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Bryan Moed\Documents\GitHub\BikerBlinker\Hardware\BikerBlinkerRev1\BikerBlinker.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3489.627mil|Location2.X=3494.877mil|Location1.Y=1324.364mil|Location2.Y=1329.614mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Bryan Moed\Documents\GitHub\BikerBlinker\Hardware\BikerBlinkerRev1\BikerBlinker.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3489.627mil|Location2.X=3494.877mil|Location1.Y=1324.364mil|Location2.Y=1329.614mil|Absolute=True">Minimum Solder Mask Sliver Constraint: (0.092mm &lt; 0.102mm) Between Pad U2-9(16.774mm,7.422mm) on Top Layer And Region (0 hole(s)) Top Solder [Top Solder] Mask Sliver [0.092mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Bryan Moed\Documents\GitHub\BikerBlinker\Hardware\BikerBlinkerRev1\BikerBlinker.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3489.334mil|Location2.X=3494.584mil|Location1.Y=1304.754mil|Location2.Y=1310.004mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Bryan Moed\Documents\GitHub\BikerBlinker\Hardware\BikerBlinkerRev1\BikerBlinker.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3489.334mil|Location2.X=3494.584mil|Location1.Y=1304.754mil|Location2.Y=1310.004mil|Absolute=True">Minimum Solder Mask Sliver Constraint: (0.096mm &lt; 0.102mm) Between Pad U2-9(16.774mm,7.422mm) on Top Layer And Region (0 hole(s)) Top Solder [Top Solder] Mask Sliver [0.096mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Bryan Moed\Documents\GitHub\BikerBlinker\Hardware\BikerBlinkerRev1\BikerBlinker.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3482.465mil|Location2.X=3487.715mil|Location1.Y=1317.935mil|Location2.Y=1323.185mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Bryan Moed\Documents\GitHub\BikerBlinker\Hardware\BikerBlinkerRev1\BikerBlinker.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3482.465mil|Location2.X=3487.715mil|Location1.Y=1317.935mil|Location2.Y=1323.185mil|Absolute=True">Minimum Solder Mask Sliver Constraint: (0.078mm &lt; 0.102mm) Between Region (0 hole(s)) Top Solder And Region (0 hole(s)) Top Solder [Top Solder] Mask Sliver [0.078mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Bryan Moed\Documents\GitHub\BikerBlinker\Hardware\BikerBlinkerRev1\BikerBlinker.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3482.465mil|Location2.X=3487.715mil|Location1.Y=1298.25mil|Location2.Y=1303.5mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Bryan Moed\Documents\GitHub\BikerBlinker\Hardware\BikerBlinkerRev1\BikerBlinker.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3482.465mil|Location2.X=3487.715mil|Location1.Y=1298.25mil|Location2.Y=1303.5mil|Absolute=True">Minimum Solder Mask Sliver Constraint: (0.078mm &lt; 0.102mm) Between Region (0 hole(s)) Top Solder And Region (0 hole(s)) Top Solder [Top Solder] Mask Sliver [0.078mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Bryan Moed\Documents\GitHub\BikerBlinker\Hardware\BikerBlinkerRev1\BikerBlinker.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3482.465mil|Location2.X=3487.715mil|Location1.Y=1258.88mil|Location2.Y=1264.13mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Bryan Moed\Documents\GitHub\BikerBlinker\Hardware\BikerBlinkerRev1\BikerBlinker.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3482.465mil|Location2.X=3487.715mil|Location1.Y=1258.88mil|Location2.Y=1264.13mil|Absolute=True">Minimum Solder Mask Sliver Constraint: (0.078mm &lt; 0.102mm) Between Region (0 hole(s)) Top Solder And Region (0 hole(s)) Top Solder [Top Solder] Mask Sliver [0.078mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Bryan Moed\Documents\GitHub\BikerBlinker\Hardware\BikerBlinkerRev1\BikerBlinker.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3482.465mil|Location2.X=3487.715mil|Location1.Y=1337.62mil|Location2.Y=1342.87mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Bryan Moed\Documents\GitHub\BikerBlinker\Hardware\BikerBlinkerRev1\BikerBlinker.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3482.465mil|Location2.X=3487.715mil|Location1.Y=1337.62mil|Location2.Y=1342.87mil|Absolute=True">Minimum Solder Mask Sliver Constraint: (0.078mm &lt; 0.102mm) Between Region (0 hole(s)) Top Solder And Region (0 hole(s)) Top Solder [Top Solder] Mask Sliver [0.078mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Bryan Moed\Documents\GitHub\BikerBlinker\Hardware\BikerBlinkerRev1\BikerBlinker.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3482.465mil|Location2.X=3487.715mil|Location1.Y=1278.565mil|Location2.Y=1283.815mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Bryan Moed\Documents\GitHub\BikerBlinker\Hardware\BikerBlinkerRev1\BikerBlinker.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3482.465mil|Location2.X=3487.715mil|Location1.Y=1278.565mil|Location2.Y=1283.815mil|Absolute=True">Minimum Solder Mask Sliver Constraint: (0.078mm &lt; 0.102mm) Between Region (0 hole(s)) Top Solder And Region (0 hole(s)) Top Solder [Top Solder] Mask Sliver [0.078mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Bryan Moed\Documents\GitHub\BikerBlinker\Hardware\BikerBlinkerRev1\BikerBlinker.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3398.593mil|Location2.X=3403.843mil|Location1.Y=1304.739mil|Location2.Y=1309.989mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Bryan Moed\Documents\GitHub\BikerBlinker\Hardware\BikerBlinkerRev1\BikerBlinker.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3398.593mil|Location2.X=3403.843mil|Location1.Y=1304.739mil|Location2.Y=1309.989mil|Absolute=True">Minimum Solder Mask Sliver Constraint: (0.082mm &lt; 0.102mm) Between Region (0 hole(s)) Top Solder And Region (0 hole(s)) Top Solder [Top Solder] Mask Sliver [0.082mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Bryan Moed\Documents\GitHub\BikerBlinker\Hardware\BikerBlinkerRev1\BikerBlinker.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3398.593mil|Location2.X=3403.843mil|Location1.Y=1265.369mil|Location2.Y=1270.619mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Bryan Moed\Documents\GitHub\BikerBlinker\Hardware\BikerBlinkerRev1\BikerBlinker.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3398.593mil|Location2.X=3403.843mil|Location1.Y=1265.369mil|Location2.Y=1270.619mil|Absolute=True">Minimum Solder Mask Sliver Constraint: (0.082mm &lt; 0.102mm) Between Region (0 hole(s)) Top Solder And Region (0 hole(s)) Top Solder [Top Solder] Mask Sliver [0.082mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Bryan Moed\Documents\GitHub\BikerBlinker\Hardware\BikerBlinkerRev1\BikerBlinker.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3398.593mil|Location2.X=3403.843mil|Location1.Y=1324.424mil|Location2.Y=1329.674mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Bryan Moed\Documents\GitHub\BikerBlinker\Hardware\BikerBlinkerRev1\BikerBlinker.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3398.593mil|Location2.X=3403.843mil|Location1.Y=1324.424mil|Location2.Y=1329.674mil|Absolute=True">Minimum Solder Mask Sliver Constraint: (0.082mm &lt; 0.102mm) Between Region (0 hole(s)) Top Solder And Region (0 hole(s)) Top Solder [Top Solder] Mask Sliver [0.082mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Bryan Moed\Documents\GitHub\BikerBlinker\Hardware\BikerBlinkerRev1\BikerBlinker.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3398.593mil|Location2.X=3403.843mil|Location1.Y=1285.054mil|Location2.Y=1290.304mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Bryan Moed\Documents\GitHub\BikerBlinker\Hardware\BikerBlinkerRev1\BikerBlinker.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3398.593mil|Location2.X=3403.843mil|Location1.Y=1285.054mil|Location2.Y=1290.304mil|Absolute=True">Minimum Solder Mask Sliver Constraint: (0.082mm &lt; 0.102mm) Between Region (0 hole(s)) Top Solder And Region (0 hole(s)) Top Solder [Top Solder] Mask Sliver [0.082mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Bryan Moed\Documents\GitHub\BikerBlinker\Hardware\BikerBlinkerRev1\BikerBlinker.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3489.627mil|Location2.X=3494.877mil|Location1.Y=1324.364mil|Location2.Y=1329.614mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Bryan Moed\Documents\GitHub\BikerBlinker\Hardware\BikerBlinkerRev1\BikerBlinker.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3489.627mil|Location2.X=3494.877mil|Location1.Y=1324.364mil|Location2.Y=1329.614mil|Absolute=True">Minimum Solder Mask Sliver Constraint: (0.092mm &lt; 0.102mm) Between Region (0 hole(s)) Top Solder And Region (0 hole(s)) Top Solder [Top Solder] Mask Sliver [0.092mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Bryan Moed\Documents\GitHub\BikerBlinker\Hardware\BikerBlinkerRev1\BikerBlinker.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3489.627mil|Location2.X=3494.877mil|Location1.Y=1284.994mil|Location2.Y=1290.244mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Bryan Moed\Documents\GitHub\BikerBlinker\Hardware\BikerBlinkerRev1\BikerBlinker.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3489.627mil|Location2.X=3494.877mil|Location1.Y=1284.994mil|Location2.Y=1290.244mil|Absolute=True">Minimum Solder Mask Sliver Constraint: (0.092mm &lt; 0.102mm) Between Region (0 hole(s)) Top Solder And Region (0 hole(s)) Top Solder [Top Solder] Mask Sliver [0.092mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Bryan Moed\Documents\GitHub\BikerBlinker\Hardware\BikerBlinkerRev1\BikerBlinker.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3489.627mil|Location2.X=3494.877mil|Location1.Y=1265.309mil|Location2.Y=1270.559mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Bryan Moed\Documents\GitHub\BikerBlinker\Hardware\BikerBlinkerRev1\BikerBlinker.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3489.627mil|Location2.X=3494.877mil|Location1.Y=1265.309mil|Location2.Y=1270.559mil|Absolute=True">Minimum Solder Mask Sliver Constraint: (0.092mm &lt; 0.102mm) Between Region (0 hole(s)) Top Solder And Region (0 hole(s)) Top Solder [Top Solder] Mask Sliver [0.092mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Bryan Moed\Documents\GitHub\BikerBlinker\Hardware\BikerBlinkerRev1\BikerBlinker.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3489.627mil|Location2.X=3494.877mil|Location1.Y=1304.679mil|Location2.Y=1309.929mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Bryan Moed\Documents\GitHub\BikerBlinker\Hardware\BikerBlinkerRev1\BikerBlinker.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3489.627mil|Location2.X=3494.877mil|Location1.Y=1304.679mil|Location2.Y=1309.929mil|Absolute=True">Minimum Solder Mask Sliver Constraint: (0.092mm &lt; 0.102mm) Between Region (0 hole(s)) Top Solder And Region (0 hole(s)) Top Solder [Top Solder] Mask Sliver [0.092mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Bryan Moed\Documents\GitHub\BikerBlinker\Hardware\BikerBlinkerRev1\BikerBlinker.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3406.515mil|Location2.X=3411.765mil|Location1.Y=1329.397mil|Location2.Y=1334.647mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Bryan Moed\Documents\GitHub\BikerBlinker\Hardware\BikerBlinkerRev1\BikerBlinker.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3406.515mil|Location2.X=3411.765mil|Location1.Y=1329.397mil|Location2.Y=1334.647mil|Absolute=True">Minimum Solder Mask Sliver Constraint: (0.1mm &lt; 0.102mm) Between Region (0 hole(s)) Top Solder And Region (0 hole(s)) Top Solder [Top Solder] Mask Sliver [0.1mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Bryan Moed\Documents\GitHub\BikerBlinker\Hardware\BikerBlinkerRev1\BikerBlinker.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3406.515mil|Location2.X=3411.765mil|Location1.Y=1290.027mil|Location2.Y=1295.277mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Bryan Moed\Documents\GitHub\BikerBlinker\Hardware\BikerBlinkerRev1\BikerBlinker.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3406.515mil|Location2.X=3411.765mil|Location1.Y=1290.027mil|Location2.Y=1295.277mil|Absolute=True">Minimum Solder Mask Sliver Constraint: (0.1mm &lt; 0.102mm) Between Region (0 hole(s)) Top Solder And Region (0 hole(s)) Top Solder [Top Solder] Mask Sliver [0.1mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Bryan Moed\Documents\GitHub\BikerBlinker\Hardware\BikerBlinkerRev1\BikerBlinker.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3406.515mil|Location2.X=3411.765mil|Location1.Y=1309.712mil|Location2.Y=1314.962mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Bryan Moed\Documents\GitHub\BikerBlinker\Hardware\BikerBlinkerRev1\BikerBlinker.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3406.515mil|Location2.X=3411.765mil|Location1.Y=1309.712mil|Location2.Y=1314.962mil|Absolute=True">Minimum Solder Mask Sliver Constraint: (0.1mm &lt; 0.102mm) Between Region (0 hole(s)) Top Solder And Region (0 hole(s)) Top Solder [Top Solder] Mask Sliver [0.1mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Bryan Moed\Documents\GitHub\BikerBlinker\Hardware\BikerBlinkerRev1\BikerBlinker.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3406.515mil|Location2.X=3411.765mil|Location1.Y=1270.342mil|Location2.Y=1275.592mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Bryan Moed\Documents\GitHub\BikerBlinker\Hardware\BikerBlinkerRev1\BikerBlinker.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3406.515mil|Location2.X=3411.765mil|Location1.Y=1270.342mil|Location2.Y=1275.592mil|Absolute=True">Minimum Solder Mask Sliver Constraint: (0.1mm &lt; 0.102mm) Between Region (0 hole(s)) Top Solder And Region (0 hole(s)) Top Solder [Top Solder] Mask Sliver [0.1mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Bryan Moed\Documents\GitHub\BikerBlinker\Hardware\BikerBlinkerRev1\BikerBlinker.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3406.515mil|Location2.X=3411.765mil|Location1.Y=1250.657mil|Location2.Y=1255.907mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Bryan Moed\Documents\GitHub\BikerBlinker\Hardware\BikerBlinkerRev1\BikerBlinker.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3406.515mil|Location2.X=3411.765mil|Location1.Y=1250.657mil|Location2.Y=1255.907mil|Absolute=True">Minimum Solder Mask Sliver Constraint: (0.1mm &lt; 0.102mm) Between Region (0 hole(s)) Top Solder And Region (0 hole(s)) Top Solder [Top Solder] Mask Sliver [0.1mm]</acronym></a><br></td>
+</tr>
+</table></a><hr color="#EEEEEE"><a href="#top" style="font-size: 0.9em">Back to top</a><br><br><a name="IDDYDPM4H4RD2IEMUTUL5VF2K4PNVIITZZD1VJYCFZR5ZYYEA4ENR"><table>
+<tr>
+<th style="text-align : left" colspan="1" class="rule">Silk To Solder Mask (Clearance=0.254mm) (IsText),(All)</th>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Bryan Moed\Documents\GitHub\BikerBlinker\Hardware\BikerBlinkerRev1\BikerBlinker.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3274.421mil|Location2.X=3282.088mil|Location1.Y=2326.167mil|Location2.Y=2333.833mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Bryan Moed\Documents\GitHub\BikerBlinker\Hardware\BikerBlinkerRev1\BikerBlinker.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3274.421mil|Location2.X=3282.088mil|Location1.Y=2326.167mil|Location2.Y=2333.833mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (Collision &lt; 0.254mm) Between Pad R15-1(11.43mm,33.147mm) on Multi-Layer And Text "J5" (8.89mm,32.258mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Bryan Moed\Documents\GitHub\BikerBlinker\Hardware\BikerBlinkerRev1\BikerBlinker.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3288.547mil|Location2.X=3296.214mil|Location1.Y=2309.628mil|Location2.Y=2317.294mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Bryan Moed\Documents\GitHub\BikerBlinker\Hardware\BikerBlinkerRev1\BikerBlinker.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3288.547mil|Location2.X=3296.214mil|Location1.Y=2309.628mil|Location2.Y=2317.294mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (Collision &lt; 0.254mm) Between Text "J5" (8.89mm,32.258mm) on Top Overlay And Track (11.43mm,29.515mm)(11.43mm,33.147mm) on Top Layer [Top Overlay] to [Top Solder] clearance [0mm]</acronym></a><br></td>
+</tr>
+</table></a><hr color="#EEEEEE"><a href="#top" style="font-size: 0.9em">Back to top</a><br><br><a name="ID5BT0OECCEWGNLYXJFV5O4ENZPBB20AE30JLMUDLHEV3K5R2UPCGM"><table>
+<tr>
+<th style="text-align : left" colspan="1" class="rule">Net Antennae (Tolerance=0mm) (All)</th>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Bryan Moed\Documents\GitHub\BikerBlinker\Hardware\BikerBlinkerRev1\BikerBlinker.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3907.602mil|Location2.X=4079.531mil|Location1.Y=1633.602mil|Location2.Y=1917.377mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Bryan Moed\Documents\GitHub\BikerBlinker\Hardware\BikerBlinkerRev1\BikerBlinker.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3907.602mil|Location2.X=4079.531mil|Location1.Y=1633.602mil|Location2.Y=1917.377mil|Absolute=True">Net Antennae: Via (28.931mm,17.399mm) from Top Layer to Bottom Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Bryan Moed\Documents\GitHub\BikerBlinker\Hardware\BikerBlinkerRev1\BikerBlinker.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4141.5mil|Location2.X=4217.336mil|Location1.Y=2229.5mil|Location2.Y=2351.456mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Bryan Moed\Documents\GitHub\BikerBlinker\Hardware\BikerBlinkerRev1\BikerBlinker.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4141.5mil|Location2.X=4217.336mil|Location1.Y=2229.5mil|Location2.Y=2351.456mil|Absolute=True">Net Antennae: Via (33.757mm,31.42mm) from Top Layer to Bottom Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Bryan Moed\Documents\GitHub\BikerBlinker\Hardware\BikerBlinkerRev1\BikerBlinker.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4341.516mil|Location2.X=4417.351mil|Location1.Y=2229.5mil|Location2.Y=2351.456mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Bryan Moed\Documents\GitHub\BikerBlinker\Hardware\BikerBlinkerRev1\BikerBlinker.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4341.516mil|Location2.X=4417.351mil|Location1.Y=2229.5mil|Location2.Y=2351.456mil|Absolute=True">Net Antennae: Via (38.837mm,31.42mm) from Top Layer to Bottom Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Bryan Moed\Documents\GitHub\BikerBlinker\Hardware\BikerBlinkerRev1\BikerBlinker.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4541.516mil|Location2.X=4617.351mil|Location1.Y=2229.508mil|Location2.Y=2351.464mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Bryan Moed\Documents\GitHub\BikerBlinker\Hardware\BikerBlinkerRev1\BikerBlinker.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4541.516mil|Location2.X=4617.351mil|Location1.Y=2229.508mil|Location2.Y=2351.464mil|Absolute=True">Net Antennae: Via (43.917mm,31.42mm) from Top Layer to Bottom Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Bryan Moed\Documents\GitHub\BikerBlinker\Hardware\BikerBlinkerRev1\BikerBlinker.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4734.602mil|Location2.X=4906.531mil|Location1.Y=2297.602mil|Location2.Y=2581.377mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Bryan Moed\Documents\GitHub\BikerBlinker\Hardware\BikerBlinkerRev1\BikerBlinker.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4734.602mil|Location2.X=4906.531mil|Location1.Y=2297.602mil|Location2.Y=2581.377mil|Absolute=True">Net Antennae: Via (49.936mm,34.265mm) from Top Layer to Bottom Layer </acronym></a><br></td>
+</tr>
+</table></a><hr color="#EEEEEE"><a href="#top" style="font-size: 0.9em">Back to top</a><br><br></body>
+</html>

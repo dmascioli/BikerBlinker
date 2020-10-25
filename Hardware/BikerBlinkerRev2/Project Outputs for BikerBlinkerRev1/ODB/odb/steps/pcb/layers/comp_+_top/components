@@ -1,0 +1,1002 @@
+UNITS=MM
+#
+#Component attribute names
+#
+@0 .comp_mount_type
+@1 .comp_height
+
+# CMP 0
+CMP 11 36.14300112 16.72800058 0 N SW2 1825910-6 ;0=2,1=0.0000
+PRP Configuration_Pole-Throw 'Single Pole - Single Throw'
+PRP Contact_Current_Rating '50 mA'
+PRP Digi-Key_Part_Number '450-1650-ND'
+PRP Digi-Key_Purchase_URL 'https://www.digikey.com/product-detail/en/te-connectivity-alcoswitch-switches/1825910-6/450-1650-ND/1632536?utm_source=snapeda&utm_medium=aggregator&utm_campaign=symbol'
+PRP EU_RoHS_Compliance 'Compliant'
+PRP MF 'TE Connectivity'
+PRP MP '1825910-6'
+PRP Package 'None'
+PRP SnapEDA_Link 'https://www.snapeda.com/parts/1825910-6/TE%20Connectivity%20ALCOSWITCH%20Switches/view-part/424522/?ref=snap'
+PRP TE_purchase_URL 'https://www.te.com/usa-en/product-1825910-6.html?te_bu=Cor&te_type=disp&te_campaign=seda_glo_cor-seda-global-disp-prtnr-fy19-seda-model-bom-cta_sma-317_1&elqCampaignId=32493'
+PRP Value ''
+TOP 0 32.893 18.97800116 0 N 27 3 SW2-1
+TOP 1 39.39300224 18.97800116 0 N 0 29 SW2-2
+TOP 2 32.893 14.478 0 N 1 2 SW2-3
+TOP 3 39.39300224 14.478 0 N 0 28 SW2-4
+#
+# CMP 1
+CMP 8 9.017 9.017 90 N C15 10_F ;0=1,1=0.0000
+PRP @_qty '0'
+PRP Applications 'General Purpose'
+PRP Datasheets 'http://www.murata.com/~/media/webrenewal/support/library/catalog/products/capacitor/mlcc/c02e.pdf'
+PRP Digi-Key_Part_Number '490-10467-1-ND'
+PRP Factory_Stock '0'
+PRP Features 'Derating Recommended'
+PRP Height_-_Seated_(Max) '-'
+PRP Image '//media.digikey.com/Renders/Murata%20Renders/ZRB-SERIES-0402.jpg'
+PRP Lead_Spacing '-'
+PRP Lead_Style '-'
+PRP Manufacturer 'Murata Electronics North America'
+PRP Minimum_Quantity '1'
+PRP Mounting_Type 'Surface Mount, MLCC'
+PRP Operating_Temperature '-55°C ~ 85°C'
+PRP Package_/_Case '0603 (1608 Metric)'
+PRP Packaging 'Cut Tape (CT)'
+PRP Part_Number 'GRM185R60J106ME15D'
+PRP Part_Status 'Active'
+PRP Quantity_Available '25068'
+PRP Ratings '-'
+PRP Series 'GRM'
+PRP Size_/_Dimension '0.063_ L x 0.031_ W (1.60mm x 0.80mm)'
+PRP Temperature_Coefficient 'X5R'
+PRP Thickness_(Max) '0.022_ (0.55mm)'
+PRP Tolerance '±20%'
+PRP Unit_Price_(USD) '0.36'
+PRP Value '10µF'
+PRP Voltage '6.3V'
+TOP 0 9.79199972 9.017 180 N 1 5 C15-1
+TOP 1 8.24200028 9.017 180 N 29 66 C15-2
+#
+# CMP 2
+CMP 8 9.017 10.414 90 N C14 10_F ;0=1,1=0.0000
+PRP @_qty '0'
+PRP Applications 'General Purpose'
+PRP Datasheets 'http://www.murata.com/~/media/webrenewal/support/library/catalog/products/capacitor/mlcc/c02e.pdf'
+PRP Digi-Key_Part_Number '490-10467-1-ND'
+PRP Factory_Stock '0'
+PRP Features 'Derating Recommended'
+PRP Height_-_Seated_(Max) '-'
+PRP Image '//media.digikey.com/Renders/Murata%20Renders/ZRB-SERIES-0402.jpg'
+PRP Lead_Spacing '-'
+PRP Lead_Style '-'
+PRP Manufacturer 'Murata Electronics North America'
+PRP Minimum_Quantity '1'
+PRP Mounting_Type 'Surface Mount, MLCC'
+PRP Operating_Temperature '-55°C ~ 85°C'
+PRP Package_/_Case '0603 (1608 Metric)'
+PRP Packaging 'Cut Tape (CT)'
+PRP Part_Number 'GRM185R60J106ME15D'
+PRP Part_Status 'Active'
+PRP Quantity_Available '25068'
+PRP Ratings '-'
+PRP Series 'GRM'
+PRP Size_/_Dimension '0.063_ L x 0.031_ W (1.60mm x 0.80mm)'
+PRP Temperature_Coefficient 'X5R'
+PRP Thickness_(Max) '0.022_ (0.55mm)'
+PRP Tolerance '±20%'
+PRP Unit_Price_(USD) '0.36'
+PRP Value '10µF'
+PRP Voltage '6.3V'
+TOP 0 9.79199972 10.414 180 N 1 6 C14-1
+TOP 1 8.24200028 10.414 180 N 29 65 C14-2
+#
+# CMP 3
+CMP 1 46.01859986 4.757801 0 N J1 10118192-0002LF ;0=1,1=0.0000
+PRP Arrow_Electronics-Purchase-URL 'https://snapeda.com/shop?store=Arrow+Electronics&id=551616'
+PRP Availability 'Good'
+PRP DigiKey-Purchase-URL 'https://snapeda.com/shop?store=DigiKey&id=551616'
+PRP MF 'Amphenol ICC'
+PRP Mouser-Purchase-URL 'https://snapeda.com/shop?store=Mouser&id=551616'
+PRP MP '10118192-0002LF'
+PRP Package 'None'
+PRP Price 'None'
+PRP SnapEDA_Link 'https://www.snapeda.com/parts/10118192-0002LF/Amphenol%20FCI/view-part/551616/?ref=snap'
+PRP Value ''
+TOP 0 44.71859992 4.757801 0 N 24 2 J1-1
+TOP 1 45.36859862 4.757801 0 N 0 24 J1-2
+TOP 2 46.01859986 4.757801 0 N 0 25 J1-3
+TOP 3 46.6686011 4.757801 0 N 0 23 J1-4
+TOP 4 47.3185998 4.757801 0 N 29 39 J1-5
+TOP 5 42.91860098 4.63279998 0 N 29 43 J1-S1
+TOP 6 49.11859874 4.63279998 0 N 29 36 J1-S2
+TOP 7 42.21859984 2.0828 0 N 29 44 J1-S3
+TOP 8 44.81859972 2.0828 0 N 29 42 J1-S4
+TOP 9 47.2186 2.0828 0 N 29 41 J1-S5
+TOP 10 49.81859988 2.0828 0 N 29 37 J1-S6
+#
+# CMP 4
+CMP 6 12.43000054 28.9648011 180 N J5 Center ;0=2,1=0.0000
+PRP Availability 'Unavailable'
+PRP MF 'JST Sales'
+PRP MP 'B2B-PH-K-S_LF__SN_'
+PRP Package 'None'
+PRP Price 'None'
+PRP SnapEDA_Link 'https://www.snapeda.com/parts/B2B-PH-K-S%28LF%29%28SN%29/JST%20Sales%20America%20Inc./view-part/424103/?ref=snap'
+PRP Value ''
+TOP 0 11.43 29.5148 0 N 15 1 J5-1
+TOP 1 13.43000108 29.5148 0 N 18 1 J5-2
+#
+# CMP 5
+CMP 11 59.28240112 33.94499942 0 N SW 1825910-6 ;0=2,1=0.0000
+PRP Configuration_Pole-Throw 'Single Pole - Single Throw'
+PRP Contact_Current_Rating '50 mA'
+PRP Digi-Key_Part_Number '450-1650-ND'
+PRP Digi-Key_Purchase_URL 'https://www.digikey.com/product-detail/en/te-connectivity-alcoswitch-switches/1825910-6/450-1650-ND/1632536?utm_source=snapeda&utm_medium=aggregator&utm_campaign=symbol'
+PRP EU_RoHS_Compliance 'Compliant'
+PRP MF 'TE Connectivity'
+PRP MP '1825910-6'
+PRP Package 'None'
+PRP SnapEDA_Link 'https://www.snapeda.com/parts/1825910-6/TE%20Connectivity%20ALCOSWITCH%20Switches/view-part/424522/?ref=snap'
+PRP TE_purchase_URL 'https://www.te.com/usa-en/product-1825910-6.html?te_bu=Cor&te_type=disp&te_campaign=seda_glo_cor-seda-global-disp-prtnr-fy19-seda-model-bom-cta_sma-317_1&elqCampaignId=32493'
+PRP Value ''
+TOP 0 56.0324 36.195 0 N 9 1 SW-1
+TOP 1 62.53240224 36.195 0 N 0 26 SW-2
+TOP 2 56.0324 31.69499884 0 N 29 32 SW-3
+TOP 3 62.53240224 31.69499884 0 N 0 27 SW-4
+#
+# CMP 6
+CMP 8 33.90000078 11.05400126 0 N C13 22_F ;0=1,1=0.0000
+PRP @_qty '0'
+PRP Applications 'General Purpose'
+PRP Datasheets 'http://psearch.en.murata.com/capacitor/product/GRM186R60J226ME15%23.pdf'
+PRP Digi-Key_Part_Number '490-13241-1-ND'
+PRP Factory_Stock '0'
+PRP Features 'Derating Recommended'
+PRP Height_-_Seated_(Max) '-'
+PRP Image '//media.digikey.com/Renders/Murata%20Renders/ZRB-SERIES-0402.jpg'
+PRP Lead_Spacing '-'
+PRP Lead_Style '-'
+PRP Manufacturer 'Murata Electronics North America'
+PRP Minimum_Quantity '1'
+PRP Mounting_Type 'Surface Mount, MLCC'
+PRP Operating_Temperature '-55°C ~ 85°C'
+PRP Package_/_Case '0603 (1608 Metric)'
+PRP Packaging 'Cut Tape (CT)'
+PRP Part_Number 'GRM186R60J226ME15D'
+PRP Part_Status 'Active'
+PRP Quantity_Available '5072'
+PRP Ratings '-'
+PRP Series 'GRM'
+PRP Size_/_Dimension '0.063_ L x 0.031_ W (1.60mm x 0.80mm)'
+PRP Temperature_Coefficient 'X5R'
+PRP Thickness_(Max) '0.028_ (0.70mm)'
+PRP Tolerance '±20%'
+PRP Unit_Price_(USD) '0.32'
+PRP Value '22µF'
+PRP Voltage '6.3V'
+TOP 0 33.90000078 11.82900098 90 N 32 7 C13-1
+TOP 1 33.90000078 10.27900154 90 N 29 58 C13-2
+#
+# CMP 7
+CMP 8 32.07120078 11.09180154 0 N C7 22_F ;0=1,1=0.0000
+PRP @_qty '0'
+PRP Applications 'General Purpose'
+PRP Datasheets 'http://psearch.en.murata.com/capacitor/product/GRM186R60J226ME15%23.pdf'
+PRP Digi-Key_Part_Number '490-13241-1-ND'
+PRP Factory_Stock '0'
+PRP Features 'Derating Recommended'
+PRP Height_-_Seated_(Max) '-'
+PRP Image '//media.digikey.com/Renders/Murata%20Renders/ZRB-SERIES-0402.jpg'
+PRP Lead_Spacing '-'
+PRP Lead_Style '-'
+PRP Manufacturer 'Murata Electronics North America'
+PRP Minimum_Quantity '1'
+PRP Mounting_Type 'Surface Mount, MLCC'
+PRP Operating_Temperature '-55°C ~ 85°C'
+PRP Package_/_Case '0603 (1608 Metric)'
+PRP Packaging 'Cut Tape (CT)'
+PRP Part_Number 'GRM186R60J226ME15D'
+PRP Part_Status 'Active'
+PRP Quantity_Available '5072'
+PRP Ratings '-'
+PRP Series 'GRM'
+PRP Size_/_Dimension '0.063_ L x 0.031_ W (1.60mm x 0.80mm)'
+PRP Temperature_Coefficient 'X5R'
+PRP Thickness_(Max) '0.028_ (0.70mm)'
+PRP Tolerance '±20%'
+PRP Unit_Price_(USD) '0.32'
+PRP Value '22µF'
+PRP Voltage '6.3V'
+TOP 0 32.07120078 11.86680126 90 N 32 6 C7-1
+TOP 1 32.07120078 10.31680182 90 N 29 57 C7-2
+#
+# CMP 8
+CMP 9 57.7342 13.716 0 N U3 MCP73831T ;0=1,1=0.0000
+PRP Availability 'Unavailable'
+PRP MF 'Microchip'
+PRP MP 'MCP73831T-4ADI/OT'
+PRP Package 'SOT-23-5 Microchip'
+PRP Price 'None'
+PRP SnapEDA_Link 'https://www.snapeda.com/parts/MCP73831T-4ADI/OT/Microchip/view-part/1037576/?ref=snap'
+PRP Value ''
+TOP 0 56.4388 14.6558 0 N 11 2 U3-1
+TOP 1 56.4388 13.716 0 N 29 34 U3-2
+TOP 2 56.4388 12.7762 0 N 27 0 U3-3
+TOP 3 59.0296 12.7762 0 N 24 3 U3-4
+TOP 4 59.0296 14.6558 0 N 10 1 U3-5
+#
+# CMP 9
+CMP 6 12.3698 41.2242 180 N J6 Left ;0=2,1=0.0000
+PRP Availability 'Unavailable'
+PRP MF 'JST Sales'
+PRP MP 'B2B-PH-K-S_LF__SN_'
+PRP Package 'None'
+PRP Price 'None'
+PRP SnapEDA_Link 'https://www.snapeda.com/parts/B2B-PH-K-S%28LF%29%28SN%29/JST%20Sales%20America%20Inc./view-part/424103/?ref=snap'
+PRP Value ''
+TOP 0 11.36979946 41.7741989 0 N 19 0 J6-1
+TOP 1 13.36980054 41.7741989 0 N 20 1 J6-2
+#
+# CMP 10
+CMP 6 12.4968 17.3482 180 N J4 Right ;0=2,1=0.0000
+PRP Availability 'Unavailable'
+PRP MF 'JST Sales'
+PRP MP 'B2B-PH-K-S_LF__SN_'
+PRP Package 'None'
+PRP Price 'None'
+PRP SnapEDA_Link 'https://www.snapeda.com/parts/B2B-PH-K-S%28LF%29%28SN%29/JST%20Sales%20America%20Inc./view-part/424103/?ref=snap'
+PRP Value ''
+TOP 0 11.49679946 17.8981989 0 N 13 0 J4-1
+TOP 1 13.49680054 17.8981989 0 N 14 1 J4-2
+#
+# CMP 11
+CMP 7 43.0562004 51.45900046 0 N U1 ESP32-WROOM-32D ;0=1,1=0.0000
+PRP Availability 'Unavailable'
+PRP MF 'Espressif Systems'
+PRP MP 'ESP32-WROOM-32D'
+PRP Package 'Module Espressif Systems'
+PRP Price 'None'
+PRP SnapEDA_Link 'https://www.snapeda.com/parts/ESP32-WROOM-32D/Espressif%20Systems/view-part/2768115/?ref=snap'
+PRP Value ''
+TOP 0 34.55619962 56.7190001 0 N 29 45 U1-1
+TOP 1 34.55619962 55.4490001 0 N 33 4 U1-2
+TOP 2 34.55619962 54.1790001 0 N 23 2 U1-3
+TOP 3 34.55619962 52.9090001 0 N 0 1 U1-4
+TOP 4 34.55619962 51.6390001 0 N 0 2 U1-5
+TOP 5 34.55619962 50.3690001 0 N 0 3 U1-6
+TOP 6 34.55619962 49.0990001 0 N 0 4 U1-7
+TOP 7 34.55619962 47.8290001 0 N 30 1 U1-8
+TOP 8 34.55619962 46.5590001 0 N 28 1 U1-9
+TOP 9 34.55619962 45.2890001 0 N 0 5 U1-10
+TOP 10 34.55619962 44.0190001 0 N 31 2 U1-11
+TOP 11 34.55619962 42.7490001 0 N 8 1 U1-12
+TOP 12 34.55619962 41.4790001 0 N 2 0 U1-13
+TOP 13 34.55619962 40.2090001 0 N 4 0 U1-14
+TOP 14 37.3412004 39.20899956 0 N 29 40 U1-15
+TOP 15 38.6112004 39.20899956 0 N 5 0 U1-16
+TOP 16 39.8812004 39.20899956 0 N 0 6 U1-17
+TOP 17 41.1512004 39.20899956 0 N 0 7 U1-18
+TOP 18 42.4212004 39.20899956 0 N 0 8 U1-19
+TOP 19 43.6912004 39.20899956 0 N 0 9 U1-20
+TOP 20 44.9612004 39.20899956 0 N 0 10 U1-21
+TOP 21 46.2312004 39.20899956 0 N 0 11 U1-22
+TOP 22 47.5012004 39.20899956 0 N 3 0 U1-23
+TOP 23 48.7712004 39.20899956 0 N 0 12 U1-24
+TOP 24 51.55620118 40.2090001 0 N 9 0 U1-25
+TOP 25 51.55620118 41.4790001 0 N 0 13 U1-26
+TOP 26 51.55620118 42.7490001 0 N 0 14 U1-27
+TOP 27 51.55620118 44.0190001 0 N 0 15 U1-28
+TOP 28 51.55620118 45.2890001 0 N 0 16 U1-29
+TOP 29 51.55620118 46.5590001 0 N 0 17 U1-30
+TOP 30 51.55620118 47.8290001 0 N 0 18 U1-31
+TOP 31 51.55620118 49.0990001 0 N 0 19 U1-32
+TOP 32 51.55620118 50.3690001 0 N 0 20 U1-33
+TOP 33 51.55620118 51.6390001 0 N 7 0 U1-34
+TOP 34 51.55620118 52.9090001 0 N 6 0 U1-35
+TOP 35 51.55620118 54.1790001 0 N 0 21 U1-36
+TOP 36 51.55620118 55.4490001 0 N 0 22 U1-37
+TOP 37 51.55620118 56.7190001 0 N 29 9 U1-38
+TOP 38 40.22119972 51.054 0 N 29 26 U1-39_1
+TOP 39 42.05619986 51.054 0 N 29 13 U1-39_2
+TOP 40 43.8912 51.054 0 N 29 10 U1-39_3
+TOP 41 40.22119972 49.21899986 0 N 29 27 U1-39_4
+TOP 42 42.05619986 49.21899986 0 N 29 20 U1-39_5
+TOP 43 43.8912 49.21899986 0 N 29 15 U1-39_6
+TOP 44 40.22119972 47.38399972 0 N 29 30 U1-39_7
+TOP 45 42.05619986 47.38399972 0 N 29 21 U1-39_8
+TOP 46 43.8912 47.38399972 0 N 29 17 U1-39_9
+TOP 47 41.13870106 51.054 0 N 29 23 U1-39_10
+TOP 48 42.9737012 51.054 0 N 29 12 U1-39_11
+TOP 49 40.22119972 50.1365012 0 N 29 24 U1-39_12
+TOP 50 42.05619986 50.1365012 0 N 29 14 U1-39_13
+TOP 51 43.8912 50.1365012 0 N 29 11 U1-39_14
+TOP 52 41.13870106 49.21899986 0 N 29 25 U1-39_15
+TOP 53 42.9737012 49.21899986 0 N 29 19 U1-39_16
+TOP 54 40.22119972 48.30150106 0 N 29 29 U1-39_17
+TOP 55 42.05619986 48.30150106 0 N 29 22 U1-39_18
+TOP 56 43.8912 48.30150106 0 N 29 16 U1-39_19
+TOP 57 41.13870106 47.38399972 0 N 29 28 U1-39_20
+TOP 58 42.9737012 47.38399972 0 N 29 18 U1-39_21
+#
+# CMP 12
+CMP 10 15.748 51.816 0 N U4 AP2112K-3.3TRG1 ;0=1,1=0.0000
+PRP Availability 'Good'
+PRP MF 'Diodes Inc.'
+PRP MP 'AP2112K-3.3TRG1'
+PRP Package 'SOT-753 Diodes Inc.'
+PRP Price 'None'
+PRP Purchase-URL 'https://pricing.snapeda.com/search/part/AP2112K-1.8TRG1/?ref=eda'
+PRP SnapEDA_Link 'https://www.snapeda.com/parts/AP2112K-1.8TRG1/Diodes%20Inc./view-part/553400/?ref=snap'
+PRP Value ''
+TOP 0 14.5630011 52.76600064 0 N 32 4 U4-1
+TOP 1 14.5630011 51.816 0 N 29 54 U4-2
+TOP 2 14.5630011 50.86599936 0 N 32 5 U4-3
+TOP 3 16.9329989 50.86599936 0 N 0 0 U4-4
+TOP 4 16.9329989 52.76600064 0 N 33 5 U4-5
+#
+# CMP 13
+CMP 3 15.358999 6.976999 0 N U2 TPS63061DSCR ;0=1,1=0.0000
+PRP Availability 'Unavailable'
+PRP MF ''
+PRP MP 'TPS63061DSCR'
+PRP Package 'None'
+PRP Price 'None'
+PRP Value ''
+TOP 0 13.88399814 7.97699954 0 N 16 2 U2-1
+TOP 1 13.88399814 7.476998 0 N 1 4 U2-2
+TOP 2 13.88399814 6.976999 0 N 1 3 U2-3
+TOP 3 13.88399814 6.477 0 N 29 67 U2-4
+TOP 4 13.88399814 5.97699846 0 N 12 1 U2-5
+TOP 5 16.83399986 5.97699846 180 N 26 2 U2-6
+TOP 6 16.83399986 6.477 180 N 29 62 U2-7
+TOP 7 16.83399986 6.976999 180 N 25 4 U2-8
+TOP 8 16.83399986 7.476998 180 N 32 10 U2-9
+TOP 9 16.83399986 7.97699954 180 N 17 2 U2-10
+TOP 10 15.358999 6.976999 0 N 29 64 U2-11
+TOP 11 14.859 7.476998 0 N 29 4 U2-12
+TOP 12 15.858998 7.476998 0 N 29 5 U2-13
+TOP 13 14.859 6.477 0 N 29 6 U2-14
+TOP 14 15.358999 6.976999 0 N 29 7 U2-15
+TOP 15 15.858998 6.477 0 N 29 8 U2-16
+#
+# CMP 14
+CMP 5 28.9947985 44.17059746 0 N R18 30M ;0=1,1=0.9000
+PRP LatestRevisionDate '29-May-2009'
+PRP LatestRevisionNote 'IPC-7351 Footprint Added.'
+PRP PackageDescription 'Chip Resistor'
+PRP PackageReference 'J1-0603'
+PRP Published '8-Jun-2000'
+PRP Publisher 'Altium Limited'
+PRP Value ''
+TOP 0 28.2448 44.1706 270 N 29 46 R18-1
+TOP 1 29.74479954 44.1706 270 N 31 1 R18-2
+#
+# CMP 15
+CMP 5 28.96940104 45.94860254 180 N R17 20M ;0=1,1=0.9000
+PRP LatestRevisionDate '29-May-2009'
+PRP LatestRevisionNote 'IPC-7351 Footprint Added.'
+PRP PackageDescription 'Chip Resistor'
+PRP PackageReference 'J1-0603'
+PRP Published '8-Jun-2000'
+PRP Publisher 'Altium Limited'
+PRP Value ''
+TOP 0 29.71939954 45.9486 90 N 31 0 R17-1
+TOP 1 28.2194 45.9486 90 N 27 2 R17-2
+#
+# CMP 16
+CMP 2 15.113 37.338 0 N R16 20 ;0=2,1=1.5240
+PRP LatestRevisionDate '17-Jul-2002'
+PRP LatestRevisionNote 'Re-released for DXP Platform.'
+PRP PackageDescription 'Axial Device, Thru-Hole; 2 Leads; 0.3 in Pin Spacing'
+PRP PackageReference 'AXIAL-0.3'
+PRP Published '8-Jun-2000'
+PRP Publisher 'Altium Limited'
+PRP Value ''
+TOP 0 11.303 37.338 0 N 19 1 R16-1
+TOP 1 18.923 37.338 0 N 32 1 R16-2
+#
+# CMP 17
+CMP 2 15.24 33.147 0 N R15 20 ;0=2,1=1.5240
+PRP LatestRevisionDate '17-Jul-2002'
+PRP LatestRevisionNote 'Re-released for DXP Platform.'
+PRP PackageDescription 'Axial Device, Thru-Hole; 2 Leads; 0.3 in Pin Spacing'
+PRP PackageReference 'AXIAL-0.3'
+PRP Published '8-Jun-2000'
+PRP Publisher 'Altium Limited'
+PRP Value ''
+TOP 0 11.43 33.147 0 N 15 0 R15-1
+TOP 1 19.05 33.147 0 N 32 2 R15-2
+#
+# CMP 18
+CMP 2 14.986 23.114 0 N R14 20 ;0=2,1=1.5240
+PRP LatestRevisionDate '17-Jul-2002'
+PRP LatestRevisionNote 'Re-released for DXP Platform.'
+PRP PackageDescription 'Axial Device, Thru-Hole; 2 Leads; 0.3 in Pin Spacing'
+PRP PackageReference 'AXIAL-0.3'
+PRP Published '8-Jun-2000'
+PRP Publisher 'Altium Limited'
+PRP Value ''
+TOP 0 11.176 23.114 0 N 13 1 R14-1
+TOP 1 18.796 23.114 0 N 32 3 R14-2
+#
+# CMP 19
+CMP 5 18.6944 56.2864 0 N R13 10k ;0=1,1=0.9000
+PRP LatestRevisionDate '29-May-2009'
+PRP LatestRevisionNote 'IPC-7351 Footprint Added.'
+PRP PackageDescription 'Chip Resistor'
+PRP PackageReference 'J1-0603'
+PRP Published '8-Jun-2000'
+PRP Publisher 'Altium Limited'
+PRP Value ''
+TOP 0 17.9444015 56.28640254 270 N 23 0 R13-1
+TOP 1 19.44440104 56.28640254 270 N 33 0 R13-2
+#
+# CMP 20
+CMP 5 58.4454 19.0754 0 N R8 2k ;0=1,1=0.9000
+PRP LatestRevisionDate '29-May-2009'
+PRP LatestRevisionNote 'IPC-7351 Footprint Added.'
+PRP PackageDescription 'Chip Resistor'
+PRP PackageReference 'J1-0603'
+PRP Published '8-Jun-2000'
+PRP Publisher 'Altium Limited'
+PRP Value ''
+TOP 0 57.6954015 19.07540254 270 N 29 31 R8-1
+TOP 1 59.19540104 19.07540254 270 N 10 0 R8-2
+#
+# CMP 21
+CMP 5 53.1876 16.2814 270 N R5 470 ;0=1,1=0.9000
+PRP LatestRevisionDate '29-May-2009'
+PRP LatestRevisionNote 'IPC-7351 Footprint Added.'
+PRP PackageDescription 'Chip Resistor'
+PRP PackageReference 'J1-0603'
+PRP Published '8-Jun-2000'
+PRP Publisher 'Altium Limited'
+PRP Value '1K'
+TOP 0 53.18759746 15.5314015 180 N 11 0 R5-1
+TOP 1 53.18759746 17.03140104 180 N 21 0 R5-2
+#
+# CMP 22
+CMP 5 51.6382 16.383 90 N R4 470 ;0=1,1=0.9000
+PRP LatestRevisionDate '29-May-2009'
+PRP LatestRevisionNote 'IPC-7351 Footprint Added.'
+PRP PackageDescription 'Chip Resistor'
+PRP PackageReference 'J1-0603'
+PRP Published '8-Jun-2000'
+PRP Publisher 'Altium Limited'
+PRP Value ''
+TOP 0 51.63820254 17.1329985 0 N 22 0 R4-1
+TOP 1 51.63820254 15.63299896 0 N 11 1 R4-2
+#
+# CMP 23
+CMP 5 6.477 8.382 270 N R3 1M ;0=1,1=0.9000
+PRP LatestRevisionDate '29-May-2009'
+PRP LatestRevisionNote 'IPC-7351 Footprint Added.'
+PRP PackageDescription 'Chip Resistor'
+PRP PackageReference 'J1-0603'
+PRP Published '8-Jun-2000'
+PRP Publisher 'Altium Limited'
+PRP Value ''
+TOP 0 6.47699746 7.6320015 180 N 12 2 R3-1
+TOP 1 6.47699746 9.13200104 180 N 32 12 R3-2
+#
+# CMP 24
+CMP 5 23.81620332 8.42579976 270 N R2 111k ;0=1,1=0.9000
+PRP LatestRevisionDate '29-May-2009'
+PRP LatestRevisionNote 'IPC-7351 Footprint Added.'
+PRP PackageDescription 'Chip Resistor'
+PRP PackageReference 'J1-0603'
+PRP Published '8-Jun-2000'
+PRP Publisher 'Altium Limited'
+PRP Value ''
+TOP 0 23.81620078 7.67580126 180 N 29 60 R2-1
+TOP 1 23.81620078 9.1758008 180 N 25 3 R2-2
+#
+# CMP 25
+CMP 5 23.81620586 11.46179826 270 N R1 1M ;0=1,1=0.9000
+PRP LatestRevisionDate '29-May-2009'
+PRP LatestRevisionNote 'IPC-7351 Footprint Added.'
+PRP PackageDescription 'Chip Resistor'
+PRP PackageReference 'J1-0603'
+PRP Published '8-Jun-2000'
+PRP Publisher 'Altium Limited'
+PRP Value ''
+TOP 0 23.81620332 10.71179976 180 N 25 1 R1-1
+TOP 1 23.81620332 12.2117993 180 N 32 9 R1-2
+#
+# CMP 26
+CMP 4 24.3078 41.7322 180 N Q3 2N7002W ;0=1,1=0.0000
+PRP Case/Package 'SOT-323'
+PRP Contact_Plating 'Tin'
+PRP Continuous_Drain_Current_(ID) '115mA'
+PRP Drain_to_Source_Breakdown_Voltage '60V'
+PRP Drain_to_Source_Resistance '7.5R'
+PRP Drain_to_Source_Voltage_(Vdss) '60V'
+PRP Element_Configuration 'Single'
+PRP Gate_to_Source_Voltage_(Vgs) '20V'
+PRP Height '1mm'
+PRP Input_Capacitance '50pF'
+PRP Lead_Free 'Lead Free'
+PRP Length '2mm'
+PRP Max_Operating_Temperature '150°C'
+PRP Max_Power_Dissipation '200mW'
+PRP Min_Operating_Temperature '-55°C'
+PRP Mount 'Surface Mount'
+PRP Number_of_Elements '1'
+PRP Number_of_Pins '3'
+PRP On-State_Resistance '7.5R'
+PRP Package_Quantity '1'
+PRP Packaging 'Tape and Reel'
+PRP Power_Dissipation '200mW'
+PRP Radiation_Hardening 'No'
+PRP Rds_On_Max '7.5R'
+PRP REACH_SVHC 'No SVHC'
+PRP Threshold_Voltage '1.76V'
+PRP Turn-Off_Delay_Time '12.5ns'
+PRP Turn-On_Delay_Time '5.85ns'
+PRP Weight '0.03g'
+PRP Width '1.25mm'
+TOP 0 25.07789752 41.0822013 180 N 28 0 Q3-1
+TOP 1 25.07789752 42.38220124 180 N 29 52 Q3-2
+TOP 2 23.53770248 41.7322 180 N 20 0 Q3-3
+#
+# CMP 27
+CMP 4 23.4188 29.7942 180 N Q2 2N7002W ;0=1,1=0.0000
+PRP Case/Package 'SOT-323'
+PRP Contact_Plating 'Tin'
+PRP Continuous_Drain_Current_(ID) '115mA'
+PRP Drain_to_Source_Breakdown_Voltage '60V'
+PRP Drain_to_Source_Resistance '7.5R'
+PRP Drain_to_Source_Voltage_(Vdss) '60V'
+PRP Element_Configuration 'Single'
+PRP Gate_to_Source_Voltage_(Vgs) '20V'
+PRP Height '1mm'
+PRP Input_Capacitance '50pF'
+PRP Lead_Free 'Lead Free'
+PRP Length '2mm'
+PRP Max_Operating_Temperature '150°C'
+PRP Max_Power_Dissipation '200mW'
+PRP Min_Operating_Temperature '-55°C'
+PRP Mount 'Surface Mount'
+PRP Number_of_Elements '1'
+PRP Number_of_Pins '3'
+PRP On-State_Resistance '7.5R'
+PRP Package_Quantity '1'
+PRP Packaging 'Tape and Reel'
+PRP Power_Dissipation '200mW'
+PRP Radiation_Hardening 'No'
+PRP Rds_On_Max '7.5R'
+PRP REACH_SVHC 'No SVHC'
+PRP Threshold_Voltage '1.76V'
+PRP Turn-Off_Delay_Time '12.5ns'
+PRP Turn-On_Delay_Time '5.85ns'
+PRP Weight '0.03g'
+PRP Width '1.25mm'
+TOP 0 24.18889752 29.1442013 180 N 30 0 Q2-1
+TOP 1 24.18889752 30.44420124 180 N 29 53 Q2-2
+TOP 2 22.64870248 29.7942 180 N 18 0 Q2-3
+#
+# CMP 28
+CMP 4 20.2946 20.193 180 N Q1 2N7002W ;0=1,1=0.0000
+PRP Case/Package 'SOT-323'
+PRP Contact_Plating 'Tin'
+PRP Continuous_Drain_Current_(ID) '115mA'
+PRP Drain_to_Source_Breakdown_Voltage '60V'
+PRP Drain_to_Source_Resistance '7.5R'
+PRP Drain_to_Source_Voltage_(Vdss) '60V'
+PRP Element_Configuration 'Single'
+PRP Gate_to_Source_Voltage_(Vgs) '20V'
+PRP Height '1mm'
+PRP Input_Capacitance '50pF'
+PRP Lead_Free 'Lead Free'
+PRP Length '2mm'
+PRP Max_Operating_Temperature '150°C'
+PRP Max_Power_Dissipation '200mW'
+PRP Min_Operating_Temperature '-55°C'
+PRP Mount 'Surface Mount'
+PRP Number_of_Elements '1'
+PRP Number_of_Pins '3'
+PRP On-State_Resistance '7.5R'
+PRP Package_Quantity '1'
+PRP Packaging 'Tape and Reel'
+PRP Power_Dissipation '200mW'
+PRP Radiation_Hardening 'No'
+PRP Rds_On_Max '7.5R'
+PRP REACH_SVHC 'No SVHC'
+PRP Threshold_Voltage '1.76V'
+PRP Turn-Off_Delay_Time '12.5ns'
+PRP Turn-On_Delay_Time '5.85ns'
+PRP Weight '0.03g'
+PRP Width '1.25mm'
+TOP 0 21.06469752 19.5430013 180 N 8 0 Q1-1
+TOP 1 21.06469752 20.84300124 180 N 29 55 Q1-2
+TOP 2 19.52450248 20.193 180 N 14 0 Q1-3
+#
+# CMP 29
+CMP 0 15.20000262 9.8094038 180 N L1 1uH ;0=1,1=0.5500
+PRP Code_IEC '1005'
+PRP Code_JEITA '0402'
+PRP LatestRevisionDate '29-May-2009'
+PRP LatestRevisionNote 'IPC-7351 Footprint Added.'
+PRP PackageDescription 'Chip Inductor'
+PRP PackageReference '0402-A'
+PRP Published '8-Jun-2000'
+PRP Publisher 'Altium Limited'
+PRP Value ''
+TOP 0 15.55000192 9.80940126 90 N 17 1 L1-1
+TOP 1 14.85000078 9.80940126 90 N 16 1 L1-2
+#
+# CMP 30
+CMP 6 58.4873989 52.91760054 90 N J3 B2B-PH-K-S ;0=2,1=0.0000
+PRP Availability 'Unavailable'
+PRP MF 'JST Sales'
+PRP MP 'B2B-PH-K-S_LF__SN_'
+PRP Package 'None'
+PRP Price 'None'
+PRP SnapEDA_Link 'https://www.snapeda.com/parts/B2B-PH-K-S%28LF%29%28SN%29/JST%20Sales%20America%20Inc./view-part/424103/?ref=snap'
+PRP Value ''
+TOP 0 57.9374 51.9176 270 N 7 1 J3-1
+TOP 1 57.9374 53.91760108 270 N 6 1 J3-2
+#
+# CMP 31
+CMP 6 31.877 2.286 0 N Bat B2B-PH-K-S ;0=2,1=0.0000
+PRP Availability 'Unavailable'
+PRP MF 'JST Sales'
+PRP MP 'B2B-PH-K-S_LF__SN_'
+PRP Package 'None'
+PRP Price 'None'
+PRP SnapEDA_Link 'https://www.snapeda.com/parts/B2B-PH-K-S%28LF%29%28SN%29/JST%20Sales%20America%20Inc./view-part/424103/?ref=snap'
+PRP Value ''
+TOP 0 32.87700054 1.7360011 180 N 27 4 Bat-1
+TOP 1 30.87699946 1.7360011 180 N 29 61 Bat-2
+#
+# CMP 32
+CMP 5 55.6006 19.0246 0 N D2 GREEN ;0=1,1=0.9000
+PRP LatestRevisionDate '08-Jul-2005'
+PRP LatestRevisionNote 'Mech Layer 1 removed.'
+PRP PackageDescription 'LED; 2 Leads'
+PRP PackageReference 'LED-1'
+PRP Published '8-Jun-2000'
+PRP Publisher 'Altium Limited'
+TOP 0 54.8506015 19.02460254 270 N 21 1 D2-1
+TOP 1 56.35060104 19.02460254 270 N 29 33 D2-2
+#
+# CMP 33
+CMP 5 50.8 19.558 0 N D1 RED ;0=1,1=0.9000
+PRP LatestRevisionDate '08-Jul-2005'
+PRP LatestRevisionNote 'Mech Layer 1 removed.'
+PRP PackageDescription 'LED; 2 Leads'
+PRP PackageReference 'LED-1'
+PRP Published '8-Jun-2000'
+PRP Publisher 'Altium Limited'
+TOP 0 50.0500015 19.55800254 270 N 24 0 D1-1
+TOP 1 51.55000104 19.55800254 270 N 22 1 D1-2
+#
+# CMP 34
+CMP 8 28.8798 42.6212 270 N C12 0.10_F ;0=1,1=0.0000
+PRP @_qty '0'
+PRP Applications 'Automotive, Boardflex Sensitive'
+PRP Datasheets 'http://www.murata.com/~/media/webrenewal/support/library/catalog/products/capacitor/mlcc/c03e.ashx'
+PRP Digi-Key_Part_Number '490-5796-1-ND'
+PRP Factory_Stock '0'
+PRP Features 'Soft Termination'
+PRP Height_-_Seated_(Max) '-'
+PRP Image '//media.digikey.com/Renders/Murata%20Renders/0603%28LQG18%29.jpg'
+PRP Lead_Spacing '-'
+PRP Lead_Style '-'
+PRP Manufacturer 'Murata Electronics North America'
+PRP Minimum_Quantity '1'
+PRP Mounting_Type 'Surface Mount, MLCC'
+PRP Operating_Temperature '-55°C ~ 125°C'
+PRP Package_/_Case '0603 (1608 Metric)'
+PRP Packaging 'Cut Tape (CT)'
+PRP Part_Number 'GCJ188R71C104KA01D'
+PRP Part_Status 'Active'
+PRP Quantity_Available '22473'
+PRP Ratings 'AEC-Q200'
+PRP Series 'GCJ'
+PRP Size_/_Dimension '0.063_ L x 0.031_ W (1.60mm x 0.80mm)'
+PRP Temperature_Coefficient 'X7R'
+PRP Thickness_(Max) '0.035_ (0.90mm)'
+PRP Tolerance '±10%'
+PRP Unit_Price_(USD) '0.21'
+PRP Value '0.10µF'
+PRP Voltage '16V'
+TOP 0 28.10480028 42.6212 0 N 29 47 C12-1
+TOP 1 29.65479972 42.6212 0 N 23 1 C12-2
+#
+# CMP 35
+CMP 8 25.4254 53.60699972 0 N C11 0.10_F ;0=1,1=0.0000
+PRP @_qty '0'
+PRP Applications 'Automotive, Boardflex Sensitive'
+PRP Datasheets 'http://www.murata.com/~/media/webrenewal/support/library/catalog/products/capacitor/mlcc/c03e.ashx'
+PRP Digi-Key_Part_Number '490-5796-1-ND'
+PRP Factory_Stock '0'
+PRP Features 'Soft Termination'
+PRP Height_-_Seated_(Max) '-'
+PRP Image '//media.digikey.com/Renders/Murata%20Renders/0603%28LQG18%29.jpg'
+PRP Lead_Spacing '-'
+PRP Lead_Style '-'
+PRP Manufacturer 'Murata Electronics North America'
+PRP Minimum_Quantity '1'
+PRP Mounting_Type 'Surface Mount, MLCC'
+PRP Operating_Temperature '-55°C ~ 125°C'
+PRP Package_/_Case '0603 (1608 Metric)'
+PRP Packaging 'Cut Tape (CT)'
+PRP Part_Number 'GCJ188R71C104KA01D'
+PRP Part_Status 'Active'
+PRP Quantity_Available '22473'
+PRP Ratings 'AEC-Q200'
+PRP Series 'GCJ'
+PRP Size_/_Dimension '0.063_ L x 0.031_ W (1.60mm x 0.80mm)'
+PRP Temperature_Coefficient 'X7R'
+PRP Thickness_(Max) '0.035_ (0.90mm)'
+PRP Tolerance '±10%'
+PRP Unit_Price_(USD) '0.21'
+PRP Value '0.10µF'
+PRP Voltage '16V'
+TOP 0 25.4254 54.38199944 90 N 33 1 C11-1
+TOP 1 25.4254 52.832 90 N 29 48 C11-2
+#
+# CMP 36
+CMP 8 27.5844 53.60699972 0 N C10 10_F ;0=1,1=0.0000
+PRP @_qty '0'
+PRP Applications 'General Purpose'
+PRP Datasheets 'http://www.murata.com/~/media/webrenewal/support/library/catalog/products/capacitor/mlcc/c02e.pdf'
+PRP Digi-Key_Part_Number '490-10467-1-ND'
+PRP Factory_Stock '0'
+PRP Features 'Derating Recommended'
+PRP Height_-_Seated_(Max) '-'
+PRP Image '//media.digikey.com/Renders/Murata%20Renders/ZRB-SERIES-0402.jpg'
+PRP Lead_Spacing '-'
+PRP Lead_Style '-'
+PRP Manufacturer 'Murata Electronics North America'
+PRP Minimum_Quantity '1'
+PRP Mounting_Type 'Surface Mount, MLCC'
+PRP Operating_Temperature '-55°C ~ 85°C'
+PRP Package_/_Case '0603 (1608 Metric)'
+PRP Packaging 'Cut Tape (CT)'
+PRP Part_Number 'GRM185R60J106ME15D'
+PRP Part_Status 'Active'
+PRP Quantity_Available '25068'
+PRP Ratings '-'
+PRP Series 'GRM'
+PRP Size_/_Dimension '0.063_ L x 0.031_ W (1.60mm x 0.80mm)'
+PRP Temperature_Coefficient 'X5R'
+PRP Thickness_(Max) '0.022_ (0.55mm)'
+PRP Tolerance '±20%'
+PRP Unit_Price_(USD) '0.36'
+PRP Value '10µF'
+PRP Voltage '6.3V'
+TOP 0 27.5844 54.38199944 90 N 33 2 C10-1
+TOP 1 27.5844 52.832 90 N 29 49 C10-2
+#
+# CMP 37
+CMP 8 57.6072 9.779 90 N C9 10_F ;0=1,1=0.0000
+PRP @_qty '0'
+PRP Applications 'General Purpose'
+PRP Datasheets 'http://www.murata.com/~/media/webrenewal/support/library/catalog/products/capacitor/mlcc/c02e.pdf'
+PRP Digi-Key_Part_Number '490-10467-1-ND'
+PRP Factory_Stock '0'
+PRP Features 'Derating Recommended'
+PRP Height_-_Seated_(Max) '-'
+PRP Image '//media.digikey.com/Renders/Murata%20Renders/ZRB-SERIES-0402.jpg'
+PRP Lead_Spacing '-'
+PRP Lead_Style '-'
+PRP Manufacturer 'Murata Electronics North America'
+PRP Minimum_Quantity '1'
+PRP Mounting_Type 'Surface Mount, MLCC'
+PRP Operating_Temperature '-55°C ~ 85°C'
+PRP Package_/_Case '0603 (1608 Metric)'
+PRP Packaging 'Cut Tape (CT)'
+PRP Part_Number 'GRM185R60J106ME15D'
+PRP Part_Status 'Active'
+PRP Quantity_Available '25068'
+PRP Ratings '-'
+PRP Series 'GRM'
+PRP Size_/_Dimension '0.063_ L x 0.031_ W (1.60mm x 0.80mm)'
+PRP Temperature_Coefficient 'X5R'
+PRP Thickness_(Max) '0.022_ (0.55mm)'
+PRP Tolerance '±20%'
+PRP Unit_Price_(USD) '0.36'
+PRP Value '10µF'
+PRP Voltage '6.3V'
+TOP 0 58.38219972 9.779 180 N 24 1 C9-1
+TOP 1 56.83220028 9.779 180 N 29 35 C9-2
+#
+# CMP 38
+CMP 8 47.7012 13.208 0 N C8 4.7_F ;0=1,1=0.0000
+PRP @_qty '0'
+PRP Applications 'Boardflex Sensitive'
+PRP Datasheets 'http://www.murata.com/~/media/webrenewal/support/library/catalog/products/capacitor/mlcc/c02e.pdf'
+PRP Digi-Key_Part_Number '490-10884-1-ND'
+PRP Factory_Stock '0'
+PRP Features 'Soft Termination'
+PRP Height_-_Seated_(Max) '-'
+PRP Image '//media.digikey.com/Renders/Murata%20Renders/0603%28LQG18%29.jpg'
+PRP Lead_Spacing '-'
+PRP Lead_Style '-'
+PRP Manufacturer 'Murata Electronics North America'
+PRP Minimum_Quantity '1'
+PRP Mounting_Type 'Surface Mount, MLCC'
+PRP Operating_Temperature '-55°C ~ 125°C'
+PRP Package_/_Case '0603 (1608 Metric)'
+PRP Packaging 'Cut Tape (CT)'
+PRP Part_Number 'GRJ188C70J475KE11D'
+PRP Part_Status 'Active'
+PRP Quantity_Available '9234'
+PRP Ratings '-'
+PRP Series 'GRJ'
+PRP Size_/_Dimension '0.063_ L x 0.031_ W (1.60mm x 0.80mm)'
+PRP Temperature_Coefficient 'X7S'
+PRP Thickness_(Max) '0.039_ (1.00mm)'
+PRP Tolerance '±10%'
+PRP Unit_Price_(USD) '0.34'
+PRP Value '4.7µF'
+PRP Voltage '6.3V'
+TOP 0 47.7012 13.98299972 90 N 27 1 C8-1
+TOP 1 47.7012 12.43300028 90 N 29 38 C8-2
+#
+# CMP 39
+CMP 8 22.7584 53.594 0 N C6 1_F ;0=1,1=0.0000
+PRP @_qty '0'
+PRP Applications 'Automotive'
+PRP Datasheets 'http://www.murata.com/~/media/webrenewal/support/library/catalog/products/capacitor/mlcc/c03e.ashx'
+PRP Digi-Key_Part_Number '490-5241-1-ND'
+PRP Factory_Stock '0'
+PRP Features '-'
+PRP Height_-_Seated_(Max) '-'
+PRP Image '//media.digikey.com/Renders/Murata%20Renders/0603%28GCM188%29.jpg'
+PRP Lead_Spacing '-'
+PRP Lead_Style '-'
+PRP Manufacturer 'Murata Electronics North America'
+PRP Minimum_Quantity '1'
+PRP Mounting_Type 'Surface Mount, MLCC'
+PRP Operating_Temperature '-55°C ~ 125°C'
+PRP Package_/_Case '0603 (1608 Metric)'
+PRP Packaging 'Cut Tape (CT)'
+PRP Part_Number 'GCM188R71C105KA64D'
+PRP Part_Status 'Active'
+PRP Quantity_Available '9243'
+PRP Ratings 'AEC-Q200'
+PRP Series 'GCM'
+PRP Size_/_Dimension '0.063_ L x 0.031_ W (1.60mm x 0.80mm)'
+PRP Temperature_Coefficient 'X7R'
+PRP Thickness_(Max) '0.035_ (0.90mm)'
+PRP Tolerance '±10%'
+PRP Unit_Price_(USD) '0.24'
+PRP Value '1µF'
+PRP Voltage '16V'
+TOP 0 22.7584 54.36899972 90 N 33 3 C6-1
+TOP 1 22.7584 52.81900028 90 N 29 50 C6-2
+#
+# CMP 40
+CMP 8 8.4074 52.832 180 N C5 1_F ;0=1,1=0.0000
+PRP @_qty '0'
+PRP Applications 'Automotive'
+PRP Datasheets 'http://www.murata.com/~/media/webrenewal/support/library/catalog/products/capacitor/mlcc/c03e.ashx'
+PRP Digi-Key_Part_Number '490-5241-1-ND'
+PRP Factory_Stock '0'
+PRP Features '-'
+PRP Height_-_Seated_(Max) '-'
+PRP Image '//media.digikey.com/Renders/Murata%20Renders/0603%28GCM188%29.jpg'
+PRP Lead_Spacing '-'
+PRP Lead_Style '-'
+PRP Manufacturer 'Murata Electronics North America'
+PRP Minimum_Quantity '1'
+PRP Mounting_Type 'Surface Mount, MLCC'
+PRP Operating_Temperature '-55°C ~ 125°C'
+PRP Package_/_Case '0603 (1608 Metric)'
+PRP Packaging 'Cut Tape (CT)'
+PRP Part_Number 'GCM188R71C105KA64D'
+PRP Part_Status 'Active'
+PRP Quantity_Available '9243'
+PRP Ratings 'AEC-Q200'
+PRP Series 'GCM'
+PRP Size_/_Dimension '0.063_ L x 0.031_ W (1.60mm x 0.80mm)'
+PRP Temperature_Coefficient 'X7R'
+PRP Thickness_(Max) '0.035_ (0.90mm)'
+PRP Tolerance '±10%'
+PRP Unit_Price_(USD) '0.24'
+PRP Value '1µF'
+PRP Voltage '16V'
+TOP 0 8.4074 52.05700028 270 N 32 11 C5-1
+TOP 1 8.4074 53.60699972 270 N 29 51 C5-2
+#
+# CMP 41
+CMP 8 30.42020078 11.10480126 0 N C4 22_F ;0=1,1=0.0000
+PRP @_qty '0'
+PRP Applications 'General Purpose'
+PRP Datasheets 'http://psearch.en.murata.com/capacitor/product/GRM186R60J226ME15%23.pdf'
+PRP Digi-Key_Part_Number '490-13241-1-ND'
+PRP Factory_Stock '0'
+PRP Features 'Derating Recommended'
+PRP Height_-_Seated_(Max) '-'
+PRP Image '//media.digikey.com/Renders/Murata%20Renders/ZRB-SERIES-0402.jpg'
+PRP Lead_Spacing '-'
+PRP Lead_Style '-'
+PRP Manufacturer 'Murata Electronics North America'
+PRP Minimum_Quantity '1'
+PRP Mounting_Type 'Surface Mount, MLCC'
+PRP Operating_Temperature '-55°C ~ 85°C'
+PRP Package_/_Case '0603 (1608 Metric)'
+PRP Packaging 'Cut Tape (CT)'
+PRP Part_Number 'GRM186R60J226ME15D'
+PRP Part_Status 'Active'
+PRP Quantity_Available '5072'
+PRP Ratings '-'
+PRP Series 'GRM'
+PRP Size_/_Dimension '0.063_ L x 0.031_ W (1.60mm x 0.80mm)'
+PRP Temperature_Coefficient 'X5R'
+PRP Thickness_(Max) '0.028_ (0.70mm)'
+PRP Tolerance '±20%'
+PRP Unit_Price_(USD) '0.32'
+PRP Value '22µF'
+PRP Voltage '6.3V'
+TOP 0 30.42020078 11.87980098 90 N 32 8 C4-1
+TOP 1 30.42020078 10.32980154 90 N 29 56 C4-2
+#
+# CMP 42
+CMP 8 26.73720078 10.34280126 270 N C3 10pF ;0=1,1=0.0000
+PRP @_qty '0'
+PRP Applications 'Automotive'
+PRP Datasheets 'http://psearch.en.murata.com/capacitor/product/GCM1885C1H100FA16%23.pdf'
+PRP Digi-Key_Part_Number '490-12530-1-ND'
+PRP Factory_Stock '0'
+PRP Features '-'
+PRP Height_-_Seated_(Max) '-'
+PRP Image '//media.digikey.com/Renders/Murata%20Renders/0603%28GCM188%29.jpg'
+PRP Lead_Spacing '-'
+PRP Lead_Style '-'
+PRP Manufacturer 'Murata Electronics North America'
+PRP Minimum_Quantity '1'
+PRP Mounting_Type 'Surface Mount, MLCC'
+PRP Operating_Temperature '-55°C ~ 125°C'
+PRP Package_/_Case '0603 (1608 Metric)'
+PRP Packaging 'Cut Tape (CT)'
+PRP Part_Number 'GCM1885C1H100FA16D'
+PRP Part_Status 'Active'
+PRP Quantity_Available '652'
+PRP Ratings 'AEC-Q200'
+PRP Series 'GCM'
+PRP Size_/_Dimension '0.063_ L x 0.031_ W (1.60mm x 0.80mm)'
+PRP Temperature_Coefficient 'C0G, NP0'
+PRP Thickness_(Max) '0.035_ (0.90mm)'
+PRP Tolerance '±1%'
+PRP Unit_Price_(USD) '0.11'
+PRP Value '10pF'
+PRP Voltage '50V'
+TOP 0 25.96220106 10.34280126 0 N 25 2 C3-1
+TOP 1 27.5122005 10.34280126 0 N 29 59 C3-2
+#
+# CMP 43
+CMP 8 20.00620078 4.11980126 270 N C2 0.10_F ;0=1,1=0.0000
+PRP @_qty '0'
+PRP Applications 'Automotive, Boardflex Sensitive'
+PRP Datasheets 'http://www.murata.com/~/media/webrenewal/support/library/catalog/products/capacitor/mlcc/c03e.ashx'
+PRP Digi-Key_Part_Number '490-5796-1-ND'
+PRP Factory_Stock '0'
+PRP Features 'Soft Termination'
+PRP Height_-_Seated_(Max) '-'
+PRP Image '//media.digikey.com/Renders/Murata%20Renders/0603%28LQG18%29.jpg'
+PRP Lead_Spacing '-'
+PRP Lead_Style '-'
+PRP Manufacturer 'Murata Electronics North America'
+PRP Minimum_Quantity '1'
+PRP Mounting_Type 'Surface Mount, MLCC'
+PRP Operating_Temperature '-55°C ~ 125°C'
+PRP Package_/_Case '0603 (1608 Metric)'
+PRP Packaging 'Cut Tape (CT)'
+PRP Part_Number 'GCJ188R71C104KA01D'
+PRP Part_Status 'Active'
+PRP Quantity_Available '22473'
+PRP Ratings 'AEC-Q200'
+PRP Series 'GCJ'
+PRP Size_/_Dimension '0.063_ L x 0.031_ W (1.60mm x 0.80mm)'
+PRP Temperature_Coefficient 'X7R'
+PRP Thickness_(Max) '0.035_ (0.90mm)'
+PRP Tolerance '±10%'
+PRP Unit_Price_(USD) '0.21'
+PRP Value '0.10µF'
+PRP Voltage '16V'
+TOP 0 19.23120106 4.11980126 0 N 26 1 C2-1
+TOP 1 20.7812005 4.11980126 0 N 29 63 C2-2
+#

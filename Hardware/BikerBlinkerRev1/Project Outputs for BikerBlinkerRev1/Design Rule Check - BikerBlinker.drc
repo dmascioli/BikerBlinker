@@ -1,7 +1,7 @@
 Protel Design System Design Rule Check
 PCB File : C:\Users\Bryan Moed\Documents\GitHub\BikerBlinker\Hardware\BikerBlinkerRev1\BikerBlinker.PcbDoc
-Date     : 10/14/2020
-Time     : 2:14:43 PM
+Date     : 10/24/2020
+Time     : 6:14:08 PM
 
 Processing Rule : Clearance Constraint (Gap=0.152mm) (All),(All)
    Violation between Clearance Constraint: (Collision < 0.152mm) Between Pad U2-11(15.299mm,6.922mm) on Top Layer And Pad U2-15(15.299mm,6.922mm) on Multi-Layer 
@@ -10,7 +10,8 @@ Processing Rule : Clearance Constraint (Gap=0.152mm) (All),(All)
    Violation between Clearance Constraint: (Collision < 0.152mm) Between Pad U2-14(14.799mm,6.422mm) on Multi-Layer And Region (0 hole(s)) Top Layer 
    Violation between Clearance Constraint: (Collision < 0.152mm) Between Pad U2-15(15.299mm,6.922mm) on Multi-Layer And Region (0 hole(s)) Top Layer 
    Violation between Clearance Constraint: (0.086mm < 0.152mm) Between Pad U2-16(15.799mm,6.422mm) on Multi-Layer And Region (0 hole(s)) Top Layer 
-Rule Violations :6
+   Violation between Clearance Constraint: (0.096mm < 0.152mm) Between Polygon Region (118 hole(s)) Bottom Layer And Track (5mm,57.5mm)(65mm,57.5mm) on Keep-Out Layer 
+Rule Violations :7
 
 Processing Rule : Short-Circuit Constraint (Allowed=No) (All),(All)
    Violation between Short-Circuit Constraint: Between Pad U2-11(15.299mm,6.922mm) on Top Layer And Pad U2-15(15.299mm,6.922mm) on Multi-Layer Location : [X = 87.562mm][Y = 32.957mm]
@@ -23,8 +24,7 @@ Rule Violations :6
 
 Processing Rule : Un-Routed Net Constraint ( (All) )
    Violation between Un-Routed Net Constraint: Net GND Between Track (13.677mm,6.469mm)(13.677mm,6.482mm) on Top Layer And Pad U2-11(15.299mm,6.922mm) on Top Layer 
-   Violation between Un-Routed Net Constraint: Net NetSW_1 Between Track (55.533mm,36.694mm)(56.032mm,36.195mm) on Top Layer And Track (61.164mm,40.209mm)(61.214mm,40.259mm) on Top Layer 
-Rule Violations :2
+Rule Violations :1
 
 Processing Rule : Modified Polygon (Allow modified: No), (Allow shelved: No)
 Rule Violations :0
@@ -44,9 +44,10 @@ Processing Rule : Hole To Hole Clearance (Gap=0.254mm) (All),(All)
 Rule Violations :0
 
 Processing Rule : Minimum Solder Mask Sliver (Gap=0.102mm) (All),(All)
-   Violation between Minimum Solder Mask Sliver Constraint: (0.097mm < 0.102mm) Between Pad J1-A5(44.155mm,6.213mm) on Top Layer And Pad J1-B5(45.155mm,6.213mm) on Top Layer [Top Solder] Mask Sliver [0.097mm]
-   Violation between Minimum Solder Mask Sliver Constraint: (0.067mm < 0.102mm) Between Pad J1-A5(44.155mm,6.213mm) on Top Layer And Pad J1-B9(43.135mm,6.213mm) on Top Layer [Top Solder] Mask Sliver [0.067mm]
-   Violation between Minimum Solder Mask Sliver Constraint: (0.067mm < 0.102mm) Between Pad J1-A9(46.175mm,6.213mm) on Top Layer And Pad J1-B5(45.155mm,6.213mm) on Top Layer [Top Solder] Mask Sliver [0.067mm]
+   Violation between Minimum Solder Mask Sliver Constraint: (0.047mm < 0.102mm) Between Pad J-1(44.719mm,4.758mm) on Top Layer And Pad J-2(45.369mm,4.758mm) on Top Layer [Top Solder] Mask Sliver [0.047mm]
+   Violation between Minimum Solder Mask Sliver Constraint: (0.047mm < 0.102mm) Between Pad J-2(45.369mm,4.758mm) on Top Layer And Pad J-3(46.019mm,4.758mm) on Top Layer [Top Solder] Mask Sliver [0.047mm]
+   Violation between Minimum Solder Mask Sliver Constraint: (0.047mm < 0.102mm) Between Pad J-3(46.019mm,4.758mm) on Top Layer And Pad J-4(46.669mm,4.758mm) on Top Layer [Top Solder] Mask Sliver [0.047mm]
+   Violation between Minimum Solder Mask Sliver Constraint: (0.047mm < 0.102mm) Between Pad J-4(46.669mm,4.758mm) on Top Layer And Pad J-5(47.319mm,4.758mm) on Top Layer [Top Solder] Mask Sliver [0.047mm]
    Violation between Minimum Solder Mask Sliver Constraint: (0.082mm < 0.102mm) Between Pad U2-1(13.824mm,7.922mm) on Top Layer And Pad U2-2(13.824mm,7.422mm) on Top Layer [Top Solder] Mask Sliver [0.082mm]
    Violation between Minimum Solder Mask Sliver Constraint: (0.082mm < 0.102mm) Between Pad U2-1(13.824mm,7.922mm) on Top Layer And Region (0 hole(s)) Top Solder [Top Solder] Mask Sliver [0.082mm]
    Violation between Minimum Solder Mask Sliver Constraint: (0.094mm < 0.102mm) Between Pad U2-10(16.774mm,7.922mm) on Top Layer And Pad U2-9(16.774mm,7.422mm) on Top Layer [Top Solder] Mask Sliver [0.094mm]
@@ -89,23 +90,23 @@ Processing Rule : Minimum Solder Mask Sliver (Gap=0.102mm) (All),(All)
    Violation between Minimum Solder Mask Sliver Constraint: (0.1mm < 0.102mm) Between Region (0 hole(s)) Top Solder And Region (0 hole(s)) Top Solder [Top Solder] Mask Sliver [0.1mm]
    Violation between Minimum Solder Mask Sliver Constraint: (0.1mm < 0.102mm) Between Region (0 hole(s)) Top Solder And Region (0 hole(s)) Top Solder [Top Solder] Mask Sliver [0.1mm]
    Violation between Minimum Solder Mask Sliver Constraint: (0.1mm < 0.102mm) Between Region (0 hole(s)) Top Solder And Region (0 hole(s)) Top Solder [Top Solder] Mask Sliver [0.1mm]
-Rule Violations :45
+Rule Violations :46
 
 Processing Rule : Silk To Solder Mask (Clearance=0.254mm) (IsText),(All)
-Rule Violations :0
+   Violation between Silk To Solder Mask Clearance Constraint: (Collision < 0.254mm) Between Pad R15-1(11.43mm,33.147mm) on Multi-Layer And Text "J5" (8.89mm,32.258mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0mm]
+   Violation between Silk To Solder Mask Clearance Constraint: (Collision < 0.254mm) Between Text "J5" (8.89mm,32.258mm) on Top Overlay And Track (11.43mm,29.515mm)(11.43mm,33.147mm) on Top Layer [Top Overlay] to [Top Solder] clearance [0mm]
+Rule Violations :2
 
 Processing Rule : Silk to Silk (Clearance=0.254mm) (All),(All)
 Rule Violations :0
 
 Processing Rule : Net Antennae (Tolerance=0mm) (All)
-   Violation between Net Antennae: Track (61.164mm,40.209mm)(61.214mm,40.259mm) on Top Layer 
-   Violation between Net Antennae: Track (61.164mm,40.209mm)(61.214mm,40.259mm) on Top Layer 
    Violation between Net Antennae: Via (28.931mm,17.399mm) from Top Layer to Bottom Layer 
    Violation between Net Antennae: Via (33.757mm,31.42mm) from Top Layer to Bottom Layer 
    Violation between Net Antennae: Via (38.837mm,31.42mm) from Top Layer to Bottom Layer 
    Violation between Net Antennae: Via (43.917mm,31.42mm) from Top Layer to Bottom Layer 
    Violation between Net Antennae: Via (49.936mm,34.265mm) from Top Layer to Bottom Layer 
-Rule Violations :7
+Rule Violations :5
 
 Processing Rule : Room BikerBlinker (Bounding Region = (72.238mm, 25.476mm, 164.763mm, 91.035mm) (InComponentClass('BikerBlinker'))
 Rule Violations :0
@@ -114,6 +115,6 @@ Processing Rule : Height Constraint (Min=0mm) (Max=25.4mm) (Prefered=12.7mm) (Al
 Rule Violations :0
 
 
-Violations Detected : 68
+Violations Detected : 69
 Waived Violations : 0
 Time Elapsed        : 00:00:02

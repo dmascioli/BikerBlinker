@@ -1,0 +1,4 @@
+Change Component Designator: OldDesignator=J NewDesignator=J1
+Change Component Designator: OldDesignator=U NewDesignator=U1
+Added Member To Class: ClassName=BikerBlinker Member=Component J1 10118192-0002LF
+Added Member To Class: ClassName=BikerBlinker Member=Component U1 ESP32-WROOM-32D

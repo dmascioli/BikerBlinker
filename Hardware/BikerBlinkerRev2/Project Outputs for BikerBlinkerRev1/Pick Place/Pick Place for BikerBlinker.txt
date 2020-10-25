@@ -1,0 +1,55 @@
+Altium Designer Pick and Place Locations
+C:\Users\Bryan Moed\Documents\GitHub\BikerBlinker\Hardware\BikerBlinkerRev1\Project Outputs for BikerBlinkerRev1\Pick Place\Pick Place for BikerBlinker.txt
+
+========================================================================================================================
+File Design Information:
+
+Date:       16/10/20
+Time:       15:35
+Revision:   5701044f862a96e41928de14da5c5127fd073c79
+Variant:    No variations
+Units used: mil
+
+Designator Comment         Layer    Footprint                Center-X(mil) Center-Y(mil) Rotation Description                                                                                                                              
+J          10118192-0002LF TopLayer AMPHENOL_10118192-0002LF 1811.756      134.657       360      "USB - micro B USB 2.0 Receptacle Connector 5 Position Surface Mount, Right Angle"                                                       
+J5         Center          TopLayer JST_B2B-PH-K-S(LF)(SN)   489.370       1162.000      180      "Connector Header Through Hole 2 position 0.079 _2.00mm_"                                                                                
+SW         1825910-6       TopLayer SW_1825910-6-4           2333.953      1336.417      0        "Switch Push Button OFF _ON_ SPST Round Button 0.05A 24VDC Momentary Contact PC Pins Thru-Hole"                                          
+C13        22µF            TopLayer SMD-0603C                1334.646      435.197       0        "CAP CER 22UF 6.3V X5R 0603"                                                                                                             
+C7         22µF            TopLayer SMD-0603C                1262.646      436.685       0        "CAP CER 22UF 6.3V X5R 0603"                                                                                                             
+U3         MCP73831T       TopLayer SOT95P280X145-5N         2273.000      540.000       0        "Charger IC Lithium Ion/Polymer SOT-23-5"                                                                                                
+J6         Left            TopLayer JST_B2B-PH-K-S(LF)(SN)   487.000       1644.653      180      "Connector Header Through Hole 2 position 0.079 _2.00mm_"                                                                                
+J4         Right           TopLayer JST_B2B-PH-K-S(LF)(SN)   492.000       704.654       180      "Connector Header Through Hole 2 position 0.079 _2.00mm_"                                                                                
+U          ESP32-WROOM-32D TopLayer MODULE_ESP32-WROOM-32D   1695.126      1888.346      0        "Bluetooth, WiFi 802.11b/g/n, Bluetooth v4.2 + EDR, Class 1, 2 and 3 Transceiver Module 2.4GHz ~ 2.5GHz Integrated, Trace Surface Mount" 
+U4         AP2112K-3.3TRG1 TopLayer SOT95P285X140-5N         620.000       2040.000      0        "Linear Voltage Regulator IC 1 Output 600mA SOT-25"                                                                                      
+U2         TPS63061DSCR    TopLayer CONV_TPS63061DSCR        602.331       272.512       0        ""                                                                                                                                       
+R18        30M             TopLayer J1-0603                  1141.527      1739.000      360      Resistor                                                                                                                                 
+R17        20M             TopLayer J1-0603                  1140.527      1809.000      180      Resistor                                                                                                                                 
+R16        20              TopLayer AXIAL-0.3                595.000       1470.000      360      Resistor                                                                                                                                 
+R15        20              TopLayer AXIAL-0.3                600.000       1305.000      360      Resistor                                                                                                                                 
+R14        20              TopLayer AXIAL-0.3                590.000       910.000       360      Resistor                                                                                                                                 
+R13        10k             TopLayer J1-0603                  736.000       2216.000      360      Resistor                                                                                                                                 
+R8         2k              TopLayer J1-0603                  2301.000      751.000       360      Resistor                                                                                                                                 
+R5         470             TopLayer J1-0603                  2094.000      641.000       90       Resistor                                                                                                                                 
+R4         470             TopLayer J1-0603                  2033.000      645.000       270      Resistor                                                                                                                                 
+R3         1M              TopLayer J1-0603                  307.646       332.197       90       Resistor                                                                                                                                 
+R2         111k            TopLayer J1-0603                  937.646       331.724       90       Resistor                                                                                                                                 
+R1         1M              TopLayer J1-0603                  937.646       451.252       90       Resistor                                                                                                                                 
+Q3         2N7002W         TopLayer FP-419AB-01-IPC_C        957.000       1643.000      180      "MOSFET N-CH 60V 115MA SOT-323"                                                                                                          
+Q2         2N7002W         TopLayer FP-419AB-01-IPC_C        922.000       1173.000      180      "MOSFET N-CH 60V 115MA SOT-323"                                                                                                          
+Q1         2N7002W         TopLayer FP-419AB-01-IPC_C        799.000       795.000       180      "MOSFET N-CH 60V 115MA SOT-323"                                                                                                          
+L1         1uH             TopLayer 0603                     598.425       386.197       180      Inductor                                                                                                                                 
+J3         B2B-PH-K-S      TopLayer JST_B2B-PH-K-S(LF)(SN)   2281.000      2083.370      270      "Connector Header Through Hole 2 position 0.079 _2.00mm_"                                                                                
+Bat        B2B-PH-K-S      TopLayer JST_B2B-PH-K-S(LF)(SN)   1255.000      68.347        360      "Connector Header Through Hole 2 position 0.079 _2.00mm_"                                                                                
+D2         GREEN           TopLayer J1-0603                  2189.000      749.000       360      "Typical RED GaAs LED"                                                                                                                   
+D1         RED             TopLayer J1-0603                  2000.000      770.000       360      "Typical RED GaAs LED"                                                                                                                   
+C12        0.10µF          TopLayer SMD-0603C                1137.000      1678.000      90       "CAP CER 0.1UF 16V X7R 0603"                                                                                                             
+C11        0.10µF          TopLayer SMD-0603C                1001.000      2110.512      360      "CAP CER 0.1UF 16V X7R 0603"                                                                                                             
+C10        10µF            TopLayer SMD-0603C                1086.000      2110.512      360      "CAP CER 10UF 6.3V X5R 0603"                                                                                                             
+C9         10µF            TopLayer SMD-0603C                2268.000      385.000       270      "CAP CER 10UF 6.3V X5R 0603"                                                                                                             
+C8         4.7µF           TopLayer SMD-0603C                1878.000      520.000       360      "CAP CER 4.7UF 6.3V X7S 0603"                                                                                                            
+C6         1µF             TopLayer SMD-0603C                896.000       2110.000      360      "CAP CER 1UF 16V X7R 0603"                                                                                                               
+C5         1µF             TopLayer SMD-0603C                331.000       2080.000      180      "CAP CER 1UF 16V X7R 0603"                                                                                                               
+C4         22µF            TopLayer SMD-0603C                1197.646      437.197       360      "CAP CER 22UF 6.3V X5R 0603"                                                                                                             
+C3         10pF            TopLayer SMD-0603C                1052.646      407.197       90       "CAP CER 10PF 50V NP0 0603"                                                                                                              
+C2         0.10µF          TopLayer SMD-0603C                787.646       162.197       90       "CAP CER 0.1UF 16V X7R 0603"                                                                                                             
+C1         22µF            TopLayer SMD-0603C                2038.000      520.000       360      "CAP CER 22UF 6.3V X5R 0603"                                                                                                             

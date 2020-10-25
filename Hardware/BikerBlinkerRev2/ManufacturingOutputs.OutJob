@@ -1,0 +1,252 @@
+[OutputJobFile]
+Version=1.0
+Caption=
+Description=
+VaultGUID=
+ItemGUID=
+ItemHRID=
+RevisionGUID=
+RevisionId=
+VaultHRID=
+AutoItemHRID=
+NextRevId=
+FolderGUID=
+LifeCycleDefinitionGUID=
+RevisionNamingSchemeGUID=
+
+[OutputGroup1]
+Name=ManufacturingOutputs.OutJob
+Description=
+TargetOutputMedium=New PDF
+VariantName=[No Variations]
+VariantScope=1
+CurrentConfigurationName=
+TargetPrinter=Virtual Printer
+PrinterOptions=Record=PrinterOptions|Copies=1|Duplex=1|TrueTypeOptions=3|Collate=1|PrintJobKind=1|PrintWhat=1
+OutputMedium1=Print Job
+OutputMedium1_Type=Printer
+OutputMedium1_Printer=
+OutputMedium1_PrinterOptions=Record=PrinterOptions|Copies=1|Duplex=1|TrueTypeOptions=3|Collate=1|PrintJobKind=1|PrintWhat=1
+OutputMedium2=Folder Structure
+OutputMedium2_Type=GeneratedFiles
+OutputMedium3=New Folder Structure
+OutputMedium3_Type=GeneratedFiles
+OutputMedium4=New PDF
+OutputMedium4_Type=Publish
+OutputType1=Gerber
+OutputName1=Gerber Files
+OutputCategory1=Fabrication
+OutputDocumentPath1=
+OutputVariantName1=
+OutputEnabled1=0
+OutputEnabled1_OutputMedium1=0
+OutputEnabled1_OutputMedium2=1
+OutputEnabled1_OutputMedium3=0
+OutputEnabled1_OutputMedium4=0
+OutputDefault1=0
+Configuration1_Name1=OutputConfigurationParameter1
+Configuration1_Item1=AddToAllLayerClasses.Set= |AddToAllPlots.Set=SerializeLayerHash.Version~2,ClassName~TLayerToBoolean|CentrePlots=False|DrillDrawingSymbol=GraphicsSymbol|DrillDrawingSymbolSize=200000|EmbeddedApertures=True|FilmBorderSize=10000000|FilmXSize=200000000|FilmYSize=160000000|FlashAllFills=False|FlashPadShapes=True|G54OnApertureChange=False|GenerateDRCRulesFile=True|GenerateDRCRulesFile=True|GenerateReliefShapes=True|GerberUnit=Metric|GerberUnit=Metric|IncludeUnconnectedMidLayerPads=False|LayerClassesMirror.Set= |LayerClassesPlot.Set="All Layers","Component Layers","Signal Layers","Electrical Layers"|LeadingAndTrailingZeroesMode=SuppressLeadingZeroes|MaxApertureSize=2500000|MinusApertureTolerance=39|MinusApertureTolerance=39|Mirror.Set=SerializeLayerHash.Version~2,ClassName~TLayerToBoolean|MirrorDrillDrawingPlots=False|MirrorDrillGuidePlots=False|NoRegularPolygons=False|NumberOfDecimals=4|NumberOfDecimals=4|OptimizeChangeLocationCommands=True|OptimizeChangeLocationCommands=True|OriginPosition=Relative|Panelize=False|Plot.Set=SerializeLayerHash.Version~2,ClassName~TLayerToBoolean,16973830~1,16973832~1,16973834~1,16777217~1,16842751~1,16973835~1,16973833~1,16973831~1,16908289~1,16908290~1,16908291~1,16908293~1,16908301~1,16908303~1,16908304~1,16908308~1,16908309~1,16908311~1,16908312~1,16973837~1,16973848~1,16973849~1|PlotPositivePlaneLayers=False|PlotUsedDrillDrawingLayerPairs=True|PlotUsedDrillGuideLayerPairs=True|PlusApertureTolerance=39|PlusApertureTolerance=39|Record=GerberView|SoftwareArcs=False|Sorted=False|Sorted=False
+OutputType2=NC Drill
+OutputName2=NC Drill Files
+OutputCategory2=Fabrication
+OutputDocumentPath2=
+OutputVariantName2=
+OutputEnabled2=0
+OutputEnabled2_OutputMedium1=0
+OutputEnabled2_OutputMedium2=2
+OutputEnabled2_OutputMedium3=0
+OutputEnabled2_OutputMedium4=0
+OutputDefault2=0
+Configuration2_Name1=OutputConfigurationParameter1
+Configuration2_Item1=BoardEdgeRoutToolDia=2000000|GenerateBoardEdgeRout=False|GenerateDrilledSlotsG85=False|GenerateEIADrillFile=False|GenerateSeparatePlatedNonPlatedFiles=False|NumberOfDecimals=4|NumberOfUnits=4|OptimizeChangeLocationCommands=True|OriginPosition=Relative|Record=DrillView|Units=Metric|ZeroesMode=SuppressTrailingZeroes
+OutputType3=ODB
+OutputName3=ODB++ Files
+OutputCategory3=Fabrication
+OutputDocumentPath3=
+OutputVariantName3=
+OutputEnabled3=0
+OutputEnabled3_OutputMedium1=0
+OutputEnabled3_OutputMedium2=3
+OutputEnabled3_OutputMedium3=0
+OutputEnabled3_OutputMedium4=0
+OutputDefault3=0
+Configuration3_Name1=OutputConfigurationParameter1
+Configuration3_Item1=AddToAllLayerClasses.Set= |AddToAllPlots_Mechanical 1=False|AddToAllPlots_Mechanical 10=False|AddToAllPlots_Mechanical 11=False|AddToAllPlots_Mechanical 12=False|AddToAllPlots_Mechanical 13=False|AddToAllPlots_Mechanical 14=False|AddToAllPlots_Mechanical 15=False|AddToAllPlots_Mechanical 4=False|AddToAllPlots_Mechanical 6=False|AddToAllPlots_Mechanical 7=False|AddToAllPlots_Mechanical 8=False|AddToAllPlots_Mechanical 9=False|AddToAllPlots_Top 3D Body=False|AddToAllPlots_Top Assembly=False|AddToAllPlots_Top Component Center=False|AddToAllPlots_Top Courtyard=False|Compression_None=True|Compression_tar_tgz=True|Compression_zip=True|ExportPositivePlaneLayers=False|GenerateDRCRulesFile=False|IncludeUnconnectedMidLayerPads=False|LayerClassesPlot.Set= |MergeNetTieNets=False|ObjsInsideBoardOutlineOnly=False|ODBProfileLayer=-1000|ODBProfileLayerV7=-1|Plot_V7_1=True|Plot_V7_1_name=Mechanical Layer 20|Plot_V7_2=True|Plot_V7_2_name=Mechanical Layer 21|Plot_V7_3=True|Plot_V7_3_name=Mechanical Layer 23|Plot_V7_4=True|Plot_V7_4_name=Mechanical Layer 24|PlotBottomLayerPlot=True|PlotBottomOverlayPlot=True|PlotBottomPastePlot=True|PlotBottomSolderPlot=True|PlotInternalPlane10Plot=False|PlotInternalPlane11Plot=False|PlotInternalPlane12Plot=False|PlotInternalPlane13Plot=False|PlotInternalPlane14Plot=False|PlotInternalPlane15Plot=False|PlotInternalPlane16Plot=False|PlotInternalPlane1Plot=False|PlotInternalPlane2Plot=False|PlotInternalPlane3Plot=False|PlotInternalPlane4Plot=False|PlotInternalPlane5Plot=False|PlotInternalPlane6Plot=False|PlotInternalPlane7Plot=False|PlotInternalPlane8Plot=False|PlotInternalPlane9Plot=False|PlotKeepOutLayerPlot=True|PlotMechanical10Plot=False|PlotMechanical11Plot=False|PlotMechanical12Plot=False|PlotMechanical13Plot=True|PlotMechanical14Plot=False|PlotMechanical15Plot=True|PlotMechanical16Plot=True|PlotMechanical1Plot=True|PlotMechanical2Plot=True|PlotMechanical3Plot=True|PlotMechanical4Plot=False|PlotMechanical5Plot=True|PlotMechanical6Plot=False|PlotMechanical7Plot=False|PlotMechanical8Plot=False|PlotMechanical9Plot=False|PlotMidLayer10Plot=False|PlotMidLayer11Plot=False|PlotMidLayer12Plot=False|PlotMidLayer13Plot=False|PlotMidLayer14Plot=False|PlotMidLayer15Plot=False|PlotMidLayer16Plot=False|PlotMidLayer17Plot=False|PlotMidLayer18Plot=False|PlotMidLayer19Plot=False|PlotMidLayer1Plot=False|PlotMidLayer20Plot=False|PlotMidLayer21Plot=False|PlotMidLayer22Plot=False|PlotMidLayer23Plot=False|PlotMidLayer24Plot=False|PlotMidLayer25Plot=False|PlotMidLayer26Plot=False|PlotMidLayer27Plot=False|PlotMidLayer28Plot=False|PlotMidLayer29Plot=False|PlotMidLayer2Plot=False|PlotMidLayer30Plot=False|PlotMidLayer3Plot=False|PlotMidLayer4Plot=False|PlotMidLayer5Plot=False|PlotMidLayer6Plot=False|PlotMidLayer7Plot=False|PlotMidLayer8Plot=False|PlotMidLayer9Plot=False|PlotTopLayerPlot=True|PlotTopOverlayPlot=True|PlotTopPastePlot=True|PlotTopSolderPlot=True|Record=ODBView|Units=Metric
+OutputType4=Schematic Print
+OutputName4=Schematic Prints
+OutputCategory4=Documentation
+OutputDocumentPath4=
+OutputVariantName4=
+OutputEnabled4=1
+OutputEnabled4_OutputMedium1=0
+OutputEnabled4_OutputMedium2=0
+OutputEnabled4_OutputMedium3=0
+OutputEnabled4_OutputMedium4=1
+OutputDefault4=0
+PageOptions4=Record=PageOptions|CenterHorizontal=True|CenterVertical=True|PrintScale=1.00|XCorrection=1.00|YCorrection=1.00|PrintKind=1|BorderSize=5000000|LeftOffset=0|BottomOffset=0|Orientation=2|PaperLength=1000|PaperWidth=1000|Scale=100|PaperSource=7|PrintQuality=-3|MediaType=1|DitherType=10|PrintScaleMode=1|PaperKind=Letter|PaperIndex=1
+Configuration4_Name1=OutputConfigurationParameter1
+Configuration4_Item1=Record=SchPrintView|ShowNoERC=True|ShowParamSet=True|ShowProbe=True|ShowBlanket=True|NoERCSymbolsToShow="Thin Cross","Thick Cross","Small Cross",Checkbox,Triangle|ShowNote=True|ShowNoteCollapsed=True|ShowOpenEnds=True|ExpandDesignator=True|ExpandNetLabel=False|ExpandPort=False|ExpandSheetNum=False|ExpandDocNum=False|PrintArea=0|PrintAreaRect.X1=0|PrintAreaRect.Y1=0|PrintAreaRect.X2=0|PrintAreaRect.Y2=0
+OutputType5=Pick Place
+OutputName5=Generates pick and place files
+OutputCategory5=Assembly
+OutputDocumentPath5=
+OutputVariantName5=
+OutputEnabled5=0
+OutputEnabled5_OutputMedium1=0
+OutputEnabled5_OutputMedium2=0
+OutputEnabled5_OutputMedium3=5
+OutputEnabled5_OutputMedium4=0
+OutputDefault5=0
+Configuration5_Name1=OutputConfigurationParameter1
+Configuration5_Item1=Record=PickPlaceView|Units=Imperial|GenerateCSVFormat=False|GenerateTextFormat=True|ShowUnits=False|Separator=.|ExcludeFilterParam=False|IncludeVariations=False|Filter= |FilterActive=False|Column#1=Name:Designator,Fixed:True,Metric:False,Visible:True,Sort:None,Position:0|Column#2=Name:Comment,Fixed:True,Metric:False,Visible:True,Sort:None,Position:1|Column#3=Name:Layer,Fixed:True,Metric:False,Visible:True,Sort:None,Position:2|Column#4=Name:Footprint,Fixed:True,Metric:False,Visible:True,Sort:None,Position:3|Column#5=Name:Footprint Description,Fixed:True,Metric:False,Visible:False,Sort:None,Position:4|Column#6=Name:Center-X,Fixed:True,Metric:True,Visible:True,Sort:None,Position:5|Column#7=Name:Center-Y,Fixed:True,Metric:True,Visible:True,Sort:None,Position:6|Column#8=Name:Rotation,Fixed:True,Metric:False,Visible:True,Sort:None,Position:7|Column#9=Name:Description,Fixed:True,Metric:False,Visible:True,Sort:None,Position:8|Column#10=Name:ComponentKind,Fixed:True,Metric:False,Visible:False,Sort:None,Position:9|Column#11=Name:Height,Fixed:True,Metric:True,Visible:False,Sort:None,Position:10|Column#12=Name:Ref-X,Fixed:True,Metric:True,Visible:False,Sort:None,Position:11|Column#13=Name:Ref-Y,Fixed:True,Metric:True,Visible:False,Sort:None,Position:12|Column#14=Name:Pad-X,Fixed:True,Metric:True,Visible:False,Sort:None,Position:13|Column#15=Name:Pad-Y,Fixed:True,Metric:True,Visible:False,Sort:None,Position:14|Column#16=Name:Variation,Fixed:True,Metric:False,Visible:False,Sort:None,Position:15|Column#17=Name:Package / Case,Fixed:False,Metric:False,Visible:False,Sort:None,Position:65|Column#18=Name:Continuous Drain Current (ID),Fixed:False,Metric:False,Visible:False,Sort:None,Position:26|Column#19=Name:TE_purchase_URL,Fixed:False,Metric:False,Visible:False,Sort:None,Position:85|Column#20=Name:Height - Seated (Max),Fixed:False,Metric:False,Visible:False,Sort:None,Position:41|Column#21=Name:On-State Resistance,Fixed:False,Metric:False,Visible:False,Sort:None,Position:62|Column#22=Name:Mouser-Purchase-URL,Fixed:False,Metric:False,Visible:False,Sort:None,Position:58|Column#23=Name:REACH SVHC,Fixed:False,Metric:False,Visible:False,Sort:None,Position:81|Column#24=Name:LatestRevisionNote,Fixed:False,Metric:False,Visible:False,Sort:None,Position:45|Column#25=Name:Configuration_Pole-Throw,Fixed:False,Metric:False,Visible:False,Sort:None,Position:23|Column#26=Name:Arrow_Electronics-Purchase-URL,Fixed:False,Metric:False,Visible:False,Sort:None,Position:18|Column#27=Name:Package Quantity,Fixed:False,Metric:False,Visible:False,Sort:None,Position:66|Column#28=Name:Threshold Voltage,Fixed:False,Metric:False,Visible:False,Sort:None,Position:88|Column#29=Name:SnapEDA_Link,Fixed:False,Metric:False,Visible:False,Sort:None,Position:84|Column#30=Name:Length,Fixed:False,Metric:False,Visible:False,Sort:None,Position:49|Column#31=Name:Voltage,Fixed:False,Metric:False,Visible:False,Sort:None,Position:94|Column#32=Name:Minimum Quantity,Fixed:False,Metric:False,Visible:False,Sort:None,Position:55|Column#33=Name:Max Operating Temperature,Fixed:False,Metric:False,Visible:False,Sort:None,Position:51|Column#34=Name:Min Operating Temperature,Fixed:False,Metric:False,Visible:False,Sort:None,Position:54|Column#35=Name:Part Number,Fixed:False,Metric:False,Visible:False,Sort:None,Position:70|Column#36=Name:Code_IEC,Fixed:False,Metric:False,Visible:False,Sort:None,Position:21|Column#37=Name:Code_JEITA,Fixed:False,Metric:False,Visible:False,Sort:None,Position:22|Column#38=Name:MP,Fixed:False,Metric:False,Visible:False,Sort:None,Position:59|Column#39=Name:Part Status,Fixed:False,Metric:False,Visible:False,Sort:None,Position:71|Column#40=Name:Packaging,Fixed:False,Metric:False,Visible:False,Sort:None,Position:69|Column#41=Name:Ratings,Fixed:False,Metric:False,Visible:False,Sort:None,Position:79|Column#42=Name:Contact Plating,Fixed:False,Metric:False,Visible:False,Sort:None,Position:24|Column#43=Name:Mount,Fixed:False,Metric:False,Visible:False,Sort:None,Position:56|Column#44=Name:Applications,Fixed:False,Metric:False,Visible:False,Sort:None,Position:17|Column#45=Name:Turn-Off Delay Time,Fixed:False,Metric:False,Visible:False,Sort:None,Position:90|Column#46=Name:Number of Pins,Fixed:False,Metric:False,Visible:False,Sort:None,Position:61|Column#47=Name:Thickness (Max),Fixed:False,Metric:False,Visible:False,Sort:None,Position:87|Column#48=Name:Case/Package,Fixed:False,Metric:False,Visible:False,Sort:None,Position:20|Column#49=Name:Drain to Source Breakdown Voltage,Fixed:False,Metric:False,Visible:False,Sort:None,Position:32|Column#50=Name:Turn-On Delay Time,Fixed:False,Metric:False,Visible:False,Sort:None,Position:91|Column#51=Name:Width,Fixed:False,Metric:False,Visible:False,Sort:None,Position:96|Column#52=Name:Quantity Available,Fixed:False,Metric:False,Visible:False,Sort:None,Position:77|Column#53=Name:Size / Dimension,Fixed:False,Metric:False,Visible:False,Sort:None,Position:83|Column#54=Name:Rds On Max,Fixed:False,Metric:False,Visible:False,Sort:None,Position:80|Column#55=Name:Availability,Fixed:False,Metric:False,Visible:False,Sort:None,Position:19|Column#56=Name:Factory Stock,Fixed:False,Metric:False,Visible:False,Sort:None,Position:37|Column#57=Name:Tolerance,Fixed:False,Metric:False,Visible:False,Sort:None,Position:89|Column#58=Name:Drain to Source Voltage (Vdss),Fixed:False,Metric:False,Visible:False,Sort:None,Position:34|Column#59=Name:Published,Fixed:False,Metric:False,Visible:False,Sort:None,Position:74|Column#60=Name:Digi-Key_Purchase_URL,Fixed:False,Metric:False,Visible:False,Sort:None,Position:30|Column#61=Name:Drain to Source Resistance,Fixed:False,Metric:False,Visible:False,Sort:None,Position:33|Column#62=Name:Gate to Source Voltage (Vgs),Fixed:False,Metric:False,Visible:False,Sort:None,Position:39|Column#63=Name:Manufacturer,Fixed:False,Metric:False,Visible:False,Sort:None,Position:50|Column#64=Name:Unit Price (USD),Fixed:False,Metric:False,Visible:False,Sort:None,Position:92|Column#65=Name:DigiKey-Purchase-URL,Fixed:False,Metric:False,Visible:False,Sort:None,Position:31|Column#66=Name:MF,Fixed:False,Metric:False,Visible:False,Sort:None,Position:53|Column#67=Name:Input Capacitance,Fixed:False,Metric:False,Visible:False,Sort:None,Position:43|Column#68=Name:@ qty,Fixed:False,Metric:False,Visible:False,Sort:None,Position:16|Column#69=Name:Digi-Key Part Number,Fixed:False,Metric:False,Visible:False,Sort:None,Position:28|Column#70=Name:Weight,Fixed:False,Metric:False,Visible:False,Sort:None,Position:95|Column#71=Name:Radiation Hardening,Fixed:False,Metric:False,Visible:False,Sort:None,Position:78|Column#72=Name:Lead Free,Fixed:False,Metric:False,Visible:False,Sort:None,Position:46|Column#73=Name:Purchase-URL,Fixed:False,Metric:False,Visible:False,Sort:None,Position:76|Column#74=Name:Power Dissipation,Fixed:False,Metric:False,Visible:False,Sort:None,Position:72|Column#75=Name:Datasheets,Fixed:False,Metric:False,Visible:False,Sort:None,Position:27|Column#76=Name:Temperature Coefficient,Fixed:False,Metric:False,Visible:False,Sort:None,Position:86|Column#77=Name:PackageDescription,Fixed:False,Metric:False,Visible:False,Sort:None,Position:67|Column#78=Name:Max Power Dissipation,Fixed:False,Metric:False,Visible:False,Sort:None,Position:52|Column#79=Name:EU_RoHS_Compliance,Fixed:False,Metric:False,Visible:False,Sort:None,Position:36|Column#80=Name:Contact_Current_Rating,Fixed:False,Metric:False,Visible:False,Sort:None,Position:25|Column#81=Name:Value,Fixed:False,Metric:False,Visible:False,Sort:None,Position:93|Column#82=Name:Package,Fixed:False,Metric:False,Visible:False,Sort:None,Position:64|Column#83=Name:Image,Fixed:False,Metric:False,Visible:False,Sort:None,Position:42|Column#84=Name:Lead Spacing,Fixed:False,Metric:False,Visible:False,Sort:None,Position:47|Column#85=Name:LatestRevisionDate,Fixed:False,Metric:False,Visible:False,Sort:None,Position:44|Column#86=Name:Series,Fixed:False,Metric:False,Visible:False,Sort:None,Position:82|Column#87=Name:PackageReference,Fixed:False,Metric:False,Visible:False,Sort:None,Position:68|Column#88=Name:Publisher,Fixed:False,Metric:False,Visible:False,Sort:None,Position:75|Column#89=Name:Number of Elements,Fixed:False,Metric:False,Visible:False,Sort:None,Position:60|Column#90=Name:Features,Fixed:False,Metric:False,Visible:False,Sort:None,Position:38|Column#91=Name:Digi-Key_Part_Number,Fixed:False,Metric:False,Visible:False,Sort:None,Position:29|Column#92=Name:Mounting Type,Fixed:False,Metric:False,Visible:False,Sort:None,Position:57|Column#93=Name:Element Configuration,Fixed:False,Metric:False,Visible:False,Sort:None,Position:35|Column#94=Name:Height,Fixed:False,Metric:False,Visible:False,Sort:None,Position:40|Column#95=Name:Price,Fixed:False,Metric:False,Visible:False,Sort:None,Position:73|Column#96=Name:Lead Style,Fixed:False,Metric:False,Visible:False,Sort:None,Position:48|Column#97=Name:Operating Temperature,Fixed:False,Metric:False,Visible:False,Sort:None,Position:63
+OutputType6=BOM_PartType
+OutputName6=Bill of Materials
+OutputCategory6=Report
+OutputDocumentPath6=
+OutputVariantName6=
+OutputEnabled6=0
+OutputEnabled6_OutputMedium1=0
+OutputEnabled6_OutputMedium2=0
+OutputEnabled6_OutputMedium3=4
+OutputEnabled6_OutputMedium4=0
+OutputDefault6=0
+PageOptions6=Record=PageOptions|CenterHorizontal=True|CenterVertical=True|PrintScale=1.00|XCorrection=1.00|YCorrection=1.00|PrintKind=1|BorderSize=5000000|LeftOffset=0|BottomOffset=0|Orientation=2|PaperLength=1000|PaperWidth=1000|Scale=100|PaperSource=7|PrintQuality=-3|MediaType=1|DitherType=10|PrintScaleMode=1|PaperKind=Letter|PaperIndex=1
+Configuration6_Name1=ColumnNameFormat
+Configuration6_Item1=CaptionAsName
+Configuration6_Name2=General
+Configuration6_Item2=OpenExported=False|AddToProject=False|ReportBOMViolationsInMessages=False|ForceFit=False|NotFitted=False|Database=False|DatabasePriority=False|IncludePcbData=False|IncludeVaultData=False|IncludeCloudData=False|IncludeDocumentData=True|IncludeAlternatives=False|ShowExportOptions=True|TemplateFilename=|TemplateVaultGuid=|TemplateRevisionGuid=|BatchMode=5|FormWidth=1200|FormHeight=710|SupplierProdQty=1|SupplierAutoQty=False|SupplierUseCachedPricing=False|SupplierCurrency=USD|SolutionsPerItem=1|SuppliersPerSolution=1|ViewType=0|UseDirectApi=False|BomSetName=
+Configuration6_Name3=GroupOrder
+Configuration6_Item3=Comment=True|Footprint=True
+Configuration6_Name4=SortOrder
+Configuration6_Item4=Designator=Up|Comment=Up|Footprint=Up
+Configuration6_Name5=VisibleOrder
+Configuration6_Item5=Comment=120|Description=120|Designator=120|Footprint=120|LibRef=120|Quantity=120
+OutputType7=ComponentCrossReference
+OutputName7=Component Cross Reference Report
+OutputCategory7=Report
+OutputDocumentPath7=
+OutputVariantName7=
+OutputEnabled7=0
+OutputEnabled7_OutputMedium1=0
+OutputEnabled7_OutputMedium2=0
+OutputEnabled7_OutputMedium3=3
+OutputEnabled7_OutputMedium4=0
+OutputDefault7=0
+Configuration7_Name1=ColumnNameFormat
+Configuration7_Item1=CaptionAsName
+Configuration7_Name2=General
+Configuration7_Item2=OpenExported=False|AddToProject=False|ReportBOMViolationsInMessages=False|ForceFit=False|NotFitted=False|Database=False|DatabasePriority=False|IncludePcbData=False|IncludeVaultData=False|IncludeCloudData=False|IncludeDocumentData=True|IncludeAlternatives=False|ShowExportOptions=True|TemplateFilename=|TemplateVaultGuid=|TemplateRevisionGuid=|BatchMode=5|FormWidth=1200|FormHeight=710|SupplierProdQty=1|SupplierAutoQty=False|SupplierUseCachedPricing=False|SupplierCurrency=USD|SolutionsPerItem=1|SuppliersPerSolution=1|ViewType=0|UseDirectApi=False|BomSetName=
+Configuration7_Name3=GroupOrder
+Configuration7_Item3=Document=True
+Configuration7_Name4=SortOrder
+Configuration7_Item4=Document=Up|Designator=Up
+Configuration7_Name5=VisibleOrder
+Configuration7_Item5=Comment=120|Description=120|Designator=120|Footprint=120|LibRef=120|Quantity=120
+OutputType8=Design Rules Check
+OutputName8=Design Rules Check
+OutputCategory8=Validation
+OutputDocumentPath8=
+OutputVariantName8=
+OutputEnabled8=0
+OutputEnabled8_OutputMedium1=0
+OutputEnabled8_OutputMedium2=0
+OutputEnabled8_OutputMedium3=2
+OutputEnabled8_OutputMedium4=0
+OutputDefault8=0
+PageOptions8=Record=PageOptions|CenterHorizontal=True|CenterVertical=True|PrintScale=1.00|XCorrection=1.00|YCorrection=1.00|PrintKind=1|BorderSize=5000000|LeftOffset=0|BottomOffset=0|Orientation=2|PaperLength=1000|PaperWidth=1000|Scale=100|PaperSource=7|PrintQuality=-3|MediaType=1|DitherType=10|PrintScaleMode=1|PaperKind=Letter|PaperIndex=1
+Configuration8_Name1=OutputConfigurationParameter1
+Configuration8_Item1=vel1=1|DifferenceLevel10=1|DifferenceLevel11=1|DifferenceLevel12=1|DifferenceLevel13=1|DifferenceLevel14=1|DifferenceLevel15=1|DifferenceLevel16=1|DifferenceLevel17=1|DifferenceLevel18=1|DifferenceLevel19=1|DifferenceLevel2=1|DifferenceLevel20=1|DifferenceLevel21=1|DifferenceLevel22=1|DifferenceLevel23=1|DifferenceLevel24=1|DifferenceLevel25=1|DifferenceLevel26=1|DifferenceLevel27=1|DifferenceLevel28=1|DifferenceLevel29=1|DifferenceLevel3=1|DifferenceLevel30=1|DifferenceLevel31=1|DifferenceLevel32=1|DifferenceLevel33=1|DifferenceLevel34=1|DifferenceLevel35=1|DifferenceLevel36=1|DifferenceLevel37=1|DifferenceLevel38=1|DifferenceLevel39=1|DifferenceLevel4=1|DifferenceLevel40=1|DifferenceLevel41=1|DifferenceLevel42=1|DifferenceLevel43=1|DifferenceLevel44=1|DifferenceLevel45=1|DifferenceLevel46=1|DifferenceLevel47=1|DifferenceLevel48=1|DifferenceLevel49=1|DifferenceLevel5=1|DifferenceLevel50=1|DifferenceLevel51=1|DifferenceLevel52=1|DifferenceLevel53=1|DifferenceLevel54=1|DifferenceLevel55=1|DifferenceLevel56=1|DifferenceLevel57=1|DifferenceLevel58=1|DifferenceLevel59=1|DifferenceLevel6=1|DifferenceLevel60=1|DifferenceLevel61=1|DifferenceLevel62=1|DifferenceLevel63=1|DifferenceLevel64=1|DifferenceLevel65=1|DifferenceLevel66=1|DifferenceLevel67=1|DifferenceLevel68=1|DifferenceLevel7=1|DifferenceLevel8=1|DifferenceLevel9=1|Record=DiffReportView
+OutputType9=Differences Report
+OutputName9=Differences Report
+OutputCategory9=Validation
+OutputDocumentPath9=
+OutputVariantName9=
+OutputEnabled9=0
+OutputEnabled9_OutputMedium1=0
+OutputEnabled9_OutputMedium2=0
+OutputEnabled9_OutputMedium3=1
+OutputEnabled9_OutputMedium4=0
+OutputDefault9=0
+PageOptions9=Record=PageOptions|CenterHorizontal=True|CenterVertical=True|PrintScale=1.00|XCorrection=1.00|YCorrection=1.00|PrintKind=1|BorderSize=5000000|LeftOffset=0|BottomOffset=0|Orientation=2|PaperLength=1000|PaperWidth=1000|Scale=100|PaperSource=7|PrintQuality=-3|MediaType=1|DitherType=10|PrintScaleMode=1|PaperKind=Letter|PaperIndex=1
+Configuration9_Name1=OutputConfigurationParameter1
+Configuration9_Item1=DifferenceLevel1=1|DifferenceLevel10=1|DifferenceLevel11=1|DifferenceLevel12=1|DifferenceLevel13=1|DifferenceLevel14=1|DifferenceLevel15=1|DifferenceLevel16=1|DifferenceLevel17=1|DifferenceLevel18=1|DifferenceLevel19=1|DifferenceLevel2=1|DifferenceLevel20=1|DifferenceLevel21=1|DifferenceLevel22=1|DifferenceLevel23=1|DifferenceLevel24=1|DifferenceLevel25=1|DifferenceLevel26=1|DifferenceLevel27=1|DifferenceLevel28=1|DifferenceLevel29=1|DifferenceLevel3=1|DifferenceLevel30=1|DifferenceLevel31=1|DifferenceLevel32=1|DifferenceLevel33=1|DifferenceLevel34=1|DifferenceLevel35=1|DifferenceLevel36=1|DifferenceLevel37=1|DifferenceLevel38=1|DifferenceLevel39=1|DifferenceLevel4=1|DifferenceLevel40=1|DifferenceLevel41=1|DifferenceLevel42=1|DifferenceLevel43=1|DifferenceLevel44=1|DifferenceLevel45=1|DifferenceLevel46=1|DifferenceLevel47=1|DifferenceLevel48=1|DifferenceLevel49=1|DifferenceLevel5=1|DifferenceLevel50=1|DifferenceLevel51=1|DifferenceLevel52=1|DifferenceLevel53=1|DifferenceLevel54=1|DifferenceLevel55=1|DifferenceLevel56=1|DifferenceLevel57=1|DifferenceLevel58=1|DifferenceLevel59=1|DifferenceLevel6=1|DifferenceLevel60=1|DifferenceLevel61=1|DifferenceLevel62=1|DifferenceLevel63=1|DifferenceLevel64=1|DifferenceLevel65=1|DifferenceLevel66=1|DifferenceLevel67=1|DifferenceLevel68=1|DifferenceLevel7=1|DifferenceLevel8=1|DifferenceLevel9=1|Record=DiffReportView
+
+[PublishSettings]
+OutputFilePath2=C:\Users\Bryan Moed\Documents\GitHub\BikerBlinker\Hardware\BikerBlinkerRev1\Project Outputs for BikerBlinkerRev1\
+ReleaseManaged2=1
+OutputBasePath2=Project Outputs for BikerBlinkerRev1
+OutputPathMedia2=
+OutputPathMediaValue2=
+OutputPathOutputer2=[Output Type]
+OutputPathOutputerPrefix2=
+OutputPathOutputerValue2=
+OutputFileName2=
+OutputFileNameMulti2=
+UseOutputNameForMulti2=1
+OutputFileNameSpecial2=
+OpenOutput2=1
+OutputFilePath3=C:\Users\Bryan Moed\Documents\GitHub\BikerBlinker\Hardware\BikerBlinkerRev1\Project Outputs for BikerBlinkerRev1\
+ReleaseManaged3=1
+OutputBasePath3=Project Outputs for BikerBlinkerRev1
+OutputPathMedia3=
+OutputPathMediaValue3=
+OutputPathOutputer3=[Output Type]
+OutputPathOutputerPrefix3=
+OutputPathOutputerValue3=
+OutputFileName3=
+OutputFileNameMulti3=
+UseOutputNameForMulti3=1
+OutputFileNameSpecial3=
+OpenOutput3=1
+OutputFilePath4=C:\Users\Bryan Moed\Documents\GitHub\BikerBlinker\Hardware\BikerBlinkerRev1\Project Outputs for BikerBlinkerRev1\.PDF
+ReleaseManaged4=1
+OutputBasePath4=Project Outputs for BikerBlinkerRev1
+OutputPathMedia4=
+OutputPathMediaValue4=
+OutputPathOutputer4=[Output Type]
+OutputPathOutputerPrefix4=
+OutputPathOutputerValue4=
+OutputFileName4=ManufacturingOutputs.PDF
+OutputFileNameMulti4=
+UseOutputNameForMulti4=1
+OutputFileNameSpecial4=
+OpenOutput4=1
+PromptOverwrite4=1
+PublishMethod4=0
+ZoomLevel4=50
+FitSCHPrintSizeToDoc4=1
+FitPCBPrintSizeToDoc4=1
+GenerateNetsInfo4=1
+MarkPins4=1
+MarkNetLabels4=1
+MarkPortsId4=1
+GenerateTOC4=1
+ShowComponentParameters4=1
+GlobalBookmarks4=0
+PDFACompliance4=Disabled
+PDFVersion4=Default
+
+[GeneratedFilesSettings]
+RelativeOutputPath2=C:\Users\Bryan Moed\Documents\GitHub\BikerBlinker\Hardware\BikerBlinkerRev1\Project Outputs for BikerBlinkerRev1\
+OpenOutputs2=1
+AddToProject2=1
+TimestampFolder2=0
+UseOutputName2=0
+OpenODBOutput2=0
+OpenGerberOutput2=0
+OpenNCDrillOutput2=0
+OpenIPCOutput2=0
+EnableReload2=0
+RelativeOutputPath3=C:\Users\Bryan Moed\Documents\GitHub\BikerBlinker\Hardware\BikerBlinkerRev1\Project Outputs for BikerBlinkerRev1\
+OpenOutputs3=1
+AddToProject3=1
+TimestampFolder3=0
+UseOutputName3=0
+OpenODBOutput3=0
+OpenGerberOutput3=0
+OpenNCDrillOutput3=0
+OpenIPCOutput3=0
+EnableReload3=0
+RelativeOutputPath4=C:\Users\Bryan Moed\Documents\GitHub\BikerBlinker\Hardware\BikerBlinkerRev1\Project Outputs for BikerBlinkerRev1\.PDF
+OpenOutputs4=1
+
