@@ -1,0 +1,27 @@
+Removed Pin From Net: NetName=GND Pin=J-A1
+Removed Pin From Net: NetName=NetC9_1 Pin=J-A4
+Removed Pin From Net: NetName=NetC9_1 Pin=J-A9
+Removed Pin From Net: NetName=GND Pin=J-A12
+Removed Pin From Net: NetName=GND Pin=J-B1
+Removed Pin From Net: NetName=NetC9_1 Pin=J-B4
+Removed Pin From Net: NetName=NetC9_1 Pin=J-B9
+Removed Pin From Net: NetName=GND Pin=J-B12
+Removed Pin From Net: NetName=GND Pin=R6-1
+Removed Pin From Net: NetName=GND Pin=R7-1
+Removed Member From Class: ClassName=BikerBlinker Member=R6
+Removed Member From Class: ClassName=BikerBlinker Member=R7
+Change Component Footprint: Designator=J Old Footprint=GCT_USB4085-GF-A_REVA New Footprint=AMPHENOL_10118192-0002LF
+Change Component Comment : Designator=J Old Comment=USB4085-GF-A_REVA New Comment=10118192-0002LF
+Change component parameters: Designator = "J" ("J"); Footprint = "GCT_USB4085-GF-A_REVA"; UniqueID = "\ANVYEPJJ" ("\ANVYEPJJ")
+Change component parameters (AddParameter): Name = "Arrow_Electronics-Purchase-URL"; Value = "https://snapeda.com/shop?store=Arrow+Electronics&id=551616"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Availability"; Value = "Good"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "DigiKey-Purchase-URL"; Value = "https://snapeda.com/shop?store=DigiKey&id=551616"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "MF"; Value = "Amphenol ICC"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Mouser-Purchase-URL"; Value = "https://snapeda.com/shop?store=Mouser&id=551616"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "MP"; Value = "10118192-0002LF"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Package"; Value = "None"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Price"; Value = "None"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "SnapEDA_Link"; Value = "https://www.snapeda.com/parts/10118192-0002LF/Amphenol%20FCI/view-part/551616/?ref=snap"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Value"; Value = ""; VariantName = "[No Variations]"
+Added Pin To Net: NetName=NetC9_1 Pin=J-1
+Added Pin To Net: NetName=GND Pin=J-5
