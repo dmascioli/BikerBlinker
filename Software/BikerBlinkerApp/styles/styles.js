@@ -1,4 +1,6 @@
 import { StyleSheet } from "react-native";
+require('react-native').Dimensions
+var {vw, vh, vmin, vmax} = require('react-native-viewport-units');
 
 /*
 * Color Palette
@@ -22,22 +24,41 @@ export const layout = StyleSheet.create({
       height: '100%'
     },
     header: {
-        color: "#F8DA00",
+        color: "white",
         textAlign: 'center',
-        fontSize: 24,
+        fontFamily: "sans-serif",
+        fontSize: 28,
+        marginTop: 120
     },
     touchable: {
       height: '500px'
     },
     subHeader: {
-      color: "#F8DA00",
+      color: "white",
       textAlign: 'center',
-      fontSize: 18
+      fontFamily: "sans-serif",
+      fontSize: 16,
+      marginBottom: 160
     },
     menu: {
       display: "flex", 
       height: "40%",
       width: "100%"
+    },
+    menuItem: {
+      borderTopColor: "#909590",
+      width: 100*vw,
+      borderWidth: 1,
+      padding: 30,
+      borderLeftWidth: 0,
+      borderRightWidth: 0,
+      borderBottomWidth: 0
+    },
+    menuItemText: {
+      color: "white",
+      textAlign: "center",
+      fontFamily: "sans-serif",
+      fontSize: 20,
     }
   });
 
@@ -55,16 +76,12 @@ export const components = StyleSheet.create({
   main: {
     display: 'flex',
     flexDirection: 'row',
+    height: '100%'
   },
   verticalRule: {
     borderLeftWidth: 6,
     borderLeftColor: 'white',
-    borderStyle: 'dashed',
-    height: '100%',
-    position: 'absolute',
-    left: '50%',
-    marginLeft: -3,
-    top: 0
+    borderStyle: 'dashed'
   }
 });
   

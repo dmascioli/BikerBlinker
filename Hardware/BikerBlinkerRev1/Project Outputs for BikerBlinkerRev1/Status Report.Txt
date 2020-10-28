@@ -1,0 +1,10 @@
+Output: Generates pick and place files
+Type  : Pick Place
+From  : Variant [[No Variations]] of PCB Document [BikerBlinker.PcbDoc]
+   Generated File[Pick Place for BikerBlinker.txt]
+
+
+Files Generated   : 1
+Documents Printed : 0
+
+Finished Output Generation At 3:35:49 PM On 10/16/2020

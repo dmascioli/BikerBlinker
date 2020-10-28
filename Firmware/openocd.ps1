@@ -1,0 +1,1 @@
+.\openocd-esp32\bin\openocd.exe -f .\openocd-esp32\share\openocd\scripts\interface\ftdi\esp32_devkitj_v1.cfg -f .\openocd-esp32\share\openocd\scripts\board\esp-wroom-32.cfg
