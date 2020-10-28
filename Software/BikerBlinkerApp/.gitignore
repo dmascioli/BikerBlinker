@@ -57,6 +57,7 @@ buck-out/
 
 # CocoaPods
 /ios/Pods/
+ios/BikerBlinkerApp.xcworkspace/xcshareddata/
 
 # Expo
 Software/BikerBlinkerApp/.expo/*
