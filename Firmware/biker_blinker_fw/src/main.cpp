@@ -1,6 +1,9 @@
 #include <Arduino.h>
 #include "bluetooth.h"
 #include "blinkers.h"
+#include "battery.h"
+
+int batteryLevel = 0;
 
 void setup()
 {
@@ -8,10 +11,16 @@ void setup()
   Serial.begin(115200);
   initBluetooth();
   initBlinkers();
+  initBattery();
 }
 
 void loop()
 {
+
+  batteryLevel = read_battery_pin();
+
+  setBatLevel(batteryLevel);
+
   /*
   TEST_leftBlinkOn();
   delay(10000);

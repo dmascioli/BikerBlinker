@@ -62,4 +62,6 @@ buck-out/
 Software/BikerBlinkerApp/.expo/*
 web-build/
 
+Firmware/openocd-esp32
+
 *.code-workspace

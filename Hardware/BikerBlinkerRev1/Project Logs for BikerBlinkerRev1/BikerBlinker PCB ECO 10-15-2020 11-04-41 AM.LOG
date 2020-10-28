@@ -1,0 +1,43 @@
+Removed Pin From Net: NetName=NetJ1_A5 Pin=J1-A5
+Removed Pin From Net: NetName=NetC9_1 Pin=J1-A9
+Removed Pin From Net: NetName=GND Pin=J1-A12
+Removed Pin From Net: NetName=NetJ1_B5 Pin=J1-B5
+Removed Pin From Net: NetName=NetC9_1 Pin=J1-B9
+Removed Pin From Net: NetName=GND Pin=J1-B12
+Removed Pin From Net: NetName=NetJ1_A5 Pin=R6-2
+Removed Pin From Net: NetName=NetJ1_B5 Pin=R7-2
+Removed Member From Class: ClassName=BikerBlinker Member=J1
+Added Component: Designator=J5(JST_B2B-PH-K-S(LF)(SN))
+Add component (AddParameter): Name = "Availability"; Value = "Unavailable"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "MF"; Value = "JST Sales"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "MP"; Value = "B2B-PH-K-S_LF__SN_"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Package"; Value = "None"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Price"; Value = "None"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "SnapEDA_Link"; Value = "https://www.snapeda.com/parts/B2B-PH-K-S%28LF%29%28SN%29/JST%20Sales%20America%20Inc./view-part/424103/?ref=snap"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Value"; Value = ""; VariantName = "[No Variations]"
+Added Component: Designator=J(GCT_USB4085-GF-A_REVA)
+Add component (AddParameter): Name = "Availability"; Value = "Unavailable"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "MF"; Value = "Global Connector Technology"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "MP"; Value = "USB4085-GF-A"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Package"; Value = "Package Analog Devices"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Price"; Value = "None"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "SnapEDA_Link"; Value = "https://www.snapeda.com/parts/USB4085-GF-A/Global%20Connector%20Technology/view-part/2780390/?ref=snap"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Value"; Value = ""; VariantName = "[No Variations]"
+Added Pin To Net: NetName=NetJ5_1 Pin=J5-1
+Added Pin To Net: NetName=NetJ5_2 Pin=J5-2
+Added Pin To Net: NetName=GND Pin=J-A1
+Added Pin To Net: NetName=NetC9_1 Pin=J-A4
+Added Pin To Net: NetName=NetJ1_B5 Pin=J-A5
+Added Pin To Net: NetName=NetC9_1 Pin=J-A9
+Added Pin To Net: NetName=GND Pin=J-A12
+Added Pin To Net: NetName=GND Pin=J-B1
+Added Pin To Net: NetName=NetC9_1 Pin=J-B4
+Added Pin To Net: NetName=NetJ1_A5 Pin=J-B5
+Added Pin To Net: NetName=NetC9_1 Pin=J-B9
+Added Pin To Net: NetName=GND Pin=J-B12
+Added Pin To Net: NetName=NetJ1_B5 Pin=R6-2
+Added Pin To Net: NetName=NetJ1_A5 Pin=R7-2
+Change Net Name : Old Net Name=NetJ1_A5 New Net Name=NetJ_B5
+Change Net Name : Old Net Name=NetJ1_B5 New Net Name=NetJ_A5
+Added Member To Class: ClassName=BikerBlinker Member=Component J5 Center
+Added Member To Class: ClassName=BikerBlinker Member=Component J USB4085-GF-A_REVA

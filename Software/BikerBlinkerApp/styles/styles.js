@@ -1,6 +1,4 @@
 import { StyleSheet } from "react-native";
-require('react-native').Dimensions
-var {vw, vh, vmin, vmax} = require('react-native-viewport-units');
 
 /*
 * Color Palette
@@ -26,7 +24,6 @@ export const layout = StyleSheet.create({
     header: {
         color: "white",
         textAlign: 'center',
-        fontFamily: "sans-serif",
         fontSize: 28,
         marginTop: 120
     },
@@ -36,7 +33,6 @@ export const layout = StyleSheet.create({
     subHeader: {
       color: "white",
       textAlign: 'center',
-      fontFamily: "sans-serif",
       fontSize: 16,
       marginBottom: 160
     },
@@ -47,7 +43,7 @@ export const layout = StyleSheet.create({
     },
     menuItem: {
       borderTopColor: "#909590",
-      width: 100*vw,
+      width: 100,
       borderWidth: 1,
       padding: 30,
       borderLeftWidth: 0,
@@ -57,7 +53,6 @@ export const layout = StyleSheet.create({
     menuItemText: {
       color: "white",
       textAlign: "center",
-      fontFamily: "sans-serif",
       fontSize: 20,
     }
   });
