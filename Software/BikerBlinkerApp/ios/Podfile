@@ -87,6 +87,8 @@ target 'BikerBlinkerApp' do
   # you should disable these next few lines.
   add_flipper_pods!
 
+  pod 'react-native-ble-plx', :path => '../node_modules/react-native-ble-plx'
+
   post_install do |installer|
     flipper_post_install(installer)
   end
