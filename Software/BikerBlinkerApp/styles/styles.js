@@ -77,6 +77,10 @@ export const components = StyleSheet.create({
     borderLeftWidth: 6,
     borderLeftColor: 'white',
     borderStyle: 'dashed'
+  },
+  arrow: {
+    width: 150,
+    height: 100
   }
 });
   
