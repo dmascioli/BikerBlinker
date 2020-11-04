@@ -59,5 +59,7 @@
   <string>Microphone will pick up users voice commands</string>
   <key>NSSpeechRecognitionUsageDescription</key>
   <string>Speech recognition will use users voice input to issue commands to BikerBlinker module</string>
+  <key>NSBluetoothAlwaysUsageDescription</key>
+  <string>Sends signals to turn signal module over bluetooth</string>
 </dict>
 </plist>
