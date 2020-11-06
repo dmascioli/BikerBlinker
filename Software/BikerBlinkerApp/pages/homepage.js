@@ -50,7 +50,7 @@ export default class HomePage extends React.Component {
 
   leftTurn() {
   	console.log("turn left");
-  	this.manager.writeCharacteristicWithResponseForService(this.state.deviceId, 'dad223bb-67b0-40d0-8a76-4bca05ae04b6', 'cda2e29c-d126-4887-9bfc-5a390dfe8255', 'bGVmdA==', false);
+  	//this.manager.writeCharacteristicWithResponseForService(this.state.deviceId, 'dad223bb-67b0-40d0-8a76-4bca05ae04b6', 'cda2e29c-d126-4887-9bfc-5a390dfe8255', 'bGVmdA==', false);
   }
 
   rightTurn() {
@@ -114,13 +114,22 @@ export default class HomePage extends React.Component {
   }
 
   async setupNotifications(device) {
+    console.log("try and write");
+    console.log(device);
+    await device.writeCharacteristicWithResponseForService(
+      'dad223bb-67b0-40d0-8a76-4bca05ae04b6',
+      'cda2e29c-d126-4887-9bfc-5a390dfe8255',
+      "bGVmdA==", false);
+    conosle.log("did it write?");
+    /*
     for (const id in this.sensors) {
       const service = this.serviceUUID(id)
       const characteristicW = this.writeUUID(id)
       const characteristicN = this.notifyUUID(id)
 
+
       const characteristic = await device.writeCharacteristicWithResponseForService(
-        service, characteristicW, "AQ==" /* 0x01 in hex */
+        service, characteristicW, "AQ==" 
       )
 
       device.monitorCharacteristicForService(service, characteristicN, (error, characteristic) => {
@@ -131,6 +140,7 @@ export default class HomePage extends React.Component {
         this.updateValue(characteristic.uuid, characteristic.value)
       })
     }
+    */
   }
 
   render() {
