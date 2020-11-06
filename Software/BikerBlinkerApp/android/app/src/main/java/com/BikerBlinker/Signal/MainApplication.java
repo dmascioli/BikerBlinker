@@ -6,6 +6,7 @@ import android.net.Uri;
 
 import com.facebook.react.PackageList;
 import com.facebook.react.ReactApplication;
+import com.rusel.RCTBluetoothSerial.RCTBluetoothSerialPackage;
 import com.polidea.reactnativeble.BlePackage;
 import com.facebook.react.ReactPackage;
 import com.wenkesj.voice.VoicePackage;

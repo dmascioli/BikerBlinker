@@ -2,140 +2,109 @@ import React from 'react';
 import LeftSignalButton from '../components/leftSignalButton';
 import RightSignalButton from '../components/rightSignalButton';
 import { layout, components} from '../styles/styles';
-import { View } from "react-native";
-import { BleManager } from 'react-native-ble-plx';
+import { View, StyleSheet } from "react-native";
+import BluetoothSerial from 'react-native-bluetooth-serial';
 
 export default class HomePage extends React.Component {
-	constructor() {
-    super()
-    this.manager = new BleManager()
-    this.state = {info: "", values: {}, device: null}
-    this.prefixUUID = "f000aa"
-    this.suffixUUID = "-0451-4000-b000-000000000000"
-    this.serviceUUID = ""
-    this.blinkerUUID = ""
-    this.batteryUUID =""
-    this.sensors = {
-      0: "Battery",
-      1: "LeftBlinkerOn",
-      2: "RightBlinker",
-      3: "Brake",
-      4: "Barometer",
-      5: "Gyroscope"
+	constructor(props) {
+    super(props)
+    this.state = {
+      isEnabled: false,
+      discovering: false,
+      devices: [],
+      unpairedDevices: [],
+      connected: false,
     }
   }
 
-  serviceUUID(num) {
-    return this.prefixUUID + num + "0" + this.suffixUUID
+  componentDidMount() {
+    Promise.all([
+      BluetoothSerial.isEnabled(),
+      BluetoothSerial.list()
+    ])
+    .then((values) => {
+      const [ isEnabled, devices ] = values
+ 
+      this.setState({ isEnabled, devices })
+    })
+ 
+    BluetoothSerial.on('bluetoothEnabled', () => {
+ 
+      Promise.all([
+        BluetoothSerial.isEnabled(),
+        BluetoothSerial.list()
+      ])
+      .then((values) => {
+        const [ isEnabled, devices ] = values
+        this.setState({  devices })
+      })
+ 
+      BluetoothSerial.on('bluetoothDisabled', () => {
+ 
+         this.setState({ devices: [] })
+ 
+      })
+      BluetoothSerial.on('error', (err) => console.log(`Error: ${err.message}`))
+ 
+    })
   }
-
-  notifyUUID(num) {
-    return this.prefixUUID + num + "1" + this.suffixUUID
+  _renderItem(item){
+ 
+    return(<View style={styles.deviceNameWrap}>
+            <Text style={styles.deviceName}>{item.item.name}</Text>
+          </View>)
   }
-
-  writeUUID(num) {
-    return this.prefixUUID + num + "2" + this.suffixUUID
+  enable () {
+    BluetoothSerial.enable()
+    .then((res) => this.setState({ isEnabled: true }))
+    .catch((err) => Toast.showShortBottom(err.message))
   }
-  info(message) {
-    this.setState({info: message})
+ 
+  disable () {
+    BluetoothSerial.disable()
+    .then((res) => this.setState({ isEnabled: false }))
+    .catch((err) => Toast.showShortBottom(err.message))
   }
-
-  error(message) {
-    this.setState({info: "ERROR: " + message})
-  }
-
-  updateValue(key, value) {
-    this.setState({values: {...this.state.values, [key]: value}})
+ 
+  toggleBluetooth (value) {
+    if (value === true) {
+      this.enable()
+    } else {
+      this.disable()
+    }
   }
 
   leftTurn() {
   	console.log("turn left");
-  	this.manager.writeCharacteristicWithResponseForService(this.state.deviceId, 'dad223bb-67b0-40d0-8a76-4bca05ae04b6', 'cda2e29c-d126-4887-9bfc-5a390dfe8255', 'bGVmdA==', false);
+  	//this.manager.writeCharacteristicWithResponseForService(this.state.deviceId, 'dad223bb-67b0-40d0-8a76-4bca05ae04b6', 'cda2e29c-d126-4887-9bfc-5a390dfe8255', 'bGVmdA==', false);
   }
 
   rightTurn() {
   	console.log("turn right");
   }
 
-	componentWillMount() {
-    if (Platform.OS === 'ios') {
-      this.manager.onStateChange((state) => {
-      	console.log("scanning for bt");
-        if (state === 'PoweredOn') this.scanAndConnect()
-      })
-    } else {
-      this.scanAndConnect()
-    }
-  }
-
-  scanAndConnect() {
-    this.manager.startDeviceScan(['dad223bb-67b0-40d0-8a76-4bca05ae04b6'], 
-                                 null, (error, device) => {
-			console.log("Scanning");                                 	
-      this.info("Scanning...")
-      console.log(device);
-      console.log(error);
-      
-      if (error) {
-      	console.log("has error");
-        this.error(error.message)
-        return
-      }
-
-      console.log("has device");
-      console.log(device.name);
-
-      if (device.name === 'BikerBlinker') {
-      	console.log("has biker blinker");
-        this.info("Connecting to Biker Blinker")
-        this.manager.stopDeviceScan()
-        this.setState(prevState => Object.assign({}, {
-          ...prevState,
-          deviceId: device.id,
-        }));
-        device.connect()
-          .then((device) => {
-          	console.log("connected to biker blinker");
-          	console.log(device);
-            this.info("Discovering services and characteristics")
-            return device.discoverAllServicesAndCharacteristics()
-          })
-          .then((device) => {
-            this.info("Setting notifications")
-            return this.setupNotifications(device)
-          })
-          .then(() => {
-            this.info("Listening...")
-          }, (error) => {
-            this.error(error.message)
-          })
-      }
-    });
-  }
-
-  async setupNotifications(device) {
-    for (const id in this.sensors) {
-      const service = this.serviceUUID(id)
-      const characteristicW = this.writeUUID(id)
-      const characteristicN = this.notifyUUID(id)
-
-      const characteristic = await device.writeCharacteristicWithResponseForService(
-        service, characteristicW, "AQ==" /* 0x01 in hex */
-      )
-
-      device.monitorCharacteristicForService(service, characteristicN, (error, characteristic) => {
-        if (error) {
-          this.error(error.message)
-          return
-        }
-        this.updateValue(characteristic.uuid, characteristic.value)
-      })
-    }
-  }
-
   render() {
-	  return (
+	  return (  
 	    <View style={layout.container}>
+        <View style={styles.toolbar}>
+
+              <Text style={styles.toolbarTitle}>Bluetooth Device List</Text>
+
+              <View style={styles.toolbarButton}>
+
+                <Switch
+                  value={this.state.isEnabled}
+                  onValueChange={(val) => this.toggleBluetooth(val)}
+                />
+
+              </View>
+        </View>
+        <FlatList
+          style={{flex:1}}
+          data={this.state.devices}
+          keyExtractor={item => item.id}
+          renderItem={(item) => this._renderItem(item)}
+        />
 	      <View style={components.main}>
 	      <LeftSignalButton press={this.leftTurn} />
 	        <View style={components.verticalRule}/>
@@ -145,3 +114,34 @@ export default class HomePage extends React.Component {
 	  );  	
   }
 }
+ 
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    backgroundColor: '#F5FCFF',
+  },
+  toolbar:{
+    paddingTop:30,
+    paddingBottom:30,
+    flexDirection:'row'
+  },
+  toolbarButton:{
+    width: 50,
+    marginTop: 8,
+  },
+  toolbarTitle:{
+    textAlign:'center',
+    fontWeight:'bold',
+    fontSize: 20,
+    flex:1,
+    marginTop:6
+  },
+  deviceName: {
+    fontSize: 17,
+    color: "black"
+  },
+  deviceNameWrap: {
+    margin: 10,
+    borderBottomWidth:1
+  }
+});
