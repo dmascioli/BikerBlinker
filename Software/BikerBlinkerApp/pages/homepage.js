@@ -1,15 +1,15 @@
-import React, { Component } from 'react';
+import React from 'react';
 import LeftSignalButton from '../components/leftSignalButton';
 import RightSignalButton from '../components/rightSignalButton';
 import { layout, components} from '../styles/styles';
 import { View } from "react-native";
 import { BleManager } from 'react-native-ble-plx';
 
-export default class Main extends Component {
+export default class HomePage extends React.Component {
 	constructor() {
     super()
     this.manager = new BleManager()
-    this.state = {info: "", values: {}}
+    this.state = {info: "", values: {}, device: null}
     this.prefixUUID = "f000aa"
     this.suffixUUID = "-0451-4000-b000-000000000000"
     this.serviceUUID = ""
@@ -48,6 +48,15 @@ export default class Main extends Component {
     this.setState({values: {...this.state.values, [key]: value}})
   }
 
+  leftTurn() {
+  	console.log("turn left");
+  	this.manager.writeCharacteristicWithResponseForService(this.state.deviceId, 'dad223bb-67b0-40d0-8a76-4bca05ae04b6', 'cda2e29c-d126-4887-9bfc-5a390dfe8255', 'bGVmdA==', false);
+  }
+
+  rightTurn() {
+  	console.log("turn right");
+  }
+
 	componentWillMount() {
     if (Platform.OS === 'ios') {
       this.manager.onStateChange((state) => {
@@ -60,11 +69,12 @@ export default class Main extends Component {
   }
 
   scanAndConnect() {
-    this.manager.startDeviceScan(null, 
+    this.manager.startDeviceScan(['dad223bb-67b0-40d0-8a76-4bca05ae04b6'], 
                                  null, (error, device) => {
 			console.log("Scanning");                                 	
       this.info("Scanning...")
-      //conosle.log(device);
+      console.log(device);
+      console.log(error);
       
       if (error) {
       	console.log("has error");
@@ -72,15 +82,27 @@ export default class Main extends Component {
         return
       }
 
+      console.log("has device");
+      console.log(device.name);
+
       if (device.name === 'BikerBlinker') {
       	console.log("has biker blinker");
         this.info("Connecting to Biker Blinker")
         this.manager.stopDeviceScan()
+        this.setState(prevState => Object.assign({}, {
+          ...prevState,
+          deviceId: device.id,
+        }));
         device.connect()
           .then((device) => {
           	console.log("connected to biker blinker");
+          	console.log(device);
             this.info("Discovering services and characteristics")
             return device.discoverAllServicesAndCharacteristics()
+          })
+          .then((device) => {
+            this.info("Setting notifications")
+            return this.setupNotifications(device)
           })
           .then(() => {
             this.info("Listening...")
@@ -115,9 +137,9 @@ export default class Main extends Component {
 	  return (
 	    <View style={layout.container}>
 	      <View style={components.main}>
-	      <LeftSignalButton />
+	      <LeftSignalButton press={this.leftTurn} />
 	        <View style={components.verticalRule}/>
-	      <RightSignalButton />
+	      <RightSignalButton press={this.rightTurn} />
 	      </View>
 	    </View>
 	  );  	

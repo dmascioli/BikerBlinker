@@ -1,4 +1,4 @@
-package com.bikerblinkerapp;
+package com.BikerBlinker.Signal;
 
 import android.os.Bundle;
 

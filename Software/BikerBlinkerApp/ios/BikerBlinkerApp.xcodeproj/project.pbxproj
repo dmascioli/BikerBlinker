@@ -12,13 +12,14 @@
 		13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
 		13B07FC11A68108700A75B9A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
 		3E461D99554A48A4959DE609 /* SplashScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AA286B85B6C04FC6940260E9 /* SplashScreen.storyboard */; };
+		6954B14B255354420001C8D8 /* BikerBlinker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6954B14A255354420001C8D8 /* BikerBlinker.swift */; };
 		96905EF65AED1B983A6B3ABC /* libPods-BikerBlinkerApp.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 58EEBF8E8E6FB1BC6CAF49B5 /* libPods-BikerBlinkerApp.a */; };
 		BB2F792D24A3F905000567C9 /* Expo.plist in Resources */ = {isa = PBXBuildFile; fileRef = BB2F792C24A3F905000567C9 /* Expo.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		008F07F21AC5B25A0029DE68 /* main.jsbundle */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = main.jsbundle; sourceTree = "<group>"; };
-		13B07F961A680F5B00A75B9A /* BikerBlinkerApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BikerBlinkerApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		13B07F961A680F5B00A75B9A /* Signal.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Signal.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		13B07FAF1A68108700A75B9A /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = BikerBlinkerApp/AppDelegate.h; sourceTree = "<group>"; };
 		13B07FB01A68108700A75B9A /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AppDelegate.m; path = BikerBlinkerApp/AppDelegate.m; sourceTree = "<group>"; };
 		13B07FB21A68108700A75B9A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
@@ -26,6 +27,8 @@
 		13B07FB61A68108700A75B9A /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = BikerBlinkerApp/Info.plist; sourceTree = "<group>"; };
 		13B07FB71A68108700A75B9A /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = BikerBlinkerApp/main.m; sourceTree = "<group>"; };
 		58EEBF8E8E6FB1BC6CAF49B5 /* libPods-BikerBlinkerApp.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-BikerBlinkerApp.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		6954B149255354410001C8D8 /* BikerBlinkerApp-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "BikerBlinkerApp-Bridging-Header.h"; sourceTree = "<group>"; };
+		6954B14A255354420001C8D8 /* BikerBlinker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BikerBlinker.swift; sourceTree = "<group>"; };
 		6C2E3173556A471DD304B334 /* Pods-BikerBlinkerApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BikerBlinkerApp.debug.xcconfig"; path = "Target Support Files/Pods-BikerBlinkerApp/Pods-BikerBlinkerApp.debug.xcconfig"; sourceTree = "<group>"; };
 		7A4D352CD337FB3A3BF06240 /* Pods-BikerBlinkerApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BikerBlinkerApp.release.xcconfig"; path = "Target Support Files/Pods-BikerBlinkerApp/Pods-BikerBlinkerApp.release.xcconfig"; sourceTree = "<group>"; };
 		AA286B85B6C04FC6940260E9 /* SplashScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = SplashScreen.storyboard; path = BikerBlinkerApp/SplashScreen.storyboard; sourceTree = "<group>"; };
@@ -58,6 +61,8 @@
 				13B07FB11A68108700A75B9A /* LaunchScreen.xib */,
 				13B07FB71A68108700A75B9A /* main.m */,
 				AA286B85B6C04FC6940260E9 /* SplashScreen.storyboard */,
+				6954B14A255354420001C8D8 /* BikerBlinker.swift */,
+				6954B149255354410001C8D8 /* BikerBlinkerApp-Bridging-Header.h */,
 			);
 			name = BikerBlinkerApp;
 			sourceTree = "<group>";
@@ -96,7 +101,7 @@
 		83CBBA001A601CBA00E9B192 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				13B07F961A680F5B00A75B9A /* BikerBlinkerApp.app */,
+				13B07F961A680F5B00A75B9A /* Signal.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -139,7 +144,7 @@
 			);
 			name = BikerBlinkerApp;
 			productName = BikerBlinkerApp;
-			productReference = 13B07F961A680F5B00A75B9A /* BikerBlinkerApp.app */;
+			productReference = 13B07F961A680F5B00A75B9A /* Signal.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -152,7 +157,7 @@
 				TargetAttributes = {
 					13B07F861A680F5B00A75B9A = {
 						DevelopmentTeam = T2SVF422T7;
-						LastSwiftMigration = 1120;
+						LastSwiftMigration = 1200;
 					};
 				};
 			};
@@ -253,6 +258,7 @@
 			files = (
 				13B07FBC1A68108700A75B9A /* AppDelegate.m in Sources */,
 				13B07FC11A68108700A75B9A /* main.m in Sources */,
+				6954B14B255354420001C8D8 /* BikerBlinker.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -277,6 +283,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = BikerBlinkerApp/Signal.entitlements;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = T2SVF422T7;
 				ENABLE_BITCODE = NO;
@@ -292,10 +299,12 @@
 					"-ObjC",
 					"-lc++",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = org.name.BikerBlinkerApp;
-				PRODUCT_NAME = BikerBlinkerApp;
+				PRODUCT_BUNDLE_IDENTIFIER = com.BikerBlinker.Signal;
+				PRODUCT_NAME = Signal;
+				SWIFT_OBJC_BRIDGING_HEADER = "BikerBlinkerApp-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
 				VERSIONING_SYSTEM = "apple-generic";
 			};
 			name = Debug;
@@ -306,6 +315,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = BikerBlinkerApp/Signal.entitlements;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = T2SVF422T7;
 				INFOPLIST_FILE = BikerBlinkerApp/Info.plist;
@@ -316,9 +326,11 @@
 					"-ObjC",
 					"-lc++",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = org.name.BikerBlinkerApp;
-				PRODUCT_NAME = BikerBlinkerApp;
+				PRODUCT_BUNDLE_IDENTIFIER = com.BikerBlinker.Signal;
+				PRODUCT_NAME = Signal;
+				SWIFT_OBJC_BRIDGING_HEADER = "BikerBlinkerApp-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
 				VERSIONING_SYSTEM = "apple-generic";
 			};
 			name = Release;
@@ -351,6 +363,7 @@
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_ENTITLEMENTS = BikerBlinkerApp/Signal.entitlements;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -411,6 +424,7 @@
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_ENTITLEMENTS = BikerBlinkerApp/Signal.entitlements;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = YES;
 				ENABLE_NS_ASSERTIONS = NO;
