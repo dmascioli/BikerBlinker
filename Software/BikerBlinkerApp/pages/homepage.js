@@ -9,20 +9,7 @@ export default class HomePage extends React.Component {
 	constructor() {
     super()
     this.manager = new BleManager()
-    this.state = {info: "", values: {}, device: null}
-    this.prefixUUID = "f000aa"
-    this.suffixUUID = "-0451-4000-b000-000000000000"
-    this.serviceUUID = ""
-    this.blinkerUUID = ""
-    this.batteryUUID =""
-    this.sensors = {
-      0: "Battery",
-      1: "LeftBlinkerOn",
-      2: "RightBlinker",
-      3: "Brake",
-      4: "Barometer",
-      5: "Gyroscope"
-    }
+    this.state = {info: "", values: {}, device: null, deviceId: null};
   }
 
   serviceUUID(num) {
@@ -51,6 +38,52 @@ export default class HomePage extends React.Component {
   leftTurn() {
   	console.log("turn left");
   	//this.manager.writeCharacteristicWithResponseForService(this.state.deviceId, 'dad223bb-67b0-40d0-8a76-4bca05ae04b6', 'cda2e29c-d126-4887-9bfc-5a390dfe8255', 'bGVmdA==', false);
+    //this.manager.connectedDevices()
+    console.log("left is on");
+    this.manager.startDeviceScan(['dad223bb-67b0-40d0-8a76-4bca05ae04b6'], 
+                                 {allowDuplicates: true}, (error, device) => {
+      console.log("Scanning");                                  
+      this.info("Scanning...")
+      console.log(device);
+      console.log(error);
+      
+      if (error) {
+        console.log("has error");
+        this.error(error.message)
+        return
+      }
+
+      console.log("has device");
+      console.log(device.name);
+
+      if (device.name === 'BikerBlinker') {
+        console.log("has biker blinker");
+        this.info("Connecting to Biker Blinker")
+        this.manager.stopDeviceScan()
+        this.setState(prevState => Object.assign({}, {
+          ...prevState,
+          deviceId: device.id,
+          device, device,
+        }));
+        device.connect()
+          .then((device) => {
+            console.log("connected to biker blinker");
+            console.log(device);
+            this.info("Discovering services and characteristics")
+            return device.discoverAllServicesAndCharacteristics()
+          })
+          .then((device) => {
+            this.info("Setting notifications")
+            return this.setupNotifications(device)
+          })
+          .then(() => {
+            this.info("Listening...")
+          }, (error) => {
+            this.error(error.message)
+          })
+      }
+    });
+
   }
 
   rightTurn() {
@@ -70,7 +103,7 @@ export default class HomePage extends React.Component {
 
   scanAndConnect() {
     this.manager.startDeviceScan(['dad223bb-67b0-40d0-8a76-4bca05ae04b6'], 
-                                 null, (error, device) => {
+                                 {allowDuplicates: true}, (error, device) => {
 			console.log("Scanning");                                 	
       this.info("Scanning...")
       console.log(device);
@@ -92,6 +125,7 @@ export default class HomePage extends React.Component {
         this.setState(prevState => Object.assign({}, {
           ...prevState,
           deviceId: device.id,
+          device, device,
         }));
         device.connect()
           .then((device) => {
@@ -114,33 +148,54 @@ export default class HomePage extends React.Component {
   }
 
   async setupNotifications(device) {
-    console.log("try and write");
-    console.log(device);
+    console.log("Left turn on");
+    // turn on blinker left
     await device.writeCharacteristicWithResponseForService(
       'dad223bb-67b0-40d0-8a76-4bca05ae04b6',
       'cda2e29c-d126-4887-9bfc-5a390dfe8255',
       "bGVmdA==", false);
-    conosle.log("did it write?");
-    /*
-    for (const id in this.sensors) {
-      const service = this.serviceUUID(id)
-      const characteristicW = this.writeUUID(id)
-      const characteristicN = this.notifyUUID(id)
+    console.log("left on");
+    await new Promise(resolve => setTimeout(resolve, 2000));
+    // turn of blinker left
+    console.log("left turn of");
+    await device.writeCharacteristicWithResponseForService(
+      'dad223bb-67b0-40d0-8a76-4bca05ae04b6',
+      'cda2e29c-d126-4887-9bfc-5a390dfe8255',
+      "bGVmdG9mZg==", false);
+    console.log("left off");
+    await new Promise(resolve => setTimeout(resolve, 2000));
+    console.log("Right turn on");
+    // turn on blinker right
+    await device.writeCharacteristicWithResponseForService(
+      'dad223bb-67b0-40d0-8a76-4bca05ae04b6',
+      'cda2e29c-d126-4887-9bfc-5a390dfe8255',
+      "cmlnaHQ=", false);
+    console.log("right on");
+    await new Promise(resolve => setTimeout(resolve, 2000));
+    console.log("right turn off");
+    // turn off blinker right
+    await device.writeCharacteristicWithResponseForService(
+      'dad223bb-67b0-40d0-8a76-4bca05ae04b6',
+      'cda2e29c-d126-4887-9bfc-5a390dfe8255',
+      "cmlnaHRvZmY=", false);
+    console.log("right off");
+    // turn on brake
+    await new Promise(resolve => setTimeout(resolve, 2000));
+    console.log("activate brake");
+    await device.writeCharacteristicWithResponseForService(
+      'dad223bb-67b0-40d0-8a76-4bca05ae04b6',
+      'cda2e29c-d126-4887-9bfc-5a390dfe8255',
+      "YnJha2U=", false);
+    console.log("brake on");
+    // turn off brake
+    await new Promise(resolve => setTimeout(resolve, 2000));
 
-
-      const characteristic = await device.writeCharacteristicWithResponseForService(
-        service, characteristicW, "AQ==" 
-      )
-
-      device.monitorCharacteristicForService(service, characteristicN, (error, characteristic) => {
-        if (error) {
-          this.error(error.message)
-          return
-        }
-        this.updateValue(characteristic.uuid, characteristic.value)
-      })
-    }
-    */
+    console.log("deactivate brake");
+    await device.writeCharacteristicWithResponseForService(
+      'dad223bb-67b0-40d0-8a76-4bca05ae04b6',
+      'cda2e29c-d126-4887-9bfc-5a390dfe8255',
+      "YnJha2VvZmY=", false);
+    conosle.log("off?");
   }
 
   render() {
