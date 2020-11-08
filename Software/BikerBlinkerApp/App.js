@@ -1,10 +1,10 @@
 import { StatusBar } from "expo-status-bar";
-import React from "react";
+import React from 'react';
 import { layout} from './styles/styles';
 import { Text, View } from "react-native";
 import { useNavigation } from '@react-navigation/native';
 import Debug from './pages/debug';
-import Main from './pages/main';
+import HomePage from './pages/homepage';
 import SensorsPage from './pages/sensors';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
@@ -22,17 +22,20 @@ const layoutOptions = {
   },
 }
 
-export default function App() {
-  return (
-    <NavigationContainer>
-      <Stack.Navigator initialRouteName="Home">
-        <Stack.Screen name="Home" component={Home} options={layoutOptions}/>
-        <Stack.Screen name="Debug" component={Debug} options={layoutOptions}/>
-        <Stack.Screen name="Main" component={Main} options={layoutOptions}/>
-        <Stack.Screen name="Sensors" component={SensorsPage} options={layoutOptions}/>
-      </Stack.Navigator>
-    </NavigationContainer>
-  );
+export default class App extends React.Component {
+  render() {
+    return (
+      <NavigationContainer>
+        <Stack.Navigator initialRouteName="Home">
+          <Stack.Screen name="Home" component={Home} options={layoutOptions}/>
+          <Stack.Screen name="Debug" component={Debug} options={layoutOptions}/>
+          <Stack.Screen name="Main" component={HomePage} options={layoutOptions}/>
+          <Stack.Screen name="Sensors" component={SensorsPage} options={layoutOptions}/>
+
+        </Stack.Navigator>
+      </NavigationContainer>
+    );
+  }
 }
 
 function Home() {

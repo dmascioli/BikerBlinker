@@ -1,4 +1,4 @@
-package com.bikerblinkerapp.generated;
+package com.BikerBlinker.Signal.generated;
 
 import java.util.Arrays;
 import java.util.List;

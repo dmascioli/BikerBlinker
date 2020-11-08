@@ -7,6 +7,12 @@
     "version": "1.0.0",
     "assetBundlePatterns": [
       "**/*"
-    ]
+    ],
+    "android": {
+      "package": "com.BikerBlinker.Signal"
+    },
+    "ios": {
+      "bundleIdentifier": "com.BikerBlinker.Signal"
+    }
   }
 }

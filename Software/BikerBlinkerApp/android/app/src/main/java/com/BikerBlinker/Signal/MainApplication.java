@@ -1,4 +1,4 @@
-package com.bikerblinkerapp;
+package com.BikerBlinker.Signal;
 
 import android.app.Application;
 import android.content.Context;
@@ -6,13 +6,14 @@ import android.net.Uri;
 
 import com.facebook.react.PackageList;
 import com.facebook.react.ReactApplication;
+import com.polidea.reactnativeble.BlePackage;
 import com.facebook.react.ReactPackage;
 import com.wenkesj.voice.VoicePackage;
 import com.facebook.react.ReactInstanceManager;
 import com.facebook.react.ReactNativeHost;
 import com.facebook.react.shell.MainReactPackage;
 import com.facebook.soloader.SoLoader;
-import com.bikerblinkerapp.generated.BasePackageList;
+import com.BikerBlinker.Signal.generated.BasePackageList;
 
 import org.unimodules.adapters.react.ReactAdapterPackage;
 import org.unimodules.adapters.react.ModuleRegistryAdapter;
@@ -45,6 +46,7 @@ public class MainApplication extends Application implements ReactApplication {
       List<ReactPackage> packages = new PackageList(this).getPackages();
       packages.add(new ModuleRegistryAdapter(mModuleRegistryProvider));
       packages.add(new VoicePackage());
+      packages.add(new BlePackage());
       return packages;
     }
 
