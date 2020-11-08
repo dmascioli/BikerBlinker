@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { components } from '../styles/styles';
 import { TouchableHighlight, Image } from "react-native";
 import leftArrowOn from  '../assets/left_arrow.png';
