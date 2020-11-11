@@ -5,7 +5,7 @@ import { Text, View } from "react-native";
 import { useNavigation } from '@react-navigation/native';
 import Debug from './pages/debug';
 import HomePage from './pages/homepage';
-import SensorsPage from './pages/sensors';
+import Main from './pages/main';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import { TouchableHighlight, TouchableOpacity, TouchableWithoutFeedback } from "react-native-gesture-handler";
@@ -29,9 +29,7 @@ export default class App extends React.Component {
         <Stack.Navigator initialRouteName="Home">
           <Stack.Screen name="Home" component={Home} options={layoutOptions}/>
           <Stack.Screen name="Debug" component={Debug} options={layoutOptions}/>
-          <Stack.Screen name="Main" component={HomePage} options={layoutOptions}/>
-          <Stack.Screen name="Sensors" component={SensorsPage} options={layoutOptions}/>
-
+          <Stack.Screen name="Main" component={Main} options={layoutOptions}/>
         </Stack.Navigator>
       </NavigationContainer>
     );
@@ -46,11 +44,6 @@ function Home() {
           <Text style={layout.header}>Welcome to BikerBlinker</Text>
           <Text style={layout.subHeader}>Click here to begin!</Text>
         </TouchableOpacity>
-        <TouchableHighlight onPress={() => navigation.navigate("Sensors")}>
-          <View style={layout.menuItem}>
-            <Text style={layout.menuItemText}>Sensors</Text>
-          </View>
-        </TouchableHighlight>
         <TouchableHighlight onPress={() => navigation.navigate("Debug")}>
           <View style={layout.menuItem}>
             <Text style={layout.menuItemText}>Debug</Text>
