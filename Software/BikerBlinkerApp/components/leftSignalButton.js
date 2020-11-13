@@ -4,8 +4,7 @@ import { TouchableHighlight, Image } from "react-native";
 import leftArrowOn from  '../assets/left_arrow.png';
 import leftArrowOff from '../assets/left_arrow_dull.png';
 
-export default function LeftSignalButton({forwardDirection}) {
-  var [signalLight, setSignalLight] = useState(false);
+export default function LeftSignalButton({forwardDirection, active, toggle}) {
   var [shutOffReady, setShutOffReady] = useState(false);
   const [average, setAverage] = useState(0);
   const [stabilization, setStabilization] = useState([0,0,0,0,0]);
@@ -23,7 +22,7 @@ export default function LeftSignalButton({forwardDirection}) {
         setAverage(total / tempStabilization.length);
         if(average < .1 && average > -.1) {
           if(shutOffReady) {
-            setSignalLight(false);
+            toggle();
             setShutOffReady(false);
           }
         }
@@ -37,12 +36,12 @@ export default function LeftSignalButton({forwardDirection}) {
   }, [average]);
 
   function toggleSignal() {
-    setSignalLight(!signalLight);
+    toggle();
   }
   
   return (
     <TouchableHighlight style={components.menuBox} onPress={() => toggleSignal()}>
-      {(signalLight == true) ? <Image style={components.arrow} source={leftArrowOn} /> : <Image style={components.arrow} source={leftArrowOff} />}
+      {(active == true) ? <Image style={components.arrow} source={leftArrowOn} /> : <Image style={components.arrow} source={leftArrowOff} />}
     </TouchableHighlight>
   );
 }
