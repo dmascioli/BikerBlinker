@@ -5,6 +5,7 @@ import { layout, components} from '../styles/styles';
 import { Accelerometer, Gyroscope } from 'expo-sensors';
 import {
   AppState,
+  Button,
   View,
   NativeEventEmitter,
   NativeModules,
@@ -74,11 +75,13 @@ export default function Main() {
     console.log("right turn");
     if (!togglingRight) {
       setTogglingRight(true);
-      connectAndWrite(rightSignal ? "rightoff" : "right", setTogglingRight, setRightSignal, leftSignal);
+      connectAndWrite(rightSignal ? "rightoff" : "right", setTogglingRight, setRightSignal, rightSignal);
     };
   }
 
   const connectAndWrite = (data, setToggle, setState, stateVar) =>  {
+    console.log("writing: " + data);
+    console.log("found: " + found);
     if (found) {
       BleManager.connect(peripheralId)
         .then(() => {
@@ -244,18 +247,25 @@ export default function Main() {
   var zGyro = gyroData.z;
 
   useEffect(() => {
-    if(yAccel < 0 && !brake) {
-      if (!togglingBrake) {
-        setTogglingBrake(true);
-        connectAndWrite("brake", setTogglingBrake, setBrake, brake);
-      };
-    } else {
-      if (!togglingBrake) {
-        setTogglingBrake(true);
-        connectAndWrite("brakeoff", setTogglingBrake, setBrake, brake);
-      };
-    }
+    // if(yAccel < 0 && !brake) {
+    //   if (!togglingBrake) {
+    //     setTogglingBrake(true);
+    //     connectAndWrite("brake", setTogglingBrake, setBrake, brake);
+    //   };
+    // } else {
+    //   if (!togglingBrake) {
+    //     setTogglingBrake(true);
+    //     connectAndWrite("brakeoff", setTogglingBrake, setBrake, brake);
+    //   };
+    // }
   }, [yAccel]);
+  const toggleBrake = () => {
+    console.log("toggle brake: " + brake);
+    if (!togglingBrake) {
+      setTogglingBrake(true);
+      connectAndWrite(brake ? "brakeoff" : "brake", setTogglingBrake, setBrake, brake);
+    };
+  }
   
   return (
     <View style={layout.container}>
@@ -273,6 +283,7 @@ export default function Main() {
         forwardAccel={yAccel}
         toggle={toggleRight}
       />
+      <Button onPress={toggleBrake} title="BRAKE"></Button>
       </View>
     </View>
   );
