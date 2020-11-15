@@ -10,6 +10,7 @@ export default function LeftSignalButton({forwardDirection, active, toggle}) {
   const [stabilization, setStabilization] = useState([0,0,0,0,0]);
 
   useEffect(() => {
+    if(active) {
       if(Array.isArray(stabilization)) {
         var tempStabilization = stabilization;
         tempStabilization.push(forwardDirection);
@@ -27,7 +28,8 @@ export default function LeftSignalButton({forwardDirection, active, toggle}) {
           }
         }
     }
-  }, [forwardDirection]);
+  }
+  }, [forwardDirection, active]);
 
   useEffect(() => {
     if(average > .3 || average < -.3) {
