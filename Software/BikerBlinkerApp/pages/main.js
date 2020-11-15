@@ -11,6 +11,7 @@ import {
   NativeModules,
   PermissionsAndroid,
 } from "react-native";
+import Voice from 'react-native-voice';
 import BleManager from 'react-native-ble-manager';
 import { stringToBytes } from "convert-string";
 
@@ -30,11 +31,32 @@ export default function Main() {
   const [togglingLeft, setTogglingLeft] = useState(false);
   const [togglingRight, setTogglingRight] = useState(false);
   const [togglingBrake, setTogglingBrake] = useState(false);
+  const [results, setResults] = useState([]);
+  const [voiceRunning, setVoiceRunning] = useState(false);
   const [peripherals, setPeripherals] = useState(new Map());
   const [appState, setAppState] = useState('');
+  const [recognized, setRecognized] = useState('');
+  const [started, setStarted] = useState('');
+  const words = [
+    "turn",
+    "turns",
+    "turned",
+    "left",
+    "lefts",
+    "right",
+    "rights",
+    "stop",
+    "stops",
+    "stopped",
+  ];
+
+  const leftCommands = ["left", "lefts"];
+  const rightCommands = ["right", "rights"];
+  const stopCommands = ["stop", "stops"];
 
   useEffect(() => {
     _subscribeAppState();
+    _subscribeVoice();
     _toggleAccel();
     _toggleGyro();
   }, []);
@@ -43,7 +65,8 @@ export default function Main() {
     return () => {
       _unsubscribeAccel();
       _unsubscribeGyro();
-      _unsubscribeBT()
+      _unsubscribeBT();
+      _unsubscribeVoice();
     };
   }, []);
 
@@ -113,6 +136,13 @@ export default function Main() {
     });
   }
 
+  const _subscribeVoice = () => {
+    Voice.onSpeechStart = onSpeechStart;
+    Voice.onSpeechRecognized = onSpeechRecognized;
+    Voice.onSpeechResults = onSpeechResults;
+    _startRecognition()
+  }
+
   const _subscribeAppState = () => {
     AppState.addEventListener('change', this.handleAppStateChange)
 
@@ -178,6 +208,8 @@ export default function Main() {
   const handleStopScan = () => {
     console.log('Scan is stopped');
     setScanning(false);
+    if (found) 
+      alert('biker blinker module found');
   }
 
   const retrieveConnected = () => {
@@ -210,6 +242,19 @@ export default function Main() {
     setPeripherals(newPeriperals);
   }
 
+  const onSpeechStart = (e) => {
+    setStarted('√');
+  };
+
+  const onSpeechRecognized = (e) => {
+    setRecognized('√');
+  };
+
+  const onSpeechResults = (e) => {
+    console.log(e.value);
+    setResults(e.value);
+  }
+
   const _subscribeAccel = () => {
     this._subscribeAccel = Accelerometer.addListener(accelerometerData => {
       setAccelData(accelerometerData);
@@ -232,6 +277,10 @@ export default function Main() {
     this._subscribeGyro = null;
   };
 
+  const _unsubscribeVoice = () => {
+    Voice.destroy().then(Voice.removeAllListeners);
+  };
+
   const _unsubscribeBT = () => {
     this.handlerDiscover && this.handlerDiscover.remove();
     this.handlerDiscover = null;
@@ -241,6 +290,27 @@ export default function Main() {
     this.handlerDisconnect = null;
     this.handlerUpdate && this.handlerUpdate.remove();
     this.handlerUpdate = null;
+  }
+
+  const _startRecognition = async (e) => {
+    setVoiceRunning(true);
+    setResults([]);
+    try {
+      await Voice.start('en-US');
+      alert('voice detection started');
+    } catch (e) {
+      console.error(e);
+    }
+  }
+
+  const _stopRecognition = async (e) => {
+    setVoiceRunning(stop);
+    setResults([]);
+    try {
+      await Voice.stop();
+    } catch (e) {
+      console.error(e);
+    }
   }
   
   var yAccel = accelData.y;
