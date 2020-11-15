@@ -37,6 +37,9 @@ export default function Main() {
   const [appState, setAppState] = useState('');
   const [recognized, setRecognized] = useState('');
   const [started, setStarted] = useState('');
+  const [madeLeft, setMadeLeft] = useState(false);
+  const [madeRight, setMadeRight] = useState(false);
+  const [detecting, setDetecting] = useState(false);
   const words = [
     "turn",
     "turns",
@@ -89,22 +92,22 @@ export default function Main() {
   const toggleLeft = () => {
     console.log("left turn");
     if (!togglingLeft) {
+      setLeftSignal(!toggleLeft);
       setTogglingLeft(true);
-      connectAndWrite(leftSignal ? "leftoff" : "left", setTogglingLeft, setLeftSignal, leftSignal);
+      connectAndWrite(leftSignal ? "leftoff" : "left", setTogglingLeft);
     };
   }
 
   const toggleRight = () => {
     console.log("right turn");
     if (!togglingRight) {
+      setRightSignal(!toggleRight);
       setTogglingRight(true);
-      connectAndWrite(rightSignal ? "rightoff" : "right", setTogglingRight, setRightSignal, rightSignal);
+      connectAndWrite(rightSignal ? "rightoff" : "right", setTogglingRight);
     };
   }
 
-  const connectAndWrite = (data, setToggle, setState, stateVar) =>  {
-    console.log("writing: " + data);
-    console.log("found: " + found);
+  const connectAndWrite = (data, setToggle) =>  {
     if (found) {
       BleManager.connect(peripheralId)
         .then(() => {
@@ -118,7 +121,7 @@ export default function Main() {
           console.log('Connected to ' + peripheralId);
 
           BleManager.retrieveServices(peripheralId).then((peripheralInfo) => {
-            writeData(data, setToggle, setState, stateVar);
+            writeData(data, setToggle);
           });
           }).catch((error) => {
             console.log('Connection error', error);
@@ -126,12 +129,11 @@ export default function Main() {
     }
   }
 
-  const writeData = (data, setToggle, setState, stateVar) => {
+  const writeData = (data, setToggle) => {
     const service = 'dad223bb-67b0-40d0-8a76-4bca05ae04b6';
     const characteristic = 'cda2e29c-d126-4887-9bfc-5a390dfe8255';
     BleManager.write(peripheralId, service, characteristic, stringToBytes(data)).then(() => {
       console.log('wrote data: ' + data);
-      setState(!stateVar);
       setToggle(false);
     });
   }
@@ -254,6 +256,28 @@ export default function Main() {
     console.log(e.value);
     setResults(e.value);
   }
+
+  useEffect(() => {
+    console.log(results);
+    if (!detecting && results.length > 0) {
+      setDetecting(true);
+      var detectedWords = results[0].split(' ');
+      const leftResults = detectedWords.filter(word => leftCommands.includes(word.trim().toLowerCase()));
+      console.log(leftResults);
+      const rightResults = detectedWords.filter(word => rightCommands.includes(word.trim().toLowerCase()));
+      console.log(rightResults);
+      if (!madeLeft && !leftSignal && !rightSignal && leftResults.length > 0) {
+        setMadeLeft(true);
+        console.log("make left turn");
+        toggleLeft();
+      } else if (!madeRight && !leftSignal && !rightSignal && rightResults.length > 0) {
+        setMadeRight(true);
+        console.log("make right turn");
+        toggleRight();
+      };
+      setDetecting(false);
+    };
+  }, [results, detecting])
 
   const _subscribeAccel = () => {
     this._subscribeAccel = Accelerometer.addListener(accelerometerData => {
