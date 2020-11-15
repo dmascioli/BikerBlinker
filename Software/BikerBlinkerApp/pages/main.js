@@ -277,7 +277,7 @@ export default function Main() {
       };
       setDetecting(false);
     };
-  }, [results, detecting])
+  }, [results, detecting, leftSignal, rightSignal, madeRight, madeLeft])
 
   const _subscribeAccel = () => {
     this._subscribeAccel = Accelerometer.addListener(accelerometerData => {
