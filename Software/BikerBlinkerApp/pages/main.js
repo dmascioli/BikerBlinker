@@ -357,12 +357,14 @@ export default function Main() {
       if(average < 0.05 && !brake) {
        if (!togglingBrake) {
          setTogglingBrake(true);
-         connectAndWrite("brake", setTogglingBrake, setBrake, brake);
+         setBrake(!brake);
+         connectAndWrite("brake", setTogglingBrake);
        };
      } else {
        if (!togglingBrake) {
          setTogglingBrake(true);
-         connectAndWrite("brakeoff", setTogglingBrake, setBrake, brake);
+         setBrake(!brake);
+         connectAndWrite("brakeoff", setTogglingBrake);
        };
      }
   }
