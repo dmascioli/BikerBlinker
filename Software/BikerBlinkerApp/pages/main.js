@@ -340,19 +340,34 @@ export default function Main() {
   var yAccel = accelData.y;
   var zGyro = gyroData.z;
 
+  const [average, setAverage] = useState(0);
+  const [stabilization, setStabilization] = useState([0,0,0]);
+
   useEffect(() => {
-    // if(yAccel < 0 && !brake) {
-    //   if (!togglingBrake) {
-    //     setTogglingBrake(true);
-    //     connectAndWrite("brake", setTogglingBrake, setBrake, brake);
-    //   };
-    // } else {
-    //   if (!togglingBrake) {
-    //     setTogglingBrake(true);
-    //     connectAndWrite("brakeoff", setTogglingBrake, setBrake, brake);
-    //   };
-    // }
+    if(Array.isArray(stabilization)) {
+      var tempStabilization = stabilization;
+      tempStabilization.push(yAccel);
+      tempStabilization.shift(); 
+      setStabilization(tempStabilization);
+      var total = 0;
+      for(var i = 0; i < tempStabilization.length; i++) {
+          total += tempStabilization[i];
+      }
+      setAverage(total / tempStabilization.length);
+      if(average < 0.05 && !brake) {
+       if (!togglingBrake) {
+         setTogglingBrake(true);
+         connectAndWrite("brake", setTogglingBrake, setBrake, brake);
+       };
+     } else {
+       if (!togglingBrake) {
+         setTogglingBrake(true);
+         connectAndWrite("brakeoff", setTogglingBrake, setBrake, brake);
+       };
+     }
+  }
   }, [yAccel]);
+
   const toggleBrake = () => {
     console.log("toggle brake: " + brake);
     if (!togglingBrake) {
